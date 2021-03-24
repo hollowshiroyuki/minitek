@@ -1,0 +1,12 @@
+; DO NOT EDIT (unless you know what you are doing)
+;
+; This subdirectory is a git "subrepo", and this file is maintained by the
+; git-subrepo command. See https://github.com/git-commands/git-subrepo#readme
+;
+[subrepo]
+	remote = git@github.com:hollowshiroyuki/libhsy.git
+	branch = master
+	commit = f6835668f8a44ffcfa4d914c8054c4ec5abc7950
+	parent = 43a9c1067ab3190a1174b4f507179b0a2c92f4ce
+	method = merge
+	cmdver = 0.4.3
