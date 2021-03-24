@@ -30,7 +30,7 @@ CFLAGS	=	-W -Wall -Wextra -Werror \
 		-g3 \
 		$(C_FLAGS_INPUT)
 
-LFLAGS	=	-L$(LIBRARY_DIR) \
+LFLAGS	=	-L$(LIBRARY_DIR) -lhsy \
 		-lcsfml-graphics -lcsfml-window -lcsfml-system -lcsfml-audio -lm \
 		$(L_FLAGS_INPUT)
 
@@ -40,7 +40,7 @@ LFLAGS	=	-L$(LIBRARY_DIR) \
 
 SOURCES_FILES	=	main.c
 
-LIBRARY		=
+LIBRARY		=	libhsy.a
 
 ########################
 ### OBJECT FILES     ###
