@@ -44,7 +44,24 @@ LFLAGS	=	-L$(LIBRARY_DIR) -lhsy \
 # Ajouter une entrée dans SOURCE_FILES comme ceci :
 # $(addprefix <nomdudossier>/, $(<NOMDELAREGLE>))
 
-SOURCES_FILES	=	main.c
+WINDOW_FILES	=	window_init.c \
+					window_destroy.c
+
+VIEW_FILES		=	view_ratio.c
+
+ENGINE_FILES	=	engine_init.c \
+					engine_draw.c \
+					engine_start.c \
+					engine_update.c \
+					engine_events.c \
+					engine_destroy.c \
+					engine_internal_events.c \
+					engine_internal_resized.c
+
+SOURCES_FILES	=	main.c \
+					$(addprefix engine/, $(ENGINE_FILES)) \
+					$(addprefix view/, $(VIEW_FILES)) \
+					$(addprefix window/, $(WINDOW_FILES))
 
 LIBRARY		=	libhsy.a
 
