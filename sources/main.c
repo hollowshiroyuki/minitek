@@ -11,6 +11,8 @@ int main(int argc, char **argv, char **envp)
 {
     engine_t engine = {.argc = argc, .argv = argv, .envp = envp};
 
+    if (engine_usage(&engine))
+        return (engine.ret);
     engine_init(&engine);
     if (engine.state == EN_RUN)
         engine_start(&engine);
