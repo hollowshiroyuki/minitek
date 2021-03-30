@@ -49,7 +49,11 @@ WINDOW_FILES	=	window_init.c \
 
 VIEW_FILES		=	view_ratio.c
 
+ASSET_MAN_FILES =	asset_manager_destroy.c \
+					asset_manager_init.c
+
 ENGINE_FILES	=	engine_init.c \
+					engine_usage.c \
 					engine_draw.c \
 					engine_start.c \
 					engine_update.c \
@@ -61,7 +65,8 @@ ENGINE_FILES	=	engine_init.c \
 SOURCES_FILES	=	main.c \
 					$(addprefix engine/, $(ENGINE_FILES)) \
 					$(addprefix view/, $(VIEW_FILES)) \
-					$(addprefix window/, $(WINDOW_FILES))
+					$(addprefix window/, $(WINDOW_FILES)) \
+					$(addprefix asset_manager/, $(ASSET_MAN_FILES))
 
 LIBRARY		=	libhsy.a
 

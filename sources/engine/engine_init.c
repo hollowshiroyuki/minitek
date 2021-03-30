@@ -10,5 +10,6 @@
 void engine_init(engine_t *engine)
 {
     window_init(engine);
+    asset_manager_init(engine);
     engine->state = EN_RUN;
 }
