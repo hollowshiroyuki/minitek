@@ -9,7 +9,7 @@
 #include "hsy.h"
 #include "consts.h"
 
-static void print_usage()
+static void print_usage(void)
 {
     hsy_putstr(USAGE_MSG);
 }
@@ -20,5 +20,5 @@ bool engine_usage(engine_t *engine)
         print_usage();
         return (true);
     }
-    return (false);  
+    return (false);
 }
