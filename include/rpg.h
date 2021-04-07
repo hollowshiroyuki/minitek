@@ -16,8 +16,9 @@
 
 // Put all typedefs on top so we can use any type anywhere.
 typedef struct engine_s engine_t;
-typedef struct secene_s scene_t;
+typedef struct scene_s scene_t;
 typedef struct asset_store_s asset_store_t;
+typedef struct menu_data_s menu_data_t;
 typedef enum engine_states_e engine_states_t;
 
 enum engine_states_e
@@ -36,6 +37,21 @@ struct asset_store_s
     sfTexture *tiles;
 };
 
+struct menu_data_s
+{
+    bool init;
+    sfSprite *logo;
+};
+
+struct scene_s
+{
+    void (*init)(engine_t *engine);
+    void (*update)(engine_t *engine);
+    void (*event)(engine_t *engine, sfEvent *event);
+    void (*draw)(engine_t *engine, sfRenderWindow *window);
+    void (*destroy)(engine_t *engine);
+};
+
 struct engine_s
 {
     int argc;
@@ -43,6 +59,9 @@ struct engine_s
     char **envp;
     engine_states_t state;
     asset_store_t assets;
+    int active_scene;
+    scene_t scenes[5];
+    menu_data_t menu_data;
     sfRenderWindow *window;
     sfView *view;
     sfEvent event;
@@ -70,5 +89,12 @@ void window_destroy(engine_t *engine);
 
 /* View */
 sfView *view_ratio(sfView *view, int width, int height);
+
+/* Scene Menu */
+void menu_init(engine_t *engine);
+void menu_update(engine_t *engine);
+void menu_event(engine_t *engine, sfEvent *event);
+void menu_draw(engine_t *engine, sfRenderWindow *window);
+void menu_destroy(engine_t *engine);
 
 #endif /* RPG_H_ */
