@@ -25,6 +25,7 @@ CFLAGS	=	-W -Wall -Wextra -Werror \
 		-I$(HEADER_DIR) \
 		-Wno-unused-variable \
 		-Wno-unused-parameter \
+		-Wno-deprecated-declarations \
 		-g3 \
 		$(C_FLAGS_INPUT)
 
