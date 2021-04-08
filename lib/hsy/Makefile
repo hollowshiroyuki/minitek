@@ -23,6 +23,7 @@ AR	=	ar
 CFLAGS	=	-W -Wall -Wextra -Werror \
 		-I$(HEADER_DIR) \
 		-Wno-unused-variable \
+		-Wno-self-assign \
 		-Wno-unused-parameter \
 		$(C_FLAGS_INPUT)
 

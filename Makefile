@@ -25,8 +25,6 @@ CFLAGS	=	-W -Wall -Wextra -Werror \
 		-I$(HEADER_DIR) \
 		-Wno-unused-variable \
 		-Wno-unused-parameter \
-		-Wno-unused-but-set-variable \
-		-Wno-unused-but-set-parameter \
 		-g3 \
 		$(C_FLAGS_INPUT)
 
