@@ -34,5 +34,6 @@ void level_gen_destroy(level_gen_t *lg);
 maps_t level_gen_create_top_map(int w, int h);
 void generate_sand(int *m, sfVector2i s);
 void generate_island(level_gen_t *n[5], int *m, sfVector2i s);
+void generate_trees(int *m, sfVector2i s);
 
 #endif
