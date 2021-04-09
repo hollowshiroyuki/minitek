@@ -9,5 +9,6 @@
 #define RANDOM_H_
 
 float random_float(void);
+int random_int(int bound);
 
 #endif

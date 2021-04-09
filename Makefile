@@ -57,7 +57,8 @@ MENU_FILES		=	menu_update.c \
 					menu_event.c \
 					menu_init.c
 
-RANDOM_FILES	=	random_float.c
+RANDOM_FILES	=	random_float.c \
+					random_int.c
 
 LEVEL_GEN_FILES	=	level_gen_create.c \
 					level_gen_sample.c \
