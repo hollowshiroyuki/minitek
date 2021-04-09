@@ -57,6 +57,14 @@ MENU_FILES		=	menu_update.c \
 					menu_event.c \
 					menu_init.c
 
+RANDOM_FILES	=	random_float.c
+
+LEVEL_GEN_FILES	=	level_gen_create.c \
+					level_gen_sample.c \
+					level_gen_set_sample.c \
+					level_gen_destroy.c \
+					level_gen_create_top_map.c
+
 ENGINE_FILES	=	engine_init.c \
 					engine_usage.c \
 					engine_draw.c \
@@ -72,7 +80,9 @@ SOURCES_FILES	=	main.c \
 					$(addprefix view/, $(VIEW_FILES)) \
 					$(addprefix window/, $(WINDOW_FILES)) \
 					$(addprefix asset_manager/, $(ASSET_MAN_FILES)) \
-					$(addprefix menu/, $(MENU_FILES))
+					$(addprefix menu/, $(MENU_FILES)) \
+					$(addprefix random/, $(RANDOM_FILES)) \
+					$(addprefix level_gen/, $(LEVEL_GEN_FILES))
 
 LIBRARY		=	libhsy.a
 
