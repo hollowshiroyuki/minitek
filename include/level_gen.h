@@ -39,6 +39,7 @@ void generate_cactus(int *m, sfVector2i s);
 void generate_flowers(maps_t m, sfVector2i s);
 
 /* Underground Files */
+maps_t level_gen_create_and_validate_underground_map(int w, int h, int depth);
 maps_t level_gen_create_underground_map(int w, int h, int depth);
 void generate_cave(level_gen_t *n[11], int *m, sfVector2i s, int depth);
 void generate_ores(int *m, sfVector2i s, int depth);
