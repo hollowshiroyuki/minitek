@@ -34,6 +34,7 @@ maps_t level_gen_create_underground_map(int w, int h, int depth)
     depth = (depth % 3) + 1;
     generate_noise(noises, (sfVector2i){w, h});
     generate_cave(noises, map, (sfVector2i){w, h}, depth);
+    generate_ores(map, (sfVector2i){w, h}, depth);
     destroy_noise(noises);
     return ((maps_t){map, data});
 }
