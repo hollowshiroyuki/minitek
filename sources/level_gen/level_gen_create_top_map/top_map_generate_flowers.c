@@ -8,7 +8,6 @@
 #include "level_gen.h"
 #include "tiles_id.h"
 #include "random.h"
-#include <stdio.h>
 
 void generate_flowers(maps_t m, sfVector2i s)
 {
