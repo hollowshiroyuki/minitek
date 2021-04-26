@@ -11,6 +11,20 @@
 #include "random.h"
 #include "tiles_id.h"
 
+static void generate_noise(level_gen_t *n[11], sfVector2i size)
+{
+    for (int i = 0; i < 11; i++) {
+        n[i] = level_gen_create(size.x, size.y, (i > 9) ? (32) : (16));
+    }
+}
+
+static void destroy_noise(level_gen_t *n[11])
+{
+    for (int i = 0; i < 11; i++) {
+        level_gen_destroy(n[i]);
+    }
+}
+
 static void generate_stairs(int *m, sfVector2i s)
 {
     int count = 0;
@@ -19,8 +33,8 @@ static void generate_stairs(int *m, sfVector2i s)
 
     for (int i = 0; i < s.x * s.y / 100; i++) {
         enclosed = true;
-        p.x = random_int(s.x - 2) + 1;
-        p.y = random_int(s.y - 2) + 1;
+        p.x = random_int(s.x - 20) + 10;
+        p.y = random_int(s.y - 20) + 10;
         for (int y = p.y - 1; y <= p.y + 1; y++) {
             for (int x = p.x - 1; x <= p.x + 1; x++) {
                 enclosed = (m[x + y * s.x] != T_ROCK) ? (false) : (enclosed);
@@ -35,21 +49,17 @@ static void generate_stairs(int *m, sfVector2i s)
     }
 }
 
-maps_t level_gen_create_top_map(int w, int h)
+maps_t level_gen_create_underground_map(int w, int h, int depth)
 {
-    level_gen_t *noises[5];
+    level_gen_t *noises[11];
     int *map = malloc(sizeof(int) * w * h);
     int *data = malloc(sizeof(int) * w * h);
 
-    for (int i = 0; i < 5; i++)
-        noises[i] = level_gen_create(w, h, (i > 2) ? (32) : (16));
-    generate_island(noises, map, (sfVector2i){w, h});
-    generate_sand(map, (sfVector2i){w, h});
-    generate_trees(map, (sfVector2i){w, h});
-    generate_cactus(map, (sfVector2i){w, h});
-    generate_flowers((maps_t){map, data}, (sfVector2i){w, h});
+    depth = (depth % 3) + 1;
+    generate_noise(noises, (sfVector2i){w, h});
+    generate_cave(noises, map, (sfVector2i){w, h}, depth);
+    generate_ores(map, (sfVector2i){w, h}, depth);
     generate_stairs(map, (sfVector2i){w, h});
-    for (int i = 0; i < 5; i++)
-        level_gen_destroy(noises[i]);
+    destroy_noise(noises);
     return ((maps_t){map, data});
 }
