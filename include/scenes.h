@@ -9,6 +9,7 @@
 #define SCENES_H_
 
 #include "rpg.h"
+#include "game.h"
 
 enum scene_id_e
 {
@@ -17,6 +18,12 @@ enum scene_id_e
 };
 
 static const scene_t scenes[] = {
+    {
+        .init = game_init,
+        .update = game_update,
+        .draw = game_draw,
+        .destroy = game_destroy
+    },
     {
         menu_init,
         menu_update,

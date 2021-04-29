@@ -29,6 +29,8 @@ double level_gen_sample(level_gen_t *lg, int x, int y);
 void level_gen_set_sample(level_gen_t *lg, int x, int y, double value);
 void level_gen_destroy(level_gen_t *lg);
 
+/* Sky Files (Sky) */
+
 /* Top Floor Files (Overworld) */
 maps_t level_gen_create_and_validate_top_map(int w, int h);
 maps_t level_gen_create_top_map(int w, int h);
@@ -39,7 +41,7 @@ void generate_cactus(int *m, sfVector2i s);
 void generate_flowers(maps_t m, sfVector2i s);
 
 /* Underground Files */
-maps_t level_gen_create_and_validate_underground_map(int w, int h, int depth);
+maps_t level_gen_create_and_validate_und_map(int w, int h, int depth);
 maps_t level_gen_create_underground_map(int w, int h, int depth);
 void generate_cave(level_gen_t *n[11], int *m, sfVector2i s, int depth);
 void generate_ores(int *m, sfVector2i s, int depth);

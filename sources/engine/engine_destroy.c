@@ -15,6 +15,8 @@ void engine_destroy(engine_t *engine)
             (*scenes[i].destroy)(engine);
         }
     }
+    sfClock_destroy(engine->tick_clk);
+    sfClock_destroy(engine->second_clk);
     window_destroy(engine);
     asset_manager_destroy(engine);
 }

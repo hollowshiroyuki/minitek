@@ -294,7 +294,7 @@ typedef enum til_tex_id_e
     TIL_TEX_OBSI_DOOR_CLOSE_BR
 } til_tex_id_t;
 
-const sfIntRect til_tex_index[] = {
+static const sfIntRect til_tex_index[] = {
 /* Ligne 1 */
     {0, 0, 8, 8},
     {8, 0, 8, 8},

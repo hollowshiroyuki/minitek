@@ -7,6 +7,7 @@
 
 #include "rpg.h"
 #include "scenes.h"
+#include "entities.h"
 
 int main(int ac, char **av, char **env)
 {

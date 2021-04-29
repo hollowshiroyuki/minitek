@@ -8,7 +8,7 @@
 #ifndef TILES_ID_H_
 #define TILES_ID_H_
 
-enum tiles_id
+typedef enum
 {
     T_DIRT,
     T_HOLE,
@@ -44,6 +44,6 @@ enum tiles_id
     T_OBSI_DOOR_OPEN,
     T_OBSI_DOOR_CLOSED,
     T_COUNT
-};
+}  tiles_id_t;
 
 #endif
