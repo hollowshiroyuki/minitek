@@ -47,7 +47,7 @@ static void top_right(bool c[8], screen_t *scr, sfVector2i pos, int v[4])
     pos.x = pos.x * 16 + 8;
     pos.y = pos.y * 16;
     if (!c[0] && !c[3]) {
-        screen_render_tile(scr, pos, v[0]);
+        screen_render_tile(scr, pos, v[1]);
     } else {
         tex = (c[3] ? 6 * 32 + 14 : 6 * 32 + 13) + (c[0] ? 0 : 1) * 32;
         screen_render_tile(scr, pos, tex);
@@ -61,7 +61,7 @@ static void bottom_left(bool c[8], screen_t *scr, sfVector2i pos, int v[4])
     pos.x = pos.x * 16;
     pos.y = pos.y * 16 + 8;
     if (!c[1] && !c[2]) {
-        screen_render_tile(scr, pos, v[0]);
+        screen_render_tile(scr, pos, v[2]);
     } else {
         tex = (c[2] ? 6 * 32 + 12 : 6 * 32 + 13) + (c[1] ? 2 : 1) * 32;
         screen_render_tile(scr, (sfVector2i){pos.x, pos.y}, tex);
@@ -75,7 +75,7 @@ static void bottom_right(bool c[8], screen_t *scr, sfVector2i pos, int v[4])
     pos.x = pos.x * 16 + 8;
     pos.y = pos.y * 16 + 8;
     if (!c[1] && !c[3]) {
-        screen_render_tile(scr, pos, v[0]);
+        screen_render_tile(scr, pos, v[3]);
     } else {
         tex = (c[3] ? 6 * 32 + 14 : 6 * 32 + 13) + (c[1] ? 2 : 1) * 32;
         screen_render_tile(scr, (sfVector2i){pos.x, pos.y}, tex);
@@ -85,7 +85,7 @@ static void bottom_right(bool c[8], screen_t *scr, sfVector2i pos, int v[4])
 void water_render(tile_t self, screen_t *scr, floor_t *floor, sfVector2i pos)
 {
     bool c[8] = {0};
-    static int v[4] = {0};
+    int v[4] = {0};
     int seed = (floor->tickCount + (pos.x / 2 - pos.y) * 4242) / 10 * 69696969;
 
     srand(seed);
