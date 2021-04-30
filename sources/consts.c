@@ -7,7 +7,7 @@
 
 #include "consts.h"
 
-// Ratio must be 34 : 27
-const int scale = 50;
-const sfVector2i render_size = {34 * scale , 27 * scale};
+// Ratio must be 4 : 3
+const int scale = 69;
+const sfVector2i render_size = {4 * scale , 3 * scale};
 const char *window_name = "MiniTek | MyRPG";

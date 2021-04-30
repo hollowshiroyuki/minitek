@@ -17,8 +17,8 @@ void floor_draw_background(floor_t *self, sfVector2i scroll, screen_t *screen)
     tile_t tile = {0};
 
     screen_set_offset(screen, scroll);
-    for (int y = o.y; y < size.y + o.y; y++) {
-        for (int x = o.x; x < size.x + o.x; x++) {
+    for (int y = o.y; y <= size.y + o.y; y++) {
+        for (int x = o.x; x <= size.x + o.x; x++) {
             pos = (sfVector2i){x, y};
             tile = floor_get_tile(self, pos);
             if (tile.render) {
