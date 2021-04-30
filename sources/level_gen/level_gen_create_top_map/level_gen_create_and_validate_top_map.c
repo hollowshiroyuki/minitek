@@ -14,7 +14,7 @@
 bool top_map_is_valid(int *map)
 {
     bool is_valid = true;
-    
+
     is_valid = (map[T_ROCK] < 100) ? (false) : (is_valid);
     is_valid = (map[T_SAND] < 100) ? (false) : (is_valid);
     is_valid = (map[T_GRASS] < 100) ? (false) : (is_valid);

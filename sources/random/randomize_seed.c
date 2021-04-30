@@ -15,7 +15,7 @@ static int randomize_from_file(FILE *in)
 
     if (!in)
         return (-1);
-    if (fread(&seed, sizeof seed, 1, in) == 1) {
+    if (fread(&seed, sizeof(seed), 1, in) == 1) {
         fclose(in);
         srand(seed);
         return (0);
@@ -32,6 +32,6 @@ int randomize_seed(void)
         return (0);
     if (!randomize_from_file(fopen("/dev/random", "r")))
         return (0);
-    hsy_fd_putstr(2,"[WARN] No suitable random source found for seeding !\n");
+    hsy_fd_putstr(2, "[WARN] No suitable random source found for seeding !\n");
     return (-1);
 }
