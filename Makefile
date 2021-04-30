@@ -59,7 +59,8 @@ MENU_FILES	=	menu_update.c \
 				menu_init.c
 
 RANDOM_FILES	=	random_float.c \
-					random_int.c
+					random_int.c \
+					randomize_seed.c
 
 LEVEL_GEN_TOP_FILES	=	level_gen_create_top_map.c \
 						level_gen_create_and_validate_top_map.c \
@@ -96,11 +97,25 @@ SLIME_FILES	=	slime_create.c \
 
 ZOMBIE_FILES	=	zombie_funcs.c
 
-MOB_FILES	=	mob_funcs.c \
-				$(addprefix slime/, $(SLIME_FILES)) \
-				$(addprefix zombie/, $(ZOMBIE_FILES))
+PLAYER_FILES	=	player_create.c \
+					player_draw.c \
+					player_funcs.c \
+					player_find_start_pos.c \
+					player_tick.c
 
-ENTITIES_FILES	=	entity_blocked_by.c \
+
+MOB_FILES	=	mob_funcs.c \
+				mob_tick.c \
+				mob_hurt.c \
+				mob_do_hurt.c \
+				mob_is_swimming.c \
+				mob_hurt_tile.c \
+				mob_move.c \
+				$(addprefix slime/, $(SLIME_FILES)) \
+				$(addprefix zombie/, $(ZOMBIE_FILES)) \
+				$(addprefix player/, $(PLAYER_FILES))
+
+ENTITIES_FILES	=	entity_is_blockable_by.c \
 					entity_can_swim.c \
 					entity_create.c \
 					entity_destroy.c \
@@ -119,6 +134,7 @@ ENTITIES_FILES	=	entity_blocked_by.c \
 					entity_intersects.c \
 					entity_funcs_combine.c \
 					entities_funcs.c \
+					entity_hurt_tile.c \
 					$(addprefix mob/, $(MOB_FILES))
 
 DIRT_FILES	=	dirt.c \
@@ -143,6 +159,11 @@ FLOOR_FILES	=	floor_get_tile.c \
 SAND_FILES	=	sand.c \
 				sand_render.c
 
+CACTUS_FILES	=	cactus.c \
+					cactus_render.c \
+					cactus_bump.c \
+					cactus_may_pass.c
+
 GRASS_FILES	=	grass.c \
 				grass_render.c
 
@@ -153,7 +174,8 @@ TILES_FILES	=	tiles.c \
 				$(addprefix stair_down/, $(STAIRDOWN_FILES)) \
 				$(addprefix water/, $(WATER_FILES)) \
 				$(addprefix grass/, $(GRASS_FILES)) \
-				$(addprefix sand/, $(SAND_FILES))
+				$(addprefix sand/, $(SAND_FILES)) \
+				$(addprefix cactus/, $(CACTUS_FILES))
 
 UNIVERSE_FILES	=	universe_create.c \
 					universe_tick.c \
@@ -168,7 +190,15 @@ GAME_FILES	=	game_update.c \
 SCREEN_FILES	=	screen_init.c \
 					screen_render_tile.c \
 					screen_set_offset.c \
-					screen_destroy.c
+					screen_destroy.c \
+					screen_render_entity.c
+
+INPUT_FILES	=	input_create.c \
+				mkey_init.c \
+				input_tick.c \
+				mkey_tick.c \
+				input_event.c \
+				mkey_toggle.c
 
 SOURCES_FILES	=	main.c \
 					consts.c \
@@ -184,7 +214,8 @@ SOURCES_FILES	=	main.c \
 					$(addprefix floor/, $(FLOOR_FILES)) \
 					$(addprefix universe/, $(UNIVERSE_FILES)) \
 					$(addprefix game/, $(GAME_FILES)) \
-					$(addprefix screen/, $(SCREEN_FILES))
+					$(addprefix screen/, $(SCREEN_FILES)) \
+					$(addprefix input/, $(INPUT_FILES))
 
 LIBRARY		=	libhsy.a
 

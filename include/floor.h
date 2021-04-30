@@ -28,7 +28,7 @@ void floor_destroy(floor_t *self);
 void floor_tick(floor_t *self);
 void floor_try_spawn(floor_t *self, int tries);
 void floor_draw_background(floor_t *fl, sfVector2i scroll, screen_t *screen);
-void floor_render_entities(floor_t *fl, sfVector2i of, sfRenderWindow *win);
+void floor_draw_entities(floor_t *fl, sfVector2i of, screen_t *screen);
 tile_t floor_get_tile(floor_t *self, sfVector2i pos);
 void floor_set_tile(floor_t *self, sfVector2i pos, const tile_t tile, int data);
 int floor_get_data(floor_t *self, sfVector2i pos);

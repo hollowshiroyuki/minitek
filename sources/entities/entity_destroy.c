@@ -5,9 +5,10 @@
 ** hey. real programmers use vim
 */
 
+#include <stdlib.h>
 #include "entities/entity.h"
 
 void entity_destroy(entity_t *self)
 {
-    return;
+    free(self);
 }

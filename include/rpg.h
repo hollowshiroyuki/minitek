@@ -24,6 +24,7 @@ typedef struct universe_s universe_t;
 typedef enum engine_states_e engine_states_t;
 
 #include "screen.h"
+#include "input.h"
 
 enum engine_states_e
 {
@@ -51,6 +52,7 @@ struct game_data_s
 {
     universe_t *universe;
     screen_t screen;
+    input_t *input;
 };
 
 struct scene_s

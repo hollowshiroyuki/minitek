@@ -8,5 +8,8 @@
 #include "entities/mob.h"
 
 const entity_funcs_t mob_funcs = {
-    0
+    .tick = mob_tick,
+    .hurt = mob_hurt,
+    .move = mob_move,
+    .hurt_tile = mob_hurt_tile
 };

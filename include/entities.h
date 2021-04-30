@@ -12,4 +12,6 @@
 
 extern const entity_funcs_t *entities_funcs[];
 
+void entities_draw(entity_t *list, screen_t *screen);
+
 #endif

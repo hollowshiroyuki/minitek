@@ -10,5 +10,6 @@
 
 float random_float(void);
 int random_int(int bound);
+int randomize_seed(void);
 
 #endif
