@@ -12,7 +12,8 @@ enum {
     E_ENTITY,
     E_MOB,
     E_SLIME,
-    E_ZOMBIE
+    E_ZOMBIE,
+    E_PLAYER
 };
 
 #endif

@@ -10,12 +10,13 @@
 
 #include <SFML/Graphics.h>
 #include <stdbool.h>
+#include "screen.h"
 
 typedef struct entity_s entity_t;
 
 typedef struct entity_funcs_s
 {
-    void (*draw)(entity_t *self, sfRenderWindow *win);
+    void (*draw)(entity_t *self, screen_t *scr);
     void (*tick)(entity_t *self);
     void (*destroy)(entity_t *self);
     bool (*intersects)(entity_t *self, sfVector2i pos1, sfVector2i pos2);

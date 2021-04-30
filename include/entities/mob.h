@@ -12,10 +12,18 @@
 #include <stdbool.h>
 #include "entities/zombie.h"
 #include "entities/slime.h"
+#include "player.h"
 
 extern const entity_funcs_t mob_funcs;
 
 typedef struct entity_s entity_t;
+
+enum {
+    D_DOWN,
+    D_UP,
+    D_LEFT,
+    D_RIGHT
+};
 
 typedef struct mob_s
 {
@@ -30,6 +38,7 @@ typedef struct mob_s
     union {
         slime_t sli;
         zombie_t zom;
+        player_t pla;
     };
     entity_t *ent;
 } mob_t;

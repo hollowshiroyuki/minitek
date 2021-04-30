@@ -9,12 +9,14 @@
 #define UNIVERSE_H_
 
 #include "floor.h"
+//#include "input.h"
 #include "entities/entity.h"
 
 typedef struct universe_s
 {
     bool running;
     floor_t *active_floor;
+    input_t *input;
     floor_t *floors[16];
     long tick_count;
     entity_t *player;
