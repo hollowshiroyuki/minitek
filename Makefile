@@ -59,7 +59,8 @@ MENU_FILES	=	menu_update.c \
 				menu_init.c
 
 RANDOM_FILES	=	random_float.c \
-					random_int.c
+					random_int.c \
+					randomize_seed.c
 
 LEVEL_GEN_TOP_FILES	=	level_gen_create_top_map.c \
 						level_gen_create_and_validate_top_map.c \
