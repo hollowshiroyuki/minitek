@@ -5,10 +5,9 @@
 ** hey. real programmers use vim
 */
 
-#include <stdlib.h>
 #include "entities/entity.h"
 
-void entity_destroy(entity_t *self)
+bool entity_is_blockable_by(entity_t *self, entity_t *entity)
 {
-    free(self);
+    return (false);
 }

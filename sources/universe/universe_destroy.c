@@ -8,6 +8,7 @@
 #include <stdlib.h>
 #include "universe.h"
 #include "level_gen.h"
+#include <stdio.h>
 #include "floor.h"
 
 void universe_destroy(universe_t *self)
@@ -17,7 +18,8 @@ void universe_destroy(universe_t *self)
     for (int i = 0; self->floors[i]; i++) {
         floor_destroy(self->floors[i]);
     }
-    //if (self->player)
-    //    player_destroy(self->player);
+    if (self->player) {
+        (*self->player->funcs.destroy)(self->player);
+    }
     free(self);
 }
