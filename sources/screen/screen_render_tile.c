@@ -16,7 +16,7 @@ void screen_render_tile(screen_t *self, sfVector2i pos, int tile_id)
 
     pos.x -= self->offset.x;
     pos.y -= self->offset.y;
-    if (pos.x < -8 || pos.x >= self->size.x + 8) 
+    if (pos.x < -8 || pos.x >= self->size.x + 8)
         return;
     if (pos.y < -8 || pos.y >= self->size.y + 8)
         return;
