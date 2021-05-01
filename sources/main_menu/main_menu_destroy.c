@@ -7,7 +7,7 @@
 
 #include "rpg.h"
 
-void menu_destroy(engine_t *engine)
+void main_menu_destroy(engine_t *engine)
 {
     menu_data_t *data = &engine->menu_data;
 

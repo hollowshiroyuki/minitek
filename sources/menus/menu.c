@@ -1,0 +1,17 @@
+/*
+** EPITECH PROJECT, 2021
+** rpg.h
+** File description:
+** hey. real programmers use vim
+*/
+
+#include "menus/menu.h"
+#include "menu_funcs.h"
+
+const menu_funcs_t menu_funcs =
+{
+    .init = menu_init,
+    .tick = menu_tick,
+    .draw = menu_draw,
+    .destroy = menu_destroy
+};

@@ -52,11 +52,11 @@ VIEW_FILES	=	view_ratio.c
 ASSET_MAN_FILES	=	asset_manager_destroy.c \
 					asset_manager_init.c
 
-MENU_FILES	=	menu_update.c \
-				menu_destroy.c \
-				menu_draw.c \
-				menu_event.c \
-				menu_init.c
+MAIN_MENU_FILES	=	main_menu_update.c \
+				main_menu_destroy.c \
+				main_menu_draw.c \
+				main_menu_event.c \
+				main_menu_init.c
 
 RANDOM_FILES	=	random_float.c \
 					random_int.c \
@@ -199,7 +199,10 @@ TILES_FILES	=	tiles.c \
 UNIVERSE_FILES	=	universe_create.c \
 					universe_tick.c \
 					universe_draw.c \
-					universe_destroy.c
+					universe_destroy.c \
+					universe_draw_gui.c
+
+TEXT_FILES	=	text_draw.c
 
 GAME_FILES	=	game_update.c \
 				game_draw.c \
@@ -210,7 +213,20 @@ SCREEN_FILES	=	screen_init.c \
 					screen_render_tile.c \
 					screen_set_offset.c \
 					screen_destroy.c \
-					screen_render_entity.c
+					screen_render_entity.c \
+					screen_render_gui.c
+
+TITLE_MENU_FILES	=	title_menu.c \
+				title_menu_create.c \
+				title_menu_tick.c \
+				title_menu_draw.c
+
+MENUS_FILES	=	menu.c \
+				menu_tick.c \
+				menu_draw.c \
+				menu_init.c \
+				menu_destroy.c \
+				$(addprefix title_menu/, $(TITLE_MENU_FILES))
 
 INPUT_FILES	=	input_create.c \
 				mkey_init.c \
@@ -225,7 +241,7 @@ SOURCES_FILES	=	main.c \
 					$(addprefix view/, $(VIEW_FILES)) \
 					$(addprefix window/, $(WINDOW_FILES)) \
 					$(addprefix asset_manager/, $(ASSET_MAN_FILES)) \
-					$(addprefix menu/, $(MENU_FILES)) \
+					$(addprefix main_menu/, $(MAIN_MENU_FILES)) \
 					$(addprefix random/, $(RANDOM_FILES)) \
 					$(addprefix level_gen/, $(LEVEL_GEN_FILES)) \
 					$(addprefix entities/, $(ENTITIES_FILES)) \
@@ -234,7 +250,9 @@ SOURCES_FILES	=	main.c \
 					$(addprefix universe/, $(UNIVERSE_FILES)) \
 					$(addprefix game/, $(GAME_FILES)) \
 					$(addprefix screen/, $(SCREEN_FILES)) \
-					$(addprefix input/, $(INPUT_FILES))
+					$(addprefix input/, $(INPUT_FILES)) \
+					$(addprefix menus/, $(MENUS_FILES)) \
+					$(addprefix text/, $(TEXT_FILES))
 
 LIBRARY		=	libhsy.a
 

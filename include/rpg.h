@@ -109,10 +109,10 @@ void window_destroy(engine_t *engine);
 sfView *view_ratio(sfView *view, int width, int height);
 
 /* Scene Menu */
-void menu_init(engine_t *engine);
-void menu_update(engine_t *engine);
-void menu_event(engine_t *engine, sfEvent *event);
-void menu_draw(engine_t *engine, sfRenderWindow *window);
-void menu_destroy(engine_t *engine);
+void main_menu_init(engine_t *engine);
+void main_menu_update(engine_t *engine);
+void main_menu_event(engine_t *engine, sfEvent *event);
+void main_menu_draw(engine_t *engine, sfRenderWindow *window);
+void main_menu_destroy(engine_t *engine);
 
 #endif /* RPG_H_ */
