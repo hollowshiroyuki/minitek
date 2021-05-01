@@ -93,16 +93,19 @@ ENGINE_FILES	=	engine_init.c \
 					engine_internal_resized.c
 
 SLIME_FILES	=	slime_create.c \
-				slime_funcs.c
+				slime_funcs.c \
+				slime_draw.c
 
 ZOMBIE_FILES	=	zombie_funcs.c
 
 PLAYER_FILES	=	player_create.c \
 					player_draw.c \
 					player_funcs.c \
+					player_tick.c \
 					player_find_start_pos.c \
-					player_tick.c
-
+					player_hurt_tile.c \
+					player_do_hurt.c \
+					player_can_swim.c
 
 MOB_FILES	=	mob_funcs.c \
 				mob_tick.c \
@@ -111,6 +114,7 @@ MOB_FILES	=	mob_funcs.c \
 				mob_is_swimming.c \
 				mob_hurt_tile.c \
 				mob_move.c \
+				mob_find_start_pos.c \
 				$(addprefix slime/, $(SLIME_FILES)) \
 				$(addprefix zombie/, $(ZOMBIE_FILES)) \
 				$(addprefix player/, $(PLAYER_FILES))
@@ -134,7 +138,13 @@ ENTITIES_FILES	=	entity_is_blockable_by.c \
 					entity_intersects.c \
 					entity_funcs_combine.c \
 					entities_funcs.c \
+					entities_add.c \
+					entities_add_all.c \
+					entities_count.c \
+					entities_remove.c \
 					entity_hurt_tile.c \
+					entity_blocks.c \
+					entity_find_start_pos.c \
 					$(addprefix mob/, $(MOB_FILES))
 
 DIRT_FILES	=	dirt.c \
@@ -147,14 +157,23 @@ STAIRUP_FILES	=	stair_up.c
 STAIRDOWN_FILES	=	stair_down.c
 
 WATER_FILES	=	water.c \
-				water_render.c
+				water_render.c \
+				water_may_pass.c
 
 FLOOR_FILES	=	floor_get_tile.c \
 				floor_set_tile.c \
 				floor_create.c \
 				floor_tick.c \
 				floor_draw_background.c \
-				floor_destroy.c
+				floor_destroy.c \
+				floor_add.c \
+				floor_try_spawn.c \
+				floor_insert_entity.c \
+				floor_get_entities.c \
+				floor_entities_row_clear.c \
+				floor_sort_and_draw.c \
+				floor_draw_entities.c \
+				floor_remove_entity.c
 
 SAND_FILES	=	sand.c \
 				sand_render.c

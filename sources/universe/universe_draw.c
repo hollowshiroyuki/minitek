@@ -32,6 +32,5 @@ void universe_draw(universe_t *self, screen_t *screen)
     sfVector2i scroll = calc_scroll(screen, self->active_floor->size, p_pos);
 
     floor_draw_background(self->active_floor, scroll, screen);
-    //floor_draw_entities(self->active_floor, scroll, screen);
-    (*self->player->funcs.draw)(self->player, screen);
+    floor_draw_entities(self->active_floor, scroll, screen);
 }
