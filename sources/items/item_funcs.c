@@ -18,5 +18,6 @@ const item_funcs_t item_funcs =
     .can_attack = item_can_attack,
     .attack_bonus = item_attack_bonus,
     .get_name = item_get_name,
-    .matches = item_matches
+    .matches = item_matches,
+    .destroy = item_destroy
 };

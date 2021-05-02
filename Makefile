@@ -247,6 +247,14 @@ TOOL_ITEM_FILES	=	tool_item_create.c \
 					tool_item_get_tex.c \
 					tool_item_matches.c
 
+INVENTORY_FILES	=	inventory_create.c \
+					inventory_add.c \
+					inventory_add_pos.c \
+					inventory_destroy.c \
+					inventory_find_resource.c \
+					inventory_has_resources.c \
+					inventory_remove_resource.c
+
 ITEMS_FILES	=	resources.c \
 				resource_interact.c \
 				food_interact.c \
@@ -265,6 +273,7 @@ ITEMS_FILES	=	resources.c \
 				item_matches.c \
 				item_funcs_combine.c \
 				item_funcs.c \
+				item_destroy.c \
 				$(addprefix tool_item/, $(TOOL_ITEM_FILES))
 
 SOURCES_FILES	=	main.c \
@@ -285,7 +294,8 @@ SOURCES_FILES	=	main.c \
 					$(addprefix input/, $(INPUT_FILES)) \
 					$(addprefix menus/, $(MENUS_FILES)) \
 					$(addprefix text/, $(TEXT_FILES)) \
-					$(addprefix items/, $(ITEMS_FILES))
+					$(addprefix items/, $(ITEMS_FILES)) \
+					$(addprefix inventory/, $(INVENTORY_FILES))
 
 LIBRARY		=	libhsy.a
 

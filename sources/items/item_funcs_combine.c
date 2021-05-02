@@ -20,4 +20,5 @@ void item_funcs_combine(item_funcs_t *d, const item_funcs_t *i_f)
     d->is_depleted = i_f->is_depleted ?: item_funcs.is_depleted;
     d->matches = i_f->matches ?: item_funcs.matches;
     d->on_take = i_f->on_take ?: item_funcs.on_take;
+    d->destroy = i_f->destroy ?: item_funcs.destroy;
 }
