@@ -30,7 +30,7 @@ typedef struct player_s
     universe_t *universe;
     input_t *input;
     inventory_t *inventory;
-    //item_t *active_item;
+    item_t *active_item;
     mob_t *mob;
 } player_t;
 
@@ -43,5 +43,6 @@ void player_hurt_tile(entity_t *self, tile_t tile, sfVector2i pos, int dmg);
 bool player_can_swim(entity_t *self);
 bool player_pay_stamina(entity_t *self, int cost);
 void player_destroy(entity_t *self);
+bool player_use(entity_t *self, entity_t *player, int dir);
 
 #endif

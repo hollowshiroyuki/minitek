@@ -12,6 +12,12 @@
 
 typedef struct asset_store_s asset_store_t;
 
+enum {
+    NO_F,
+    HOR_F,
+    VER_F
+};
+
 typedef struct screen_s
 {
     sfVector2i size;
@@ -28,6 +34,6 @@ void screen_set_offset(screen_t *self, sfVector2i offset);
 void screen_destroy(screen_t *self);
 void screen_render_tile(screen_t *self, sfVector2i pos, int tile_id);
 void screen_render_entity(screen_t *self, sfVector2i pos, int tile_id);
-void screen_render_gui(screen_t *self, sfVector2i pos, int tile_id);
+void screen_render_gui(screen_t *self, sfVector2i pos, int tile_id, int flip);
 
 #endif

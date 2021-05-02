@@ -9,6 +9,7 @@
 #include "entities/player.h"
 #include "entities/mob.h"
 #include "screen.h"
+#include "universe.h"
 #include "tiles_id.h"
 #include <stdio.h>
 
@@ -48,5 +49,8 @@ void player_tick(entity_t *self)
     new_pos.y += (self->mob.pla.input->down.down) ? 1 : 0;
     new_pos.x -= (self->mob.pla.input->left.down) ? 1 : 0;
     new_pos.x += (self->mob.pla.input->right.down) ? 1 : 0;
+    if (self->mob.pla.input->menu.clicked)
+        if (!(self->funcs.use)(self, self, 0))
+            universe_set_menu(self->mob.pla.universe, inventory_menu_create(self));
     mob_move(self, new_pos);
 }

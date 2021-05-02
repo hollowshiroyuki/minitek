@@ -107,7 +107,8 @@ PLAYER_FILES	=	player_create.c \
 					player_do_hurt.c \
 					player_can_swim.c \
 					player_pay_stamina.c \
-					player_destroy.c
+					player_destroy.c \
+					player_use.c
 
 MOB_FILES	=	mob_funcs.c \
 				mob_tick.c \
@@ -203,9 +204,11 @@ UNIVERSE_FILES	=	universe_create.c \
 					universe_tick.c \
 					universe_draw.c \
 					universe_destroy.c \
-					universe_draw_gui.c
+					universe_draw_gui.c \
+					universe_set_menu.c
 
-TEXT_FILES	=	text_draw.c
+GUI_FILES	=	gui_text_draw.c \
+				gui_frame_draw.c
 
 GAME_FILES	=	game_update.c \
 				game_draw.c \
@@ -220,16 +223,22 @@ SCREEN_FILES	=	screen_init.c \
 					screen_render_gui.c
 
 TITLE_MENU_FILES	=	title_menu.c \
-				title_menu_create.c \
-				title_menu_tick.c \
-				title_menu_draw.c
+					title_menu_create.c \
+					title_menu_tick.c \
+					title_menu_draw.c
+
+INVENTORY_MENU_FILES	=	inventory_menu_create.c \
+							inventory_menu_draw.c \
+							inventory_menu_tick.c \
+							inventory_menu.c
 
 MENUS_FILES	=	menu.c \
 				menu_tick.c \
 				menu_draw.c \
 				menu_init.c \
 				menu_destroy.c \
-				$(addprefix title_menu/, $(TITLE_MENU_FILES))
+				$(addprefix title_menu/, $(TITLE_MENU_FILES)) \
+				$(addprefix inventory_menu/, $(INVENTORY_MENU_FILES))
 
 INPUT_FILES	=	input_create.c \
 				mkey_init.c \
@@ -254,7 +263,8 @@ INVENTORY_FILES	=	inventory_create.c \
 					inventory_destroy.c \
 					inventory_find_resource.c \
 					inventory_has_resources.c \
-					inventory_remove_resource.c
+					inventory_remove_resource.c \
+					inventory_remove_item.c
 
 ITEMS_FILES	=	resources.c \
 				resource_interact.c \
@@ -294,7 +304,7 @@ SOURCES_FILES	=	main.c \
 					$(addprefix screen/, $(SCREEN_FILES)) \
 					$(addprefix input/, $(INPUT_FILES)) \
 					$(addprefix menus/, $(MENUS_FILES)) \
-					$(addprefix text/, $(TEXT_FILES)) \
+					$(addprefix gui/, $(GUI_FILES)) \
 					$(addprefix items/, $(ITEMS_FILES)) \
 					$(addprefix inventory/, $(INVENTORY_FILES))
 

@@ -23,7 +23,7 @@ static int get_index(char c)
     return (-1);
 }
 
-void text_draw(char *text, screen_t *screen, sfVector2i pos, sfColor color)
+void gui_text_draw(char *text, screen_t *screen, sfVector2i pos, sfColor color)
 {
     char *msg = hsy_strdup(text);
     sfVector2i cpos;
@@ -36,7 +36,7 @@ void text_draw(char *text, screen_t *screen, sfVector2i pos, sfColor color)
         cpos = (sfVector2i){pos.x + i * 8, pos.y};
         if (tex == -1)
             continue;
-        screen_render_gui(screen, cpos, tex + 28 * 32);
+        screen_render_gui(screen, cpos, tex + 28 * 32, 0);
     }
     sfSprite_setColor(screen->g_sprite, sfWhite);
     free(msg);
