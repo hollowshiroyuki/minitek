@@ -8,6 +8,12 @@
 #include "entity_funcs.h"
 #include "entities/entity.h"
 
+static void combine_2(entity_funcs_t *r, const entity_funcs_t *pa,
+                        const entity_funcs_t *pb)
+{
+    r->heal = pa->heal ?: pb->heal ?: entity_funcs.heal;
+}
+
 void entity_funcs_combine(entity_funcs_t *r,
                             const entity_funcs_t *pa,
                             const entity_funcs_t *pb)
@@ -31,4 +37,5 @@ void entity_funcs_combine(entity_funcs_t *r,
     r->find_start_pos = pa->find_start_pos ?: pb->find_start_pos ?: entity_funcs.find_start_pos;
     r->blocks = pa->blocks ?: pb->blocks ?: entity_funcs.blocks;
     r->init = pa->init ?: pb->init ?: entity_funcs.init;
+    combine_2(r, pa, pb);
 }

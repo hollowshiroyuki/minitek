@@ -34,6 +34,7 @@ typedef struct entity_funcs_s
     bool (*use)(entity_t *self, void *entity, int dir);
     bool (*find_start_pos)(entity_t *self, floor_t *floor);
     void (*init)(entity_t *self, floor_t *floor);
+    void (*heal)(entity_t *self, int heal);
 } entity_funcs_t;
 
 void entity_funcs_combine(entity_funcs_t *r,

@@ -105,7 +105,8 @@ PLAYER_FILES	=	player_create.c \
 					player_find_start_pos.c \
 					player_hurt_tile.c \
 					player_do_hurt.c \
-					player_can_swim.c
+					player_can_swim.c \
+					player_pay_stamina.c
 
 MOB_FILES	=	mob_funcs.c \
 				mob_tick.c \
@@ -145,6 +146,7 @@ ENTITIES_FILES	=	entity_is_blockable_by.c \
 					entity_hurt_tile.c \
 					entity_blocks.c \
 					entity_find_start_pos.c \
+					entity_heal.c \
 					$(addprefix mob/, $(MOB_FILES))
 
 DIRT_FILES	=	dirt.c \
@@ -235,6 +237,11 @@ INPUT_FILES	=	input_create.c \
 				input_event.c \
 				mkey_toggle.c
 
+ITEMS_FILES	=	resources.c \
+				resource_interact.c \
+				food_interact.c \
+				plant_interact.c
+
 SOURCES_FILES	=	main.c \
 					consts.c \
 					$(addprefix engine/, $(ENGINE_FILES)) \
@@ -252,7 +259,8 @@ SOURCES_FILES	=	main.c \
 					$(addprefix screen/, $(SCREEN_FILES)) \
 					$(addprefix input/, $(INPUT_FILES)) \
 					$(addprefix menus/, $(MENUS_FILES)) \
-					$(addprefix text/, $(TEXT_FILES))
+					$(addprefix text/, $(TEXT_FILES)) \
+					$(addprefix items/, $(ITEMS_FILES))
 
 LIBRARY		=	libhsy.a
 

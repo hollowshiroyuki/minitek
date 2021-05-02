@@ -54,5 +54,6 @@ void entity_init(entity_t *self, floor_t *floor);
 int entities_count(entity_t *list);
 void entities_add_all(entity_t **dest, entity_t **src);
 void entities_remove(entity_t **self, entity_t *entity);
+void entity_heal(entity_t *self, sfRenderWindow *win);
 
 #endif
