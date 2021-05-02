@@ -237,10 +237,35 @@ INPUT_FILES	=	input_create.c \
 				input_event.c \
 				mkey_toggle.c
 
+TOOL_ITEM_FILES	=	tool_item_create.c \
+					tool_item_funcs.c \
+					tool_item_attack_bonus.c \
+					tool_item_can_attack.c \
+					tool_item_draw_icon.c \
+					tool_item_draw_inventory.c \
+					tool_item_get_name.c \
+					tool_item_get_tex.c \
+					tool_item_matches.c
+
 ITEMS_FILES	=	resources.c \
 				resource_interact.c \
 				food_interact.c \
-				plant_interact.c
+				plant_interact.c \
+				tool_types.c \
+				item_get_tex.c \
+				item_on_take.c \
+				item_draw_inventory.c \
+				item_draw_icon.c \
+				item_interact.c \
+				item_interact_tile.c \
+				item_is_depleted.c \
+				item_can_attack.c \
+				item_attack_bonus.c \
+				item_get_name.c \
+				item_matches.c \
+				item_funcs_combine.c \
+				item_funcs.c \
+				$(addprefix tool_item/, $(TOOL_ITEM_FILES))
 
 SOURCES_FILES	=	main.c \
 					consts.c \
