@@ -11,6 +11,7 @@
 #include "entities_id.h"
 #include "entities/entity.h"
 #include "universe.h"
+#include "inventory.h"
 
 void init_default_values(entity_t *new)
 {
@@ -32,6 +33,7 @@ entity_t *player_create(universe_t *universe, input_t *input)
     new->mob.pla.input = input;
     new->floor = universe->active_floor;
     new->mob.pla.universe = universe;
+    new->mob.pla.inventory = inventory_create(10);
     entity_funcs_combine(&new->funcs, &player_funcs, &mob_funcs);
     return (new);
 }

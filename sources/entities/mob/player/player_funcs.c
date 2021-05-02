@@ -12,5 +12,6 @@ const entity_funcs_t player_funcs = {
     .find_start_pos = player_find_start_pos,
     .tick = player_tick,
     .hurt_tile = player_hurt_tile,
-    .can_swim = player_can_swim
+    .can_swim = player_can_swim,
+    .destroy = player_destroy
 };
