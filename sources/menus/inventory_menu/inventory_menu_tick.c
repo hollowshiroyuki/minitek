@@ -31,6 +31,7 @@ void inventory_menu_tick(menu_t *self)
     if (self->input->menu.clicked) {
         universe_set_menu(self->universe, NULL);
         (self->funcs.destroy)(self);
+        return;
     }
     if (self->input->attack.clicked && len > 0) {
         item = inventory_remove_item(player_inv, self->inv.selection);
