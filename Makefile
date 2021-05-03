@@ -122,6 +122,14 @@ MOB_FILES	=	mob_funcs.c \
 				$(addprefix zombie/, $(ZOMBIE_FILES)) \
 				$(addprefix player/, $(PLAYER_FILES))
 
+FURNITURE_FILES	=	furniture_funcs.c \
+					furniture_init.c \
+					furniture_tick.c \
+					furniture_draw.c \
+					furniture_blocks.c \
+					furniture_touched_by.c \
+					furniture_take.c
+
 ENTITIES_FILES	=	entity_is_blockable_by.c \
 					entity_can_swim.c \
 					entity_create.c \
@@ -149,7 +157,8 @@ ENTITIES_FILES	=	entity_is_blockable_by.c \
 					entity_blocks.c \
 					entity_find_start_pos.c \
 					entity_heal.c \
-					$(addprefix mob/, $(MOB_FILES))
+					$(addprefix mob/, $(MOB_FILES)) \
+					$(addprefix furniture/, $(FURNITURE_FILES))
 
 DIRT_FILES	=	dirt.c \
 				dirt_render.c

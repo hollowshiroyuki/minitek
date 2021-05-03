@@ -12,6 +12,7 @@
 #include <stdbool.h>
 #include "entity_funcs.h"
 #include "entities/mob.h"
+#include "entities/furniture.h"
 
 typedef struct floor_s floor_t;
 
@@ -26,7 +27,7 @@ typedef struct entity_s
     bool removed;
     union {
         mob_t mob;
-        //furniture_t fur;
+        furniture_t fur;
     };
     entity_funcs_t funcs;
     entity_t *next;
