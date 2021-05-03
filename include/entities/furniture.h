@@ -13,7 +13,7 @@
 #include "entity_funcs.h"
 //#include "entities/workbench.h"
 
-extern const entity_funcs_t furnitures_funcs;
+extern const entity_funcs_t furniture_funcs;
 
 typedef struct entity_s entity_t;
 
@@ -35,5 +35,6 @@ void furniture_draw(entity_t *self, screen_t *screen);
 bool furniture_blocks(entity_t *self, entity_t *entity);
 void furniture_touched_by(entity_t *self, entity_t *entity);
 void furniture_take(entity_t *self, entity_t *player);
+void furniture_destroy(entity_t *self);
 
 #endif

@@ -11,5 +11,6 @@ const entity_funcs_t furniture_funcs = {
     .tick = furniture_tick,
     .draw = furniture_draw,
     .blocks = furniture_blocks,
-    .touched_by = furniture_touched_by
+    .touched_by = furniture_touched_by,
+    .destroy = furniture_destroy
 };
