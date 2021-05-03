@@ -9,24 +9,6 @@
 #include "items_id.h"
 #include "resources/resource.h"
 
-static void item_list_remove(item_t **list, item_t *item)
-{
-    item_t *tmp = *list;
-    item_t *prv = NULL;
-
-    if (tmp == item) {
-        *list = tmp->next;
-    } else {
-        while (tmp && tmp != item) {
-            prv = tmp;
-            tmp = tmp->next;
-        }
-        if (tmp) {
-            prv->next = tmp->next;
-        }
-    }
-}
-
 item_t *inventory_remove_item(inventory_t *self, int pos)
 {
     item_t *to_remove = self->items;

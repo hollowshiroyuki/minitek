@@ -25,4 +25,8 @@ typedef struct item_s
     item_t *next;
 } item_t;
 
+void item_list_add(item_t **list, item_t *new, int pos);
+int item_list_size(item_t *list);
+void item_list_remove(item_t **list, item_t *item);
+
 #endif

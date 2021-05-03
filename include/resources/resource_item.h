@@ -21,13 +21,13 @@ typedef struct resource_item_s
     int count;
 } resource_item_t;
 
-item_t *resource_item_create(tool_type_t *type, int level);
+item_t *resource_item_create(const resource_t *res, int count);
 int resource_item_get_tex(item_t *self);
 void resource_item_on_take(item_t *self, entity_t *item);
 void resource_item_draw_inventory(item_t *self, screen_t *scr, sfVector2i pos);
 void resource_item_draw_icon(item_t *self, screen_t *screen, sfVector2i pos);
 bool resource_item_interact(item_t *self, entity_t *p, entity_t *item, int dir);
-bool resource_item_interact_tile(item_t *self, entity_t *p, entity_t *i, int d);
+bool resource_item_interact_tile(item_t *, tile_t *, entity_t *, sfVector2i);
 bool resource_item_is_depleted(item_t *self);
 bool resource_item_can_attack(item_t *self);
 int resource_item_attack_bonus(item_t *self, entity_t *e);
