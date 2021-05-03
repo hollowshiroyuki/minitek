@@ -7,6 +7,7 @@
 
 #include <stdlib.h>
 #include <string.h>
+#include <stdio.h>
 #include "universe.h"
 #include "level_gen.h"
 #include "floor.h"

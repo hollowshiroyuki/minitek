@@ -7,6 +7,7 @@
 
 #include <string.h>
 #include <stdlib.h>
+#include <stdio.h>
 #include "recipes/craft.h"
 
 craft_t *craft_create(void)

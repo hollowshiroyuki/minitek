@@ -9,9 +9,13 @@
 #include <stdlib.h>
 #include "recipes/craft.h"
 
-void recipe_add(recipe_t **old, recipe_t *new)
+int recipe_list_size(recipe_t *list)
 {
-    new->next = *old;
-    new->result->next = (*old) ? (*old)->result : 0;
-    *old = new;
+    int i = 0;
+
+    while (list) {
+        list = list->next;
+        i++;
+    }
+    return (i);
 }

@@ -18,6 +18,7 @@ typedef struct inventory_s
     int capacity;
 } inventory_t;
 
+int inventory_count(inventory_t *self, item_t *item);
 inventory_t *inventory_create(int size);
 item_t *inventory_remove_item(inventory_t *self, int pos);
 void inventory_add(inventory_t *self, item_t *item);

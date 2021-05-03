@@ -10,7 +10,7 @@
 
 const item_funcs_t tool_item_funcs =
 {
-    .matches = tool_item_matches,
+    .matches = item_matches,
     .attack_bonus = tool_item_attack_bonus,
     .can_attack = tool_item_can_attack,
     .draw_inventory = tool_item_draw_inventory,

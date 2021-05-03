@@ -20,5 +20,12 @@ recipe_t *workbench_recipes_create(void)
     recipe_add_cost(recipes, (resource_t *)&r_wood, 1);
     recipe_add(&recipes, tool_recipe_create((tool_type_t *)&sword_type, 1));
     recipe_add_cost(recipes, (resource_t *)&r_bread, 2);
+    recipe_add_cost(recipes, (resource_t *)&r_wood, 15);
+    recipe_add(&recipes, tool_recipe_create((tool_type_t *)&sword_type, 2));
+    recipe_add_cost(recipes, (resource_t *)&r_wood, 1);
+    recipe_add(&recipes, tool_recipe_create((tool_type_t *)&sword_type, 3));
+    recipe_add_cost(recipes, (resource_t *)&r_wood, 1);
+    recipe_add(&recipes, tool_recipe_create((tool_type_t *)&sword_type, 4));
+    recipe_add_cost(recipes, (resource_t *)&r_wood, 1);
     return (recipes);
 }

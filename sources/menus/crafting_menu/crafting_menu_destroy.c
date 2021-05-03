@@ -7,10 +7,10 @@
 
 #include <stdlib.h>
 #include "menus/menu.h"
+#include "recipes/recipe.h"
 
-void menu_destroy(menu_t *self)
+void crafting_menu_destroy(menu_t *self)
 {
-    if (self->name)
-        free(self->name);
-    free(self);
+    recipe_list_delink(self->craft.recipes);
+    menu_destroy(self);
 }

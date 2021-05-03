@@ -26,7 +26,6 @@ CFLAGS	=	-W -Wall -Wextra -Werror \
 		-Wno-unused-variable \
 		-Wno-unused-parameter \
 		-Wno-deprecated-declarations \
-		-Wno-incompatible-pointer-types \
 		-g3 \
 		$(C_FLAGS_INPUT)
 
@@ -249,6 +248,12 @@ INVENTORY_MENU_FILES	=	inventory_menu_create.c \
 							inventory_menu_tick.c \
 							inventory_menu.c
 
+CRAFTING_MENU_FILES	=	crafting_menu.c \
+						crafting_menu_create.c \
+						crafting_menu_draw.c \
+						crafting_menu_destroy.c \
+						crafting_menu_tick.c
+
 MENUS_FILES	=	menu.c \
 				menu_tick.c \
 				menu_draw.c \
@@ -256,7 +261,8 @@ MENUS_FILES	=	menu.c \
 				menu_destroy.c \
 				menu_draw_item_list.c \
 				$(addprefix title_menu/, $(TITLE_MENU_FILES)) \
-				$(addprefix inventory_menu/, $(INVENTORY_MENU_FILES))
+				$(addprefix inventory_menu/, $(INVENTORY_MENU_FILES)) \
+				$(addprefix crafting_menu/, $(CRAFTING_MENU_FILES))
 
 INPUT_FILES	=	input_create.c \
 				mkey_init.c \
@@ -272,8 +278,7 @@ TOOL_ITEM_FILES	=	tool_item_create.c \
 					tool_item_draw_icon.c \
 					tool_item_draw_inventory.c \
 					tool_item_get_name.c \
-					tool_item_get_tex.c \
-					tool_item_matches.c
+					tool_item_get_tex.c
 
 RESOURCE_ITEM_FILES	=	resource_item_create.c \
 						resource_item_draw_icon.c \
@@ -291,7 +296,8 @@ INVENTORY_FILES	=	inventory_create.c \
 					inventory_find_resource.c \
 					inventory_has_resources.c \
 					inventory_remove_resource.c \
-					inventory_remove_item.c
+					inventory_remove_item.c \
+					inventory_count.c
 
 ITEMS_FILES	=	resources.c \
 				resource_interact.c \
@@ -334,6 +340,11 @@ RECIPES_FILES	=	craft_create.c \
 					recipe_list_destroy.c \
 					craft_destroy.c \
 					recipe_init.c \
+					recipe_list_delink.c \
+					recipe_list_copy.c \
+					recipe_list_size.c \
+					recipe_list_get.c \
+					recipe_list_sort.c \
 					$(addprefix tool_recipe/, $(TOOL_RECIPE_FILES))
 
 SOURCES_FILES	=	main.c \
