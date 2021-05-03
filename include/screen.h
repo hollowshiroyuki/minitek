@@ -36,5 +36,6 @@ void screen_render_tile(screen_t *self, sfVector2i pos, int tile_id);
 void screen_render_entity(screen_t *self, sfVector2i pos, int tile_id);
 void screen_render_gui(screen_t *self, sfVector2i pos, int tile_id, int flip);
 void screen_sprite_flip(sfSprite *sprite, int m);
+void screen_render_item(screen_t *self, sfVector2i pos, int tile_id, int flip);
 
 #endif

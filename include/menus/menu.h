@@ -12,6 +12,7 @@
 #include "menu_funcs.h"
 #include "menus/title_menu.h"
 #include "menus/inventory_menu.h"
+#include "resources/item.h"
 
 typedef struct universe_s universe_t;
 
@@ -33,5 +34,6 @@ void menu_init(menu_t *self, universe_t *universe, input_t *input);
 void menu_tick(menu_t *self);
 void menu_draw(menu_t *self, screen_t *screen);
 void menu_destroy(menu_t *self);
+void menu_draw_item_list(menu_t *self, screen_t *scr, int v[5], item_t *list);
 
 #endif
