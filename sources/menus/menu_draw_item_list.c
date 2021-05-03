@@ -11,14 +11,6 @@
 #include "gui.h"
 #include <stdio.h>
 
-static void render_cursor(screen_t *scr, int select, bool a, sfVector2i pos)
-{
-    if (!a)
-        return;
-    screen_render_gui(scr, pos, 675, 0);
-    gui_text_draw(">", scr, pos, sfWhite);
-}
-
 static int list_item_size(item_t *list)
 {
     int i = 0;
@@ -44,26 +36,42 @@ item_t *item_list_get(item_t *item, int pos)
     return (0);
 }
 
+static void calc_select(int *select, bool *draw_cursor)
+{
+    if (*select < 0) {
+        *select = -(*select) - 1;
+        *draw_cursor = false;
+    }
+}
+
+static void render_cursor(screen_t *scr, int select, sfIntRect r, int itm_off)
+{
+    sfVector2i pos = (sfVector2i){r.left, select + 1 - itm_off + r.top};
+
+    pos = (sfVector2i){pos.x * 8, pos.y * 8};
+    screen_render_gui(scr, pos, 675, 0);
+    gui_text_draw(">", scr, pos, sfWhite);
+}
+
 void menu_draw_item_list(menu_t *self, screen_t *scr, int v[5], item_t *list)
 {
-    bool a = true;
-    sfVector2i size = {v[2] - v[0], v[3] - v[1] - 1};
+    sfIntRect r = (sfIntRect){v[0], v[1], v[2] - v[0], v[3] - v[1] - 1};
+    bool draw_cursor = true;
+    int select = v[4];
+    int l_len = ((l_len = list_item_size(list)) > r.height) ? r.height : l_len;
+    int itm_off = select - r.height / 2;
     sfVector2i pos;
-    int i1 = list_item_size(list);
-    int io = v[4] - size.y / 2;
     item_t *item;
 
-    if (v[4] < 0) {
-        v[4] = -v[4] - 1;
-        a = false;
-    }
-    io = (io > i1 - size.y) ? (i1 - size.y) : io;
-    io = (io < 0) ? 0 : io;
-    i1 = (i1 > size.y) ? size.y : i1;
-    for (int i = 0; i < i1; i++) {
-        item = item_list_get(list, i + io);
-        pos = (sfVector2i){(1 + v[0]) * 8, (i + 1 + v[1]) * 8};
+    calc_select(&draw_cursor, &select);
+    if (itm_off > list_item_size(list) - r.height)
+        itm_off = list_item_size(list) - r.height;
+    itm_off = (itm_off < 0) ? 0 : itm_off;
+    for (int i = 0; i < l_len; i++) {
+        item = item_list_get(list, i + itm_off);
+        pos = (sfVector2i){(1 + r.left) * 8, (i + 1 + r.top) * 8};
         (*item->funcs.draw_inventory)(item, scr, pos);
     }
-    render_cursor(scr, v[4], a, (sfVector2i){v[0] * 8, (v[4] + 1 - io + v[1]) * 8});
+    if (draw_cursor)
+        render_cursor(scr, select, r, itm_off);
 }

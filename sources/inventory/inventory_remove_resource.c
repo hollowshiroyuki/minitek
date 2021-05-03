@@ -9,7 +9,7 @@
 #include "items_id.h"
 #include "resources/resource.h"
 
-void item_list_remove(item_t **list, item_t *item)
+static void item_list_remove(item_t **list, item_t *item)
 {
     item_t *tmp = *list;
     item_t *prv = NULL;
