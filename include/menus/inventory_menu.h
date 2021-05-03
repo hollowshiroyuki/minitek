@@ -20,7 +20,7 @@ typedef struct inventory_menu_s
     entity_t *player;
 } inventory_menu_t;
 
-menu_t *inventory_menu_create(entity_t *player);
+menu_t *inventory_menu_create(entity_t *player, char *name);
 void inventory_menu_tick(menu_t *self);
 void inventory_menu_draw(menu_t *self, screen_t *screen);
 

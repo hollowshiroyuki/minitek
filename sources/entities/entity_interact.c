@@ -7,7 +7,7 @@
 
 #include "entities/entity.h"
 
-bool entity_interact(entity_t *self, entity_t *entity, void *item, int dir)
+bool entity_interact(entity_t *self, entity_t *entity, item_t *item, int dir)
 {
     return (false);
 }

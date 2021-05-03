@@ -23,7 +23,7 @@ typedef struct item_funcs_s
     void (*draw_inventory)(item_t *self, screen_t *screen, sfVector2i pos);
     void (*draw_icon)(item_t *self, screen_t *screen, sfVector2i pos);
     bool (*interact)(item_t *self, entity_t *player, entity_t *mob, int dir);
-    bool (*interact_tile)(item_t *s, tile_t *t, entity_t *p, sfVector2i pos);
+    bool (*interact_tile)(item_t *s, tile_t t, sfVector2i pos, entity_t *p);
     bool (*is_depleted)(item_t *self);
     bool (*can_attack)(item_t *self);
     int (*attack_bonus)(item_t *self, entity_t *e);
@@ -36,7 +36,7 @@ int item_get_tex(item_t *self);
 void item_on_take(item_t *self, entity_t *item);
 void item_draw_inventory(item_t *self, screen_t *screen, sfVector2i pos);
 bool item_interact(item_t *self, entity_t *play, entity_t *item, int dir);
-bool item_interact_tile(item_t *self, entity_t *play, entity_t *item, int dir);
+bool item_interact_tile(item_t *self, tile_t tile, sfVector2i pos, entity_t *);
 bool item_is_depleted(item_t *self);
 bool item_can_attack(item_t *self);
 int item_attack_bonus(item_t *self, entity_t *e);

@@ -10,12 +10,14 @@
 #include "menus/menu.h"
 #include "menus/title_menu.h"
 #include "universe.h"
+#include "hsy.h"
 
 menu_t *title_menu_create(void)
 {
     menu_t *new = malloc(sizeof(menu_t));
 
     memset(new, 0, sizeof(menu_t));
+    new->name = hsy_strdup("");
     new->funcs = title_menu_funcs;
     return (new);
 }

@@ -10,5 +10,7 @@
 
 void menu_destroy(menu_t *self)
 {
+    if (self->name)
+        free(self->name);
     free(self);
 }

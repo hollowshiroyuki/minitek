@@ -41,4 +41,9 @@ void recipe_destroy(recipe_t *self);
 void recipe_list_destroy(recipe_t *list);
 void recipe_init(recipe_t *self, item_t *item);
 
+void recipe_list_delink(recipe_t *list);
+recipe_t *recipe_list_copy(recipe_t *list);
+void recipe_list_sort(recipe_t **list);
+int recipe_list_size(recipe_t *list);
+recipe_t *recipe_list_get(recipe_t *recipe, int pos);
 #endif

@@ -51,6 +51,6 @@ void player_tick(entity_t *self)
     new_pos.x += (self->mob.pla.input->right.down) ? 1 : 0;
     if (self->mob.pla.input->menu.clicked)
         if (!(self->funcs.use)(self, self, 0))
-            universe_set_menu(self->mob.pla.universe, inventory_menu_create(self));
+            universe_set_menu(self->mob.pla.universe, inventory_menu_create(self, "Inventory"));
     mob_move(self, new_pos);
 }

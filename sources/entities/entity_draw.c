@@ -8,7 +8,7 @@
 #include <SFML/Graphics.h>
 #include "entities/entity.h"
 
-void entity_draw(entity_t *self, sfRenderWindow *win)
+void entity_draw(entity_t *self, screen_t *scr)
 {
     return;
 }
