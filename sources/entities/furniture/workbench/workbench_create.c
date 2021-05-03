@@ -25,6 +25,7 @@ entity_t *workbench_create(void)
     new->fur.tex = 4;
     new->box.x = 3;
     new->box.y = 2;
+    new->fur.push_dir = -1;
     entity_funcs_combine(&new->funcs, &workbench_funcs, &furniture_funcs);
     return (new);
 }
