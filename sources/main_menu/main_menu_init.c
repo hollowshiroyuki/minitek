@@ -20,7 +20,7 @@ static void init_logo(engine_t *engine, menu_data_t *data)
     sfSprite_setPosition(data->logo, pos);
 }
 
-void menu_init(engine_t *engine)
+void main_menu_init(engine_t *engine)
 {
     menu_data_t *data = &engine->menu_data;
 

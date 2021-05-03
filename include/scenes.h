@@ -25,11 +25,11 @@ static const scene_t scenes[] = {
         .destroy = game_destroy
     },
     {
-        menu_init,
-        menu_update,
-        menu_event,
-        menu_draw,
-        menu_destroy
+        main_menu_init,
+        main_menu_update,
+        main_menu_event,
+        main_menu_draw,
+        main_menu_destroy
     }
 };
 

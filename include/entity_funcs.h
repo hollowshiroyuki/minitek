@@ -32,7 +32,9 @@ typedef struct entity_funcs_s
     bool (*can_swim)(entity_t *self);
     bool (*interact)(entity_t *self, entity_t *entity, void *item, int dir);
     bool (*use)(entity_t *self, void *entity, int dir);
-    bool (*instance_of)(entity_t *self);
+    bool (*find_start_pos)(entity_t *self, floor_t *floor);
+    void (*init)(entity_t *self, floor_t *floor);
+    void (*heal)(entity_t *self, int heal);
 } entity_funcs_t;
 
 void entity_funcs_combine(entity_funcs_t *r,

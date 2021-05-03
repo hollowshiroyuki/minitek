@@ -11,7 +11,7 @@
 #include "level_gen.h"
 #include "floor.h"
 
-universe_t *universe_create(sfVector2i size, input_t *input)
+universe_t *universe_create(sfVector2i size, input_t *input, int seed)
 {
     universe_t *new = malloc(sizeof(universe_t));
 
@@ -25,8 +25,9 @@ universe_t *universe_create(sfVector2i size, input_t *input)
     new->floors[2] = floor_create(size, 2, new->floors[1]);
     new->active_floor = new->floors[1];
     new->player = player_create(new, input);
-    player_find_start_pos(new->player, new->active_floor);
-    new->active_floor->player = new->player;
+    new->craft = craft_create();
+    (*new->player->funcs.find_start_pos)(new->player, new->active_floor);
+    floor_add(new->active_floor, new->player);
     new->running = true;
     return (new);
 }

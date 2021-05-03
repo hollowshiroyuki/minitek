@@ -7,7 +7,7 @@
 
 #include "rpg.h"
 
-void menu_draw(engine_t *engine, sfRenderWindow *window)
+void main_menu_draw(engine_t *engine, sfRenderWindow *window)
 {
     menu_data_t *data = &engine->menu_data;
 

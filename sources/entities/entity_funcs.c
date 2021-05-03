@@ -21,6 +21,9 @@ const entity_funcs_t entity_funcs = {
     .can_swim = entity_can_swim,
     .interact = entity_interact,
     .use = entity_use,
-    .instance_of = entity_instance_of,
-    .intersects = entity_intersects
+    .intersects = entity_intersects,
+    .find_start_pos = entity_find_start_pos,
+    .blocks = entity_blocks,
+    .init = entity_init,
+    .heal = entity_heal
 };

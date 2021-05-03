@@ -47,5 +47,13 @@ bool entity_use(entity_t *self, entity_t *entity, int dir);
 bool entity_instance_of(entity_t *self, int id);
 bool entity_intersects(entity_t *self, sfVector2i pos1, sfVector2i pos2);
 void entity_hurt_tile(entity_t *self, tile_t tile, sfVector2i pos, int dmg);
+bool entity_find_start_pos(entity_t *self, floor_t *floor);
+bool entity_blocks(entity_t *self, entity_t *entity);
+void entities_add(entity_t **self, entity_t *entity);
+void entity_init(entity_t *self, floor_t *floor);
+int entities_count(entity_t *list);
+void entities_add_all(entity_t **dest, entity_t **src);
+void entities_remove(entity_t **self, entity_t *entity);
+void entity_heal(entity_t *self, sfRenderWindow *win);
 
 #endif

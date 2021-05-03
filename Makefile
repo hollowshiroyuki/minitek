@@ -52,11 +52,11 @@ VIEW_FILES	=	view_ratio.c
 ASSET_MAN_FILES	=	asset_manager_destroy.c \
 					asset_manager_init.c
 
-MENU_FILES	=	menu_update.c \
-				menu_destroy.c \
-				menu_draw.c \
-				menu_event.c \
-				menu_init.c
+MAIN_MENU_FILES	=	main_menu_update.c \
+				main_menu_destroy.c \
+				main_menu_draw.c \
+				main_menu_event.c \
+				main_menu_init.c
 
 RANDOM_FILES	=	random_float.c \
 					random_int.c \
@@ -93,16 +93,22 @@ ENGINE_FILES	=	engine_init.c \
 					engine_internal_resized.c
 
 SLIME_FILES	=	slime_create.c \
-				slime_funcs.c
+				slime_funcs.c \
+				slime_draw.c
 
 ZOMBIE_FILES	=	zombie_funcs.c
 
 PLAYER_FILES	=	player_create.c \
 					player_draw.c \
 					player_funcs.c \
+					player_tick.c \
 					player_find_start_pos.c \
-					player_tick.c
-
+					player_hurt_tile.c \
+					player_do_hurt.c \
+					player_can_swim.c \
+					player_pay_stamina.c \
+					player_destroy.c \
+					player_use.c
 
 MOB_FILES	=	mob_funcs.c \
 				mob_tick.c \
@@ -111,6 +117,7 @@ MOB_FILES	=	mob_funcs.c \
 				mob_is_swimming.c \
 				mob_hurt_tile.c \
 				mob_move.c \
+				mob_find_start_pos.c \
 				$(addprefix slime/, $(SLIME_FILES)) \
 				$(addprefix zombie/, $(ZOMBIE_FILES)) \
 				$(addprefix player/, $(PLAYER_FILES))
@@ -134,7 +141,14 @@ ENTITIES_FILES	=	entity_is_blockable_by.c \
 					entity_intersects.c \
 					entity_funcs_combine.c \
 					entities_funcs.c \
+					entities_add.c \
+					entities_add_all.c \
+					entities_count.c \
+					entities_remove.c \
 					entity_hurt_tile.c \
+					entity_blocks.c \
+					entity_find_start_pos.c \
+					entity_heal.c \
 					$(addprefix mob/, $(MOB_FILES))
 
 DIRT_FILES	=	dirt.c \
@@ -147,14 +161,23 @@ STAIRUP_FILES	=	stair_up.c
 STAIRDOWN_FILES	=	stair_down.c
 
 WATER_FILES	=	water.c \
-				water_render.c
+				water_render.c \
+				water_may_pass.c
 
 FLOOR_FILES	=	floor_get_tile.c \
 				floor_set_tile.c \
 				floor_create.c \
 				floor_tick.c \
 				floor_draw_background.c \
-				floor_destroy.c
+				floor_destroy.c \
+				floor_add.c \
+				floor_try_spawn.c \
+				floor_insert_entity.c \
+				floor_get_entities.c \
+				floor_entities_row_clear.c \
+				floor_sort_and_draw.c \
+				floor_draw_entities.c \
+				floor_remove_entity.c
 
 SAND_FILES	=	sand.c \
 				sand_render.c
@@ -180,7 +203,12 @@ TILES_FILES	=	tiles.c \
 UNIVERSE_FILES	=	universe_create.c \
 					universe_tick.c \
 					universe_draw.c \
-					universe_destroy.c
+					universe_destroy.c \
+					universe_draw_gui.c \
+					universe_set_menu.c
+
+GUI_FILES	=	gui_text_draw.c \
+				gui_frame_draw.c
 
 GAME_FILES	=	game_update.c \
 				game_draw.c \
@@ -191,7 +219,29 @@ SCREEN_FILES	=	screen_init.c \
 					screen_render_tile.c \
 					screen_set_offset.c \
 					screen_destroy.c \
-					screen_render_entity.c
+					screen_render_entity.c \
+					screen_render_gui.c \
+					screen_sprite_flip.c \
+					screen_render_item.c
+
+TITLE_MENU_FILES	=	title_menu.c \
+					title_menu_create.c \
+					title_menu_tick.c \
+					title_menu_draw.c
+
+INVENTORY_MENU_FILES	=	inventory_menu_create.c \
+							inventory_menu_draw.c \
+							inventory_menu_tick.c \
+							inventory_menu.c
+
+MENUS_FILES	=	menu.c \
+				menu_tick.c \
+				menu_draw.c \
+				menu_init.c \
+				menu_destroy.c \
+				menu_draw_item_list.c \
+				$(addprefix title_menu/, $(TITLE_MENU_FILES)) \
+				$(addprefix inventory_menu/, $(INVENTORY_MENU_FILES))
 
 INPUT_FILES	=	input_create.c \
 				mkey_init.c \
@@ -200,13 +250,84 @@ INPUT_FILES	=	input_create.c \
 				input_event.c \
 				mkey_toggle.c
 
+TOOL_ITEM_FILES	=	tool_item_create.c \
+					tool_item_funcs.c \
+					tool_item_attack_bonus.c \
+					tool_item_can_attack.c \
+					tool_item_draw_icon.c \
+					tool_item_draw_inventory.c \
+					tool_item_get_name.c \
+					tool_item_get_tex.c \
+					tool_item_matches.c
+
+RESOURCE_ITEM_FILES	=	resource_item_create.c \
+						resource_item_draw_icon.c \
+						resource_item_draw_inventory.c \
+						resource_item_funcs.c \
+						resource_item_get_name.c \
+						resource_item_get_tex.c \
+						resource_item_interact_tile.c \
+						resource_item_is_depleted.c
+
+INVENTORY_FILES	=	inventory_create.c \
+					inventory_add.c \
+					inventory_add_pos.c \
+					inventory_destroy.c \
+					inventory_find_resource.c \
+					inventory_has_resources.c \
+					inventory_remove_resource.c \
+					inventory_remove_item.c
+
+ITEMS_FILES	=	resources.c \
+				resource_interact.c \
+				food_interact.c \
+				plant_interact.c \
+				tool_types.c \
+				item_get_tex.c \
+				item_on_take.c \
+				item_draw_inventory.c \
+				item_draw_icon.c \
+				item_interact.c \
+				item_interact_tile.c \
+				item_is_depleted.c \
+				item_can_attack.c \
+				item_attack_bonus.c \
+				item_get_name.c \
+				item_matches.c \
+				item_funcs_combine.c \
+				item_funcs.c \
+				item_destroy.c \
+				item_list_add.c \
+				item_list_size.c \
+				item_list_remove.c \
+				$(addprefix tool_item/, $(TOOL_ITEM_FILES)) \
+				$(addprefix resource_item/, $(RESOURCE_ITEM_FILES))
+
+TOOL_RECIPE_FILES	=	tool_recipe_create.c \
+						tool_recipe_funcs.c
+
+RECIPES_FILES	=	craft_create.c \
+					recipe_add_cost.c \
+					recipe_add.c \
+					workbench_recipes_create.c \
+					recipe_funcs_combine.c \
+					recipe_funcs.c \
+					recipe_destroy.c \
+					recipe_deduct_cost.c \
+					recipe_check_can_craft.c \
+					recipe_craft.c \
+					recipe_list_destroy.c \
+					craft_destroy.c \
+					recipe_init.c \
+					$(addprefix tool_recipe/, $(TOOL_RECIPE_FILES))
+
 SOURCES_FILES	=	main.c \
 					consts.c \
 					$(addprefix engine/, $(ENGINE_FILES)) \
 					$(addprefix view/, $(VIEW_FILES)) \
 					$(addprefix window/, $(WINDOW_FILES)) \
 					$(addprefix asset_manager/, $(ASSET_MAN_FILES)) \
-					$(addprefix menu/, $(MENU_FILES)) \
+					$(addprefix main_menu/, $(MAIN_MENU_FILES)) \
 					$(addprefix random/, $(RANDOM_FILES)) \
 					$(addprefix level_gen/, $(LEVEL_GEN_FILES)) \
 					$(addprefix entities/, $(ENTITIES_FILES)) \
@@ -215,7 +336,12 @@ SOURCES_FILES	=	main.c \
 					$(addprefix universe/, $(UNIVERSE_FILES)) \
 					$(addprefix game/, $(GAME_FILES)) \
 					$(addprefix screen/, $(SCREEN_FILES)) \
-					$(addprefix input/, $(INPUT_FILES))
+					$(addprefix input/, $(INPUT_FILES)) \
+					$(addprefix menus/, $(MENUS_FILES)) \
+					$(addprefix gui/, $(GUI_FILES)) \
+					$(addprefix items/, $(ITEMS_FILES)) \
+					$(addprefix inventory/, $(INVENTORY_FILES)) \
+					$(addprefix recipes/, $(RECIPES_FILES))
 
 LIBRARY		=	libhsy.a
 

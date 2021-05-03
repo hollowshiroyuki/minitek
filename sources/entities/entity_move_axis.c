@@ -25,12 +25,12 @@ static bool tile_interaction(entity_t *self, sfVector2i pos, int to[0])
     tile_t t = {0};
     sfVector2i c = {0};
 
-    for (int y = to[5]; y < to[7]; y++) {
-        for (int x = to[4]; x < to[6]; x++) {
-            if (x >= to[0] && x <= to[2] && y >= to[1] && y <= to[3])
+    for (int yt = to[5]; yt <= to[7]; yt++) {
+        for (int xt = to[4]; xt <= to[6]; xt++) {
+            if (xt >= to[0] && xt <= to[2] && yt >= to[1] && yt <= to[3])
                 continue;
-            t = floor_get_tile(self->floor, (sfVector2i){x, y});
-            c = (sfVector2i){x, y};
+            t = floor_get_tile(self->floor, (sfVector2i){xt, yt});
+            c = (sfVector2i){xt, yt};
             if (t.bump)
                 (*t.bump)(t, self->floor, c, self);
             if (t.may_pass && !(*t.may_pass)(t, self->floor, c, self)) {

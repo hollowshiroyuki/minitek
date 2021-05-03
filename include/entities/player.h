@@ -12,6 +12,7 @@
 #include "input.h"
 #include "screen.h"
 #include "floor.h"
+#include "inventory.h"
 
 typedef struct mob_s mob_t;
 typedef struct entity_s entity_t;
@@ -28,8 +29,8 @@ typedef struct player_s
     int stamina;
     universe_t *universe;
     input_t *input;
-    //inventory_t *inventory;
-    //item_t *active_item;
+    inventory_t *inventory;
+    item_t *active_item;
     mob_t *mob;
 } player_t;
 
@@ -37,6 +38,11 @@ void player_tick(entity_t *self);
 entity_t *player_create(universe_t *universe, input_t *input);
 void player_draw(entity_t *self, screen_t *screen);
 void player_find_start_pos(entity_t *self, floor_t *floor);
-
+void player_do_hurt(entity_t *self, int damage, int dir);
+void player_hurt_tile(entity_t *self, tile_t tile, sfVector2i pos, int dmg);
+bool player_can_swim(entity_t *self);
+bool player_pay_stamina(entity_t *self, int cost);
+void player_destroy(entity_t *self);
+bool player_use(entity_t *self, entity_t *player, int dir);
 
 #endif
