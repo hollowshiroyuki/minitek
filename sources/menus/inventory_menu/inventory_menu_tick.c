@@ -25,15 +25,16 @@ void inventory_menu_tick(menu_t *self)
 {
     int len = item_list_size(self->inv.player->mob.pla.inventory->items);
     inventory_t *player_inv = self->inv.player->mob.pla.inventory;
+    input_t *in = self->input;
     item_t *item;
 
     input(self, len);
-    if (self->input->menu.clicked) {
+    if (in->menu.clicked) {
         universe_set_menu(self->universe, NULL);
         (self->funcs.destroy)(self);
         return;
     }
-    if (self->input->attack.clicked && len > 0) {
+    if ((in->attack.clicked || in->accept.clicked) && len > 0) {
         item = inventory_remove_item(player_inv, self->inv.selection);
         self->inv.player->mob.pla.active_item = item;
         universe_set_menu(self->universe, NULL);
