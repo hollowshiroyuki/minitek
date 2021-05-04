@@ -23,7 +23,7 @@ static void input(menu_t *self, int len)
 
 void inventory_menu_tick(menu_t *self)
 {
-    int len = self->inv.player->mob.pla.inventory->item_count;
+    int len = item_list_size(self->inv.player->mob.pla.inventory->items);
     inventory_t *player_inv = self->inv.player->mob.pla.inventory;
     item_t *item;
 

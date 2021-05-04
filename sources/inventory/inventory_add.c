@@ -9,5 +9,5 @@
 
 void inventory_add(inventory_t *self, item_t *item)
 {
-    inventory_add_pos(self, item, self->item_count);
+    inventory_add_pos(self, item, item_list_size(self->items));
 }

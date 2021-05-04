@@ -13,7 +13,7 @@ item_t *inventory_remove_item(inventory_t *self, int pos)
 {
     item_t *to_remove = self->items;
 
-    if (pos > self->item_count)
+    if (pos > item_list_size(self->items))
         return (0);
     for (int i = 0; i < pos; i++)
         to_remove = to_remove->next;
