@@ -30,6 +30,7 @@ typedef struct tile_s
     bool (*interact)(tile_t self, floor_t *floor, sfVector2i pos, entity_t *e);
     bool (*use)(tile_t self, floor_t *floor, sfVector2i pos, entity_t *e);
     void (*tick)(tile_t self, floor_t *floor, sfVector2i pos);
+    void (*hurt)(floor_t *floor, sfVector2i pos, entity_t *entity, int dmg);
 } tile_t;
 
 #endif
