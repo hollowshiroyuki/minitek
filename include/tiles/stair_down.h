@@ -12,4 +12,6 @@
 
 extern const tile_t stair_down;
 
+void stair_down_render(tile_t self, screen_t *scr, floor_t *fl, sfVector2i p);
+
 #endif

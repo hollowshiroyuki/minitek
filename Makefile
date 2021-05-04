@@ -175,9 +175,14 @@ DIRT_FILES	=	dirt.c \
 
 HOLE_FILES	= hole.c
 
+TREE_FILES	=	tree.c \
+				tree_render.c \
+				tree_may_pass.c
+
 STAIRUP_FILES	=	stair_up.c
 
-STAIRDOWN_FILES	=	stair_down.c
+STAIRDOWN_FILES	=	stair_down.c \
+					stair_down_render.c
 
 WATER_FILES	=	water.c \
 				water_render.c \
@@ -196,7 +201,8 @@ FLOOR_FILES	=	floor_get_tile.c \
 				floor_entities_row_clear.c \
 				floor_sort_and_draw.c \
 				floor_draw_entities.c \
-				floor_remove_entity.c
+				floor_remove_entity.c \
+				floor_get_data.c
 
 SAND_FILES	=	sand.c \
 				sand_render.c
@@ -209,6 +215,12 @@ CACTUS_FILES	=	cactus.c \
 GRASS_FILES	=	grass.c \
 				grass_render.c
 
+ROCK_FILES	=	rock.c \
+				rock_render.c \
+				rock_may_pass.c
+FLOWER_FILES	=	flower.c \
+					flower_render.c
+
 TILES_FILES	=	tiles.c \
 				$(addprefix dirt/, $(DIRT_FILES)) \
 				$(addprefix hole/, $(HOLE_FILES)) \
@@ -217,7 +229,10 @@ TILES_FILES	=	tiles.c \
 				$(addprefix water/, $(WATER_FILES)) \
 				$(addprefix grass/, $(GRASS_FILES)) \
 				$(addprefix sand/, $(SAND_FILES)) \
-				$(addprefix cactus/, $(CACTUS_FILES))
+				$(addprefix cactus/, $(CACTUS_FILES)) \
+				$(addprefix rock/, $(ROCK_FILES)) \
+				$(addprefix tree/, $(TREE_FILES)) \
+				$(addprefix flower/, $(FLOWER_FILES))
 
 UNIVERSE_FILES	=	universe_create.c \
 					universe_tick.c \

@@ -29,10 +29,10 @@ static void top_left(bool c[4], screen_t *scr, sfVector2i pos, int v[4])
     pos.x = pos.x * 16;
     pos.y = pos.y * 16;
     if (!c[0] && !c[2]) {
-        screen_render_tile(scr, pos, 32 * 6 + 9);
+        screen_render_tile(scr, pos, 32 * 6 + 9, 0);
     } else {
         tex = (c[2] ? 6 * 32 + 6 : 6 * 32 + 7) + (c[0] ? 0 : 1) * 32;
-        screen_render_tile(scr, pos, tex);
+        screen_render_tile(scr, pos, tex, 0);
     }
 }
 
@@ -43,10 +43,10 @@ static void top_right(bool c[4], screen_t *scr, sfVector2i pos, int v[4])
     pos.x = pos.x * 16 + 8;
     pos.y = pos.y * 16;
     if (!c[0] && !c[3]) {
-        screen_render_tile(scr, pos, 32 * 6 + 10);
+        screen_render_tile(scr, pos, 32 * 6 + 10, 0);
     } else {
         tex = (c[3] ? 6 * 32 + 8 : 6 * 32 + 7) + (c[0] ? 0 : 1) * 32;
-        screen_render_tile(scr, pos, tex);
+        screen_render_tile(scr, pos, tex, 0);
     }
 }
 
@@ -57,10 +57,10 @@ static void bottom_left(bool c[4], screen_t *scr, sfVector2i pos, int v[4])
     pos.x = pos.x * 16;
     pos.y = pos.y * 16 + 8;
     if (!c[1] && !c[2]) {
-        screen_render_tile(scr, pos, 32 * 7 + 9);
+        screen_render_tile(scr, pos, 32 * 7 + 9, 0);
     } else {
         tex = (c[2] ? 6 * 32 + 6 : 6 * 32 + 7) + (c[1] ? 2 : 1) * 32;
-        screen_render_tile(scr, (sfVector2i){pos.x, pos.y}, tex);
+        screen_render_tile(scr, (sfVector2i){pos.x, pos.y}, tex, 0);
     }
 }
 
@@ -71,10 +71,10 @@ static void bottom_right(bool c[4], screen_t *scr, sfVector2i pos, int v[4])
     pos.x = pos.x * 16 + 8;
     pos.y = pos.y * 16 + 8;
     if (!c[1] && !c[3]) {
-        screen_render_tile(scr, pos, 32 * 7 + 10);
+        screen_render_tile(scr, pos, 32 * 7 + 10, 0);
     } else {
         tex = (c[3] ? 6 * 32 + 8 : 6 * 32 + 7) + (c[1] ? 2 : 1) * 32;
-        screen_render_tile(scr, (sfVector2i){pos.x, pos.y}, tex);
+        screen_render_tile(scr, (sfVector2i){pos.x, pos.y}, tex, 0);
     }
 }
 

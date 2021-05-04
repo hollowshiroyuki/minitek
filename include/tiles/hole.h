@@ -12,4 +12,6 @@
 
 extern const tile_t hole;
 
+void hole_render(tile_t self, screen_t *scr, floor_t *floor, sfVector2i pos);
+
 #endif
