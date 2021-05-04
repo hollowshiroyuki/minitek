@@ -299,6 +299,17 @@ INVENTORY_FILES	=	inventory_create.c \
 					inventory_remove_item.c \
 					inventory_count.c
 
+FURNITURE_ITEM_FILES	=	furniture_item_create.c \
+							furniture_item_draw_inventory.c \
+							furniture_item_draw_icon.c \
+							furniture_item_interact_tile.c \
+							furniture_item_can_attack.c \
+							furniture_item_get_tex.c \
+							furniture_item_get_name.c \
+							furniture_item_is_depleted.c \
+							furniture_item_funcs.c \
+							furniture_item_destroy.c
+
 ITEMS_FILES	=	resources.c \
 				resource_interact.c \
 				food_interact.c \
@@ -322,7 +333,8 @@ ITEMS_FILES	=	resources.c \
 				item_list_size.c \
 				item_list_remove.c \
 				$(addprefix tool_item/, $(TOOL_ITEM_FILES)) \
-				$(addprefix resource_item/, $(RESOURCE_ITEM_FILES))
+				$(addprefix resource_item/, $(RESOURCE_ITEM_FILES)) \
+				$(addprefix furniture_item/, $(FURNITURE_ITEM_FILES))
 
 TOOL_RECIPE_FILES	=	tool_recipe_create.c \
 						tool_recipe_funcs.c

@@ -10,6 +10,7 @@
 
 #include "resources/tool_item.h"
 #include "resources/resource_item.h"
+#include "resources/furniture_item.h"
 #include "item_funcs.h"
 
 typedef struct item_s item_t;
@@ -19,7 +20,7 @@ typedef struct item_s
     union {
         tool_item_t tool;
         resource_item_t res;
-        //furniture_item_t fur;
+        furniture_item_t fur;
     };
     item_funcs_t funcs;
     item_t *next;

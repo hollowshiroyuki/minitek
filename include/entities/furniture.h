@@ -11,7 +11,6 @@
 #include <SFML/Graphics.h>
 #include <stdbool.h>
 #include "entity_funcs.h"
-//#include "entities/workbench.h"
 
 extern const entity_funcs_t furniture_funcs;
 
@@ -24,8 +23,6 @@ typedef struct furniture_s
     int push_dir;
     int tex;
     entity_t *player;
-    union {
-    };
     entity_t *ent;
 } furniture_t;
 
