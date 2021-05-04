@@ -17,6 +17,7 @@ void recipe_list_delink(recipe_t *list)
 
     while (list) {
         tmp = list->next;
+        free(list->result);
         free(list);
         list = tmp;
     }
