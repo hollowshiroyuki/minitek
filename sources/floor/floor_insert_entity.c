@@ -5,6 +5,7 @@
 ** hey. real programmers use vim
 */
 
+#include <stdio.h>
 #include "floor.h"
 #include "entities_id.h"
 #include "entities/entity.h"

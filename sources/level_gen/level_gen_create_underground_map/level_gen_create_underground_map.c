@@ -7,6 +7,7 @@
 
 #include <stdlib.h>
 #include <stdbool.h>
+#include <string.h>
 #include "level_gen.h"
 #include "random.h"
 #include "tiles_id.h"
@@ -56,6 +57,7 @@ maps_t level_gen_create_underground_map(int w, int h, int depth)
     int *data = malloc(sizeof(int) * w * h);
 
     depth = (depth % 3) + 1;
+    memset(data, 0, sizeof(int) * w * h);
     generate_noise(noises, (sfVector2i){w, h});
     generate_cave(noises, map, (sfVector2i){w, h}, depth);
     generate_ores(map, (sfVector2i){w, h}, depth);

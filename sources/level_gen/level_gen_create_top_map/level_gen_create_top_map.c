@@ -7,6 +7,7 @@
 
 #include <stdlib.h>
 #include <stdbool.h>
+#include <string.h>
 #include "level_gen.h"
 #include "random.h"
 #include "tiles_id.h"
@@ -43,6 +44,7 @@ maps_t level_gen_create_top_map(int w, int h)
 
     for (int i = 0; i < 5; i++)
         noises[i] = level_gen_create(w, h, (i > 2) ? (32) : (16));
+    memset(data, 0, sizeof(int) * w * h);
     generate_island(noises, map, (sfVector2i){w, h});
     generate_sand(map, (sfVector2i){w, h});
     generate_trees(map, (sfVector2i){w, h});

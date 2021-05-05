@@ -11,6 +11,7 @@
 #include "screen.h"
 #include "universe.h"
 #include "tiles_id.h"
+#include "resources/resources.h"
 #include <stdio.h>
 
 static void stamina_tick(entity_t *self)
@@ -93,6 +94,8 @@ void player_tick(entity_t *self)
     sfVector2i tile_pos = (sfVector2i){self->pos.x >> 4, self->pos.y >> 4};
     tile_t on_tile = floor_get_tile(self->floor, tile_pos);
 
+    if (self->mob.pla.input->accept.clicked)
+        floor_add(self->floor, item_entity_create(resource_item_create((resource_t *)&r_stone, 1), self->pos));
     mob_tick(self);
     if (self->mob.pla.invul)
         self->mob.pla.invul--;

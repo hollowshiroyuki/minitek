@@ -7,6 +7,7 @@
 
 #include "floor.h"
 #include "entities_id.h"
+#include <stdio.h>
 #include "entities/entity.h"
 #include "consts.h"
 
@@ -25,6 +26,7 @@ void floor_remove_entity(floor_t *self, sfVector2i p, entity_t *entity)
             for (int j = i + 1; j < ept; j++) {
                 list[j - 1] = list[j];
             }
+            return;
         }
     }
 }

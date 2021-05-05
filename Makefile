@@ -25,6 +25,7 @@ CFLAGS	=	-W -Wall -Wextra -Werror \
 		-I$(HEADER_DIR) \
 		-Wno-unused-variable \
 		-Wno-unused-parameter \
+		-Wno-unused-function \
 		-Wno-deprecated-declarations \
 		-g3 \
 		$(C_FLAGS_INPUT)
@@ -113,7 +114,8 @@ PLAYER_FILES	=	player_create.c \
 					player_interact_pos.c \
 					player_hurt_pos.c \
 					player_get_attack_damage.c \
-					player_change_floor.c
+					player_change_floor.c \
+					player_touch_item.c
 
 MOB_FILES	=	mob_funcs.c \
 				mob_tick.c \
@@ -140,6 +142,14 @@ FURNITURE_FILES	=	furniture_funcs.c \
 					furniture_take.c \
 					furniture_destroy.c \
 					$(addprefix workbench/, $(WORKBENCH_FILES))
+
+ITEM_ENTITY_FILES	=	item_entity_create.c \
+						item_entity_tick.c \
+						item_entity_funcs.c \
+						item_entity_draw.c \
+						item_entity_destroy.c \
+						item_entity_take.c \
+						item_entity_touched_by.c
 
 ENTITIES_FILES	=	entity_is_blockable_by.c \
 					entity_can_swim.c \
@@ -168,8 +178,10 @@ ENTITIES_FILES	=	entity_is_blockable_by.c \
 					entity_blocks.c \
 					entity_find_start_pos.c \
 					entity_heal.c \
+					entities_remove_all.c \
 					$(addprefix mob/, $(MOB_FILES)) \
-					$(addprefix furniture/, $(FURNITURE_FILES))
+					$(addprefix furniture/, $(FURNITURE_FILES)) \
+					$(addprefix item_entity/, $(ITEM_ENTITY_FILES))
 
 DIRT_FILES	=	dirt.c \
 				dirt_render.c
@@ -178,7 +190,10 @@ HOLE_FILES	= hole.c
 
 TREE_FILES	=	tree.c \
 				tree_render.c \
-				tree_may_pass.c
+				tree_may_pass.c \
+				tree_hurt.c \
+				tree_damage.c \
+				tree_interact.c
 
 STAIR_FILES	=	stair.c \
 				stair_render.c
@@ -201,7 +216,8 @@ FLOOR_FILES	=	floor_get_tile.c \
 				floor_sort_and_draw.c \
 				floor_draw_entities.c \
 				floor_remove_entity.c \
-				floor_get_data.c
+				floor_get_data.c \
+				floor_set_data.c
 
 SAND_FILES	=	sand.c \
 				sand_render.c
@@ -219,7 +235,10 @@ GRASS_FILES	=	grass.c \
 
 ROCK_FILES	=	rock.c \
 				rock_render.c \
-				rock_may_pass.c
+				rock_may_pass.c \
+				rock_damage.c \
+				rock_hurt.c \
+				rock_interact.c
 
 FLOWER_FILES	=	flower.c \
 					flower_render.c

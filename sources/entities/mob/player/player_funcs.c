@@ -13,5 +13,6 @@ const entity_funcs_t player_funcs = {
     .tick = player_tick,
     .hurt_tile = player_hurt_tile,
     .can_swim = player_can_swim,
-    .destroy = player_destroy
+    .destroy = player_destroy,
+    .touch_item = player_touch_item
 };

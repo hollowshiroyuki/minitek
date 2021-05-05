@@ -13,6 +13,7 @@
 #include "entity_funcs.h"
 #include "entities/mob.h"
 #include "entities/furniture.h"
+#include "entities/item_entity.h"
 
 typedef struct floor_s floor_t;
 
@@ -28,6 +29,7 @@ typedef struct entity_s
     union {
         mob_t mob;
         furniture_t fur;
+        item_entity_t itm;
     };
     entity_funcs_t funcs;
     entity_t *next;
@@ -56,5 +58,6 @@ int entities_count(entity_t *list);
 void entities_add_all(entity_t **dest, entity_t **src);
 void entities_remove(entity_t **self, entity_t *entity);
 void entity_heal(entity_t *self, int heal);
+void entities_remove_all(entity_t **self, entity_t **to_remove);
 
 #endif

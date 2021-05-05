@@ -16,5 +16,7 @@ const tile_t rock = {
     .grass = false,
     .lava = false,
     .render = rock_render,
-    .may_pass = rock_may_pass
+    .may_pass = rock_may_pass,
+    .hurt = rock_hurt,
+    .interact = rock_interact
 };

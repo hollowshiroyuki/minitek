@@ -18,7 +18,7 @@ item_t *resource_item_create(const resource_t *res, int count)
 
     memset(new, 0, sizeof(item_t));
     new->id = I_RESOURCE;
-    new->res.count = count ?: 1;
+    new->res.count = (count) ? count : 1;
     new->res.resource = (resource_t *)res;
     item_funcs_combine(&new->funcs, &resource_item_funcs);
     return (new);

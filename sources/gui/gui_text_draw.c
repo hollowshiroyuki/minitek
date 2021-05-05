@@ -31,7 +31,7 @@ void gui_text_draw(char *text, screen_t *screen, sfVector2i pos, sfColor color)
 
     hsy_strupcase(msg);
     sfSprite_setColor(screen->g_sprite, color);
-    for (int i = 0; msg[i]; i++) {
+    for (int i = 0; msg && msg[i]; i++) {
         tex = get_index(msg[i]);
         cpos = (sfVector2i){pos.x + i * 8, pos.y};
         if (tex == -1)
@@ -39,5 +39,6 @@ void gui_text_draw(char *text, screen_t *screen, sfVector2i pos, sfColor color)
         screen_render_gui(screen, cpos, tex + 28 * 32, 0);
     }
     sfSprite_setColor(screen->g_sprite, sfWhite);
-    free(msg);
+    if (msg)
+        free(msg);
 }
