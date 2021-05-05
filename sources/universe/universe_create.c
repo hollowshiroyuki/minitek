@@ -11,6 +11,7 @@
 #include "universe.h"
 #include "level_gen.h"
 #include "floor.h"
+#include "random.h"
 
 universe_t *universe_create(sfVector2i size, input_t *input, int seed)
 {
@@ -20,6 +21,7 @@ universe_t *universe_create(sfVector2i size, input_t *input, int seed)
         return (0);
     memset(new, 0, sizeof(universe_t));
     new->input = input;
+    randomize_seed();
     new->floors[0] = floor_create(size, 0, 0);
     new->floors[1] = floor_create(size, 1, new->floors[0]);
     new->floors[2] = floor_create(size, 2, new->floors[1]);

@@ -18,6 +18,7 @@
 typedef struct universe_s
 {
     bool running;
+    int floor_change;
     floor_t *active_floor;
     input_t *input;
     floor_t *floors[16];
@@ -34,5 +35,6 @@ void universe_draw(universe_t *self, screen_t *screen);
 void universe_destroy(universe_t *self);
 void universe_draw_gui(universe_t *self, screen_t *screen);
 void universe_set_menu(universe_t *self, menu_t *menu);
+void universe_change_floor(universe_t *self, int dir);
 
 #endif

@@ -13,6 +13,8 @@
 #include "menus/title_menu.h"
 #include "menus/inventory_menu.h"
 #include "menus/crafting_menu.h"
+#include "menus/floor_change_menu.h"
+#include "menus/death_menu.h"
 #include "resources/item.h"
 
 typedef struct universe_s universe_t;
@@ -29,6 +31,8 @@ typedef struct menu_s
         title_menu_t title;
         inventory_menu_t inv;
         crafting_menu_t craft;
+        death_menu_t dea;
+        floor_change_menu_t flc;
     };
     menu_funcs_t funcs;
 } menu_t;

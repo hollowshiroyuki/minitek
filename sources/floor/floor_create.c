@@ -11,7 +11,7 @@
 #include "floor.h"
 #include "tiles_id.h"
 #include "tiles/dirt.h"
-#include "tiles/stair_down.h"
+#include "tiles/stair.h"
 #include "consts.h"
 
 static maps_t floor_create_map(sfVector2i size, int depth)
@@ -35,7 +35,7 @@ void floor_link(floor_t *new, floor_t *par)
         for (int x = 0; x < par->size.x; x++) {
             if (floor_get_tile(par, (sfVector2i){x, y}).id != T_STAIRDOWN)
                 continue;
-            floor_set_tile(new, (sfVector2i){x, y}, stair_down, 0);
+            floor_set_tile(new, (sfVector2i){x, y}, stair_up, 0);
             floor_set_tile(new, (sfVector2i){x + 1, y}, dirt, 0);
             floor_set_tile(new, (sfVector2i){x, y + 1}, dirt, 0);
             floor_set_tile(new, (sfVector2i){x + 1, y + 1}, dirt, 0);

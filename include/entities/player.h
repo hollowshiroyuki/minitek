@@ -28,6 +28,7 @@ typedef struct player_s
     int max_stamina;
     int stamina;
     int attack_time;
+    int stair_delay;
     universe_t *universe;
     input_t *input;
     inventory_t *inventory;
@@ -50,5 +51,6 @@ void player_attack(entity_t *self);
 bool player_interact_pos(entity_t *self, sfVector2i pos1, sfVector2i pos2);
 void player_hurt_pos(entity_t *self, sfVector2i pos1, sfVector2i pos2);
 int player_get_attack_damage(entity_t *self, entity_t *entity);
+void player_change_floor(entity_t *self, int dir);
 
 #endif

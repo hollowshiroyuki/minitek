@@ -112,7 +112,8 @@ PLAYER_FILES	=	player_create.c \
 					player_attack.c \
 					player_interact_pos.c \
 					player_hurt_pos.c \
-					player_get_attack_damage.c
+					player_get_attack_damage.c \
+					player_change_floor.c
 
 MOB_FILES	=	mob_funcs.c \
 				mob_tick.c \
@@ -179,11 +180,8 @@ TREE_FILES	=	tree.c \
 				tree_render.c \
 				tree_may_pass.c
 
-STAIRUP_FILES	=	stair_up.c \
-					stair_up_render.c
-
-STAIRDOWN_FILES	=	stair_down.c \
-					stair_down_render.c
+STAIR_FILES	=	stair.c \
+				stair_render.c
 
 WATER_FILES	=	water.c \
 				water_render.c \
@@ -238,8 +236,7 @@ ORE_FILES	=	ore.c \
 TILES_FILES	=	tiles.c \
 				$(addprefix dirt/, $(DIRT_FILES)) \
 				$(addprefix hole/, $(HOLE_FILES)) \
-				$(addprefix stair_up/, $(STAIRUP_FILES)) \
-				$(addprefix stair_down/, $(STAIRDOWN_FILES)) \
+				$(addprefix stair/, $(STAIR_FILES)) \
 				$(addprefix water/, $(WATER_FILES)) \
 				$(addprefix grass/, $(GRASS_FILES)) \
 				$(addprefix sand/, $(SAND_FILES)) \
@@ -257,7 +254,8 @@ UNIVERSE_FILES	=	universe_create.c \
 					universe_draw.c \
 					universe_destroy.c \
 					universe_draw_gui.c \
-					universe_set_menu.c
+					universe_set_menu.c \
+					universe_change_floor.c
 
 GUI_FILES	=	gui_text_draw.c \
 				gui_frame_draw.c
@@ -292,6 +290,16 @@ CRAFTING_MENU_FILES	=	crafting_menu.c \
 						crafting_menu_destroy.c \
 						crafting_menu_tick.c
 
+DEATH_MENU_FILES	=	death_menu.c \
+						death_menu_draw.c \
+						death_menu_tick.c \
+						death_menu_create.c
+
+FLOOR_CHANGE_MENU_FILES	=	floor_change_menu.c \
+							floor_change_menu_create.c \
+							floor_change_menu_tick.c \
+							floor_change_menu_draw.c
+
 MENUS_FILES	=	menu.c \
 				menu_tick.c \
 				menu_draw.c \
@@ -300,14 +308,18 @@ MENUS_FILES	=	menu.c \
 				menu_draw_item_list.c \
 				$(addprefix title_menu/, $(TITLE_MENU_FILES)) \
 				$(addprefix inventory_menu/, $(INVENTORY_MENU_FILES)) \
-				$(addprefix crafting_menu/, $(CRAFTING_MENU_FILES))
+				$(addprefix crafting_menu/, $(CRAFTING_MENU_FILES)) \
+				$(addprefix death_menu/, $(DEATH_MENU_FILES)) \
+				$(addprefix floor_change_menu/, $(FLOOR_CHANGE_MENU_FILES))
 
 INPUT_FILES	=	input_create.c \
 				mkey_init.c \
 				input_tick.c \
 				mkey_tick.c \
 				input_event.c \
-				mkey_toggle.c
+				mkey_toggle.c \
+				input_release_all.c \
+				mkey_release.c
 
 TOOL_ITEM_FILES	=	tool_item_create.c \
 					tool_item_funcs.c \

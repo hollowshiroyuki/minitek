@@ -20,4 +20,8 @@ void input_event(input_t *input, sfEvent *event)
             }
         }
     }
+    if (event->type == sfEvtGainedFocus)
+        input->has_focus = true;
+    if (event->type == sfEvtLostFocus)
+        input->has_focus = false;
 }
