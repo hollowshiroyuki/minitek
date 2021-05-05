@@ -10,6 +10,7 @@
 
 #include <stdbool.h>
 #include "screen.h"
+#include "resources/resource.h"
 
 typedef struct floor_s floor_t;
 typedef struct entity_s entity_t;
@@ -48,6 +49,8 @@ typedef struct tile_s
     bool lava;
     tile_t *on_type;
     tile_t *grows_to;
+    resource_t *to_drop;
+    int variant;
     void (*render)(tile_t self, screen_t *scr, floor_t *floor, sfVector2i pos);
     void (*bump)(tile_t self, floor_t *floor, sfVector2i pos, entity_t *e);
     bool (*may_pass)(tile_t self, floor_t *floor, sfVector2i pos, entity_t *e);

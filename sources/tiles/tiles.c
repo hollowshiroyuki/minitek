@@ -18,6 +18,10 @@
 #include "tiles/cactus.h"
 #include "tiles/tree.h"
 #include "tiles/flower.h"
+#include "tiles/farmland.h"
+#include "tiles/wheat.h"
+#include "tiles/carrot.h"
+#include "tiles/ore.h"
 #include "tiles.h"
 
 const tile_t *tiles[T_COUNT] = {
@@ -31,5 +35,8 @@ const tile_t *tiles[T_COUNT] = {
     &cactus,
     &rock,
     &tree,
-    &flower
+    &flower,
+    &farmland,
+    &wheat,
+    &carrot
 };
