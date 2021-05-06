@@ -15,6 +15,7 @@ void universe_change_floor(universe_t *self, int dir)
     sfVector2i size = self->active_floor->size;
 
     entities_remove(&self->active_floor->entities, self->player);
+    self->active_floor->player = 0;
     depth += dir;
     if (depth > 15)
         depth = 15;

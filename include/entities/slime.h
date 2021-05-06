@@ -25,5 +25,8 @@ typedef struct slime_s
 
 entity_t *slime_create(int level);
 void slime_draw(entity_t *self, screen_t *screen);
+void slime_tick(entity_t *self);
+void slime_die(entity_t *self);
+void slime_touched_by(entity_t *self, entity_t *entity);
 
 #endif

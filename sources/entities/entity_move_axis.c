@@ -8,6 +8,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "entities/entity.h"
+#include "entities_id.h"
 
 static void calc_to(entity_t *self, sfVector2i pos, int to[8])
 {

@@ -12,6 +12,7 @@ static void combine_2(entity_funcs_t *r, const entity_funcs_t *pa,
                         const entity_funcs_t *pb)
 {
     r->heal = pa->heal ?: pb->heal ?: entity_funcs.heal;
+    r->die = pa->die ?: pb->die ?: entity_funcs.die;
 }
 
 void entity_funcs_combine(entity_funcs_t *r,

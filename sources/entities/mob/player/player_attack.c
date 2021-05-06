@@ -99,7 +99,7 @@ void attack_tile(entity_t *self, int yo, int radius)
 
 void player_attack(entity_t *self)
 {
-    int yo = -2;
+    int yo = 0;
     item_t *active_item = self->mob.pla.active_item;
 
     self->mob.walk_dist += 8;

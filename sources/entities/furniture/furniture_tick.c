@@ -11,9 +11,9 @@
 
 static void move(entity_t *self)
 {
-    if (self->fur.push_dir == D_UP)
-        self->funcs.move(self, (sfVector2i){0, 1});
     if (self->fur.push_dir == D_DOWN)
+        self->funcs.move(self, (sfVector2i){0, 1});
+    if (self->fur.push_dir == D_UP)
         self->funcs.move(self, (sfVector2i){0, -1});
     if (self->fur.push_dir == D_RIGHT)
         self->funcs.move(self, (sfVector2i){1, 0});

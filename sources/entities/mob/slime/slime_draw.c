@@ -13,10 +13,18 @@
 
 void slime_draw(entity_t *self, screen_t *screen)
 {
-    sfVector2i pos = self->pos;
+    int t = self->mob.sli.level * 32;
+    sfVector2i o = (sfVector2i){self->pos.x - 8, self->pos.y - 11};
 
-    screen_render_entity(screen, (sfVector2i){pos.x - 8, pos.y - 4}, 0, 0);
-    screen_render_entity(screen, (sfVector2i){pos.x, pos.y - 4}, 1, 0);
-    screen_render_entity(screen, (sfVector2i){pos.x - 8, pos.y + 4}, 32, 0);
-    screen_render_entity(screen, (sfVector2i){pos.x, pos.y + 4}, 33, 0);
+    if (self->mob.sli.jump_time > 0) {
+        t += 2;
+        o.y -= 4;
+    }
+    if (self->mob.hurt_time > 0)
+        sfSprite_setColor(screen->e_sprite, sfRed);
+    screen_render_entity(screen, o, t, 0);
+    screen_render_entity(screen, (sfVector2i){o.x + 8, o.y}, t + 1, 0);
+    screen_render_entity(screen, (sfVector2i){o.x, o.y + 8}, t + 32, 0);
+    screen_render_entity(screen, (sfVector2i){o.x + 8, o.y + 8}, t + 33, 0);
+    sfSprite_setColor(screen->e_sprite, sfWhite);
 }

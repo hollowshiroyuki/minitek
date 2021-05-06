@@ -94,7 +94,10 @@ ENGINE_FILES	=	engine_init.c \
 
 SLIME_FILES	=	slime_create.c \
 				slime_funcs.c \
-				slime_draw.c
+				slime_draw.c \
+				slime_tick.c \
+				slime_die.c \
+				slime_touched_by.c
 
 ZOMBIE_FILES	=	zombie_funcs.c
 
@@ -169,6 +172,7 @@ ENTITIES_FILES	=	entity_is_blockable_by.c \
 					entity_funcs.c \
 					entity_intersects.c \
 					entity_funcs_combine.c \
+					entity_die.c \
 					entities_funcs.c \
 					entities_add.c \
 					entities_add_all.c \
