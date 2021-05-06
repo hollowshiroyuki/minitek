@@ -9,7 +9,7 @@
 #include "screen.h"
 #include <stdio.h>
 
-void screen_render_entity(screen_t *self, sfVector2i pos, int tile_id)
+void screen_render_entity(screen_t *self, sfVector2i pos, int tile_id, int f)
 {
     sfVector2i tile = {(tile_id % 32) * 8, (tile_id / 32) * 8};
     sfIntRect rect = {tile.x, tile.y, 8, 8};
@@ -21,6 +21,8 @@ void screen_render_entity(screen_t *self, sfVector2i pos, int tile_id)
     if (pos.y < -8 || pos.y >= self->size.y + 8)
         return;
     sfSprite_setTextureRect(self->e_sprite, rect);
+    screen_sprite_flip(self->e_sprite, f);
     sfSprite_setPosition(self->e_sprite, (sfVector2f){pos.x, pos.y});
     sfRenderWindow_drawSprite(self->win, self->e_sprite, NULL);
+    screen_sprite_flip(self->e_sprite, 0);
 }

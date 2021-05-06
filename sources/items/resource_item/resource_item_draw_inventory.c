@@ -11,9 +11,11 @@
 
 void resource_item_draw_inventory(item_t *self, screen_t *screen, sfVector2i p)
 {
-    sfVector2i off_pos = (sfVector2i){p.x + 8, p.y};
+    sfVector2i off_pos = (sfVector2i){p.x + 32, p.y};
+    sfVector2i num_pos = (sfVector2i){p.x + 8, p.y};
     int tex = (self->funcs.get_tex)(self);
 
     resource_item_draw_icon(self, screen, p);
+    gui_num_draw(self->res.count, screen, num_pos, sfWhite);
     gui_text_draw(self->res.resource->name, screen, off_pos, sfWhite);
 }

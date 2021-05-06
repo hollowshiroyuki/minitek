@@ -20,6 +20,7 @@ bool inventory_remove_resource(inventory_t *self, resource_t *res, int count)
     has->res.count -= count;
     if (has->res.count <= 0) {
         item_list_remove(&self->items, has);
+        (has->funcs.destroy)(has);
         self->item_count--;
     }
     return (true);

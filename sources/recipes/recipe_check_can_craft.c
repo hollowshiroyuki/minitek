@@ -21,11 +21,11 @@ void recipe_check_can_craft(recipe_t *self, entity_t *player)
         if (cost->id == I_RESOURCE) {
             res = &cost->res;
             if (inventory_has_resources(inv, res->resource, res->count)) {
-                self->can_craft = false;
+                self->can_craft = true;
                 return;
             }
         }
         cost = cost->next;
     }
-    self->can_craft = true;
+    self->can_craft = false;
 }

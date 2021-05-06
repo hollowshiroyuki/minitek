@@ -5,6 +5,7 @@
 ** hey. real programmers use vim
 */
 
+#include <stdio.h>
 #include "inventory.h"
 #include "items_id.h"
 
@@ -15,14 +16,14 @@ void inventory_add_pos(inventory_t *self, item_t *item, int pos)
     if (item->id == I_RESOURCE) {
         has = inventory_find_resource(self, item->res.resource);
         if (!has) {
-            item_list_add(&self->items, item, self->item_count);
+            item_list_add(&self->items, item, pos);
             self->item_count++;
         } else {
             has->res.count += item->res.count;
             (item->funcs.destroy)(item);
         }
     } else {
-        item_list_add(&self->items, item, self->item_count);
+        item_list_add(&self->items, item, pos);
         self->item_count++;
     }
 }

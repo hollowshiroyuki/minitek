@@ -8,6 +8,7 @@
 #include <stdlib.h>
 #include "entities/entity.h"
 #include "entities_id.h"
+#include <stdio.h>
 
 bool player_use_pos(entity_t *self, sfVector2i pos1, sfVector2i pos2)
 {

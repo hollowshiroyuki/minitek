@@ -13,5 +13,6 @@
 
 void gui_text_draw(char *text, screen_t *screen, sfVector2i pos, sfColor color);
 void gui_frame_draw(screen_t *self, char *name, sfVector2i p1, sfVector2i p2);
+void gui_num_draw(int num, screen_t *screen, sfVector2i pos, sfColor color);
 
 #endif

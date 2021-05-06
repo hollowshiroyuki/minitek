@@ -23,5 +23,6 @@ bool player_interact_pos(entity_t *self, sfVector2i pos1, sfVector2i pos2)
             return (true);
         }
     }
+    free(es);
     return (false);
 }

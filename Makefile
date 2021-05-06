@@ -277,7 +277,8 @@ UNIVERSE_FILES	=	universe_create.c \
 					universe_change_floor.c
 
 GUI_FILES	=	gui_text_draw.c \
-				gui_frame_draw.c
+				gui_frame_draw.c \
+				gui_num_draw.c
 
 GAME_FILES	=	game_update.c \
 				game_draw.c \
@@ -406,7 +407,8 @@ ITEMS_FILES	=	resources.c \
 				$(addprefix furniture_item/, $(FURNITURE_ITEM_FILES))
 
 TOOL_RECIPE_FILES	=	tool_recipe_create.c \
-						tool_recipe_funcs.c
+						tool_recipe_funcs.c \
+						tool_recipe_craft.c
 
 RECIPES_FILES	=	craft_create.c \
 					recipe_add_cost.c \
