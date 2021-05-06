@@ -39,7 +39,7 @@ void floor_change_menu_tick(menu_t *self)
     if (self->flc.time == 30)
         universe_change_floor(self->universe, self->flc.dir);
     if (self->flc.time == 60) {
-        universe_set_menu(self->universe, self);
+        universe_set_menu(self->universe, NULL);
         (self->funcs.destroy)(self);
     }
     //spiral();

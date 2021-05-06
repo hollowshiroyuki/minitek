@@ -30,7 +30,6 @@ static void tick_entities(floor_t *self, entity_t *entities)
 {
     sfVector2i pos;
     sfVector2i npos;
-    int did = 0;
     entity_t *next;
 
     for (entity_t *e = entities; e; e = next) {
