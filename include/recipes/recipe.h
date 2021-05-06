@@ -9,6 +9,8 @@
 #define RECIPE_H_
 
 #include "recipes/tool_recipe.h"
+#include "recipes/furniture_recipe.h"
+#include "recipes/resource_recipe.h"
 #include "recipe_funcs.h"
 
 extern const recipe_funcs_t recipe_funcs;
@@ -22,8 +24,8 @@ typedef struct recipe_s
     bool can_craft;
     union {
         tool_recipe_t tool;
-        //furniture_recipe_t furn;
-        //resource_recipe_t res;
+        furniture_recipe_t fur;
+        resource_recipe_t res;
     };
     recipe_funcs_t funcs;
     recipe_t *next;
