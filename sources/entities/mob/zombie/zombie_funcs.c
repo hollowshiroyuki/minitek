@@ -8,5 +8,8 @@
 #include "entities/zombie.h"
 
 const entity_funcs_t zombie_funcs = {
-    0
+    .draw = zombie_draw,
+    .tick = zombie_tick,
+    .die = zombie_die,
+    .touched_by = zombie_touched_by
 };

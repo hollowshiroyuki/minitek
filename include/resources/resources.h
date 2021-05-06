@@ -14,5 +14,6 @@ extern const resource_t r_wood;
 extern const resource_t r_stone;
 extern const resource_t r_apple;
 extern const resource_t r_slime;
+extern const resource_t r_cloth;
 
 #endif

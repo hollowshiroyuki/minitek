@@ -22,4 +22,10 @@ typedef struct zombie_s
     int level;
 } zombie_t;
 
+void zombie_draw(entity_t *self, screen_t *scr);
+void zombie_die(entity_t *self);
+void zombie_touched_by(entity_t *self, entity_t *e);
+void zombie_tick(entity_t *self);
+entity_t *zombie_create(int level);
+
 #endif

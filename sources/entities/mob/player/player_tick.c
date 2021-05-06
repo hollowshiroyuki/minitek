@@ -97,7 +97,7 @@ void player_tick(entity_t *self)
     entity_t *e;
 
     if (self->mob.pla.input->accept.clicked) {
-        e = slime_create(1);
+        e = zombie_create(1);
         e->pos = (sfVector2i){self->pos.x, self->pos.y - 16};
         floor_add(self->floor, e);
     }

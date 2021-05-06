@@ -16,7 +16,7 @@
 #include "random.h"
 #include <stdio.h>
 
-void move(entity_t *self)
+static void move(entity_t *self)
 {
     sfVector2i dir;
     sfVector2i n_pos = (sfVector2i){self->mob.sli.off.x, self->mob.sli.off.y};
