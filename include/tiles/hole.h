@@ -13,5 +13,6 @@
 extern const tile_t hole;
 
 void hole_render(tile_t self, screen_t *scr, floor_t *floor, sfVector2i pos);
+bool hole_may_pass(tile_t self, floor_t *floor, sfVector2i pos, entity_t *e);
 
 #endif

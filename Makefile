@@ -198,7 +198,8 @@ DIRT_FILES	=	dirt.c \
 				dirt_interact.c
 
 HOLE_FILES	=	hole.c \
-				hole_render.c
+				hole_render.c \
+				hole_may_pass.c
 
 TREE_FILES	=	tree.c \
 				tree_render.c \

@@ -15,5 +15,6 @@ const tile_t hole = {
     .sand = true,
     .grass = false,
     .lava = true,
-    .render = hole_render
+    .render = hole_render,
+    .may_pass = hole_may_pass
 };
