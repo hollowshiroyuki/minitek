@@ -12,7 +12,7 @@
 #include "universe.h"
 #include "hsy.h"
 
-menu_t *title_menu_create(menu_data_t *data)
+menu_t *text_input_menu_create(char *dest, int len, menu_t **parent)
 {
     menu_t *new = malloc(sizeof(menu_t));
 

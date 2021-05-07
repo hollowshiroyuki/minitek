@@ -9,7 +9,7 @@
 #include <SFML/Graphics.h>
 #include "input.h"
 
-void mkey_init(mkey_t *key, int code)
+void mkey_init(mkey_t *key, int code, int id)
 {
     mkey_t empty = {0};
 
@@ -17,4 +17,5 @@ void mkey_init(mkey_t *key, int code)
         return;
     *key = empty;
     key->code = code;
+    key->id = id;
 }

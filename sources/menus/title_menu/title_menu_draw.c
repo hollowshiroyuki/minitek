@@ -14,8 +14,8 @@
 const char *title_menu_entries[] = {
     "Play",
     "Options",
-    "Quit",
-    "About"
+    "About",
+    "Quit"
 };
 
 static void print_title(sfVector2i size, screen_t *screen)
@@ -59,4 +59,6 @@ void title_menu_draw(menu_t *self, screen_t *screen)
 
     print_title(size, screen);
     print_entries(size, screen, self->title.selection);
+    if (self->child)
+        (self->child->funcs.draw)(self->child, screen);
 }

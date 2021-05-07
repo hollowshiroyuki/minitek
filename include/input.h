@@ -13,6 +13,7 @@
 
 typedef struct key_s
 {
+    int id;
     int code;
     bool down;
     bool clicked;
@@ -22,7 +23,7 @@ typedef struct key_s
 
 void mkey_toggle(mkey_t *self, bool pressed);
 void mkey_tick(mkey_t *self);
-void mkey_init(mkey_t *key, int code);
+void mkey_init(mkey_t *key, int code, int id);
 void mkey_release(mkey_t *key);
 
 enum {
@@ -30,9 +31,10 @@ enum {
     C_DOWN,
     C_LEFT,
     C_RIGHT,
-    C_MENU,
     C_ATTACK,
+    C_MENU,
     C_ACCEPT,
+    C_PAUSE,
     C_COUNT
 };
 
@@ -44,12 +46,14 @@ typedef struct input_s
             mkey_t down;
             mkey_t left;
             mkey_t right;
-            mkey_t menu;
             mkey_t attack;
+            mkey_t menu;
             mkey_t accept;
+            mkey_t escape;
         };
         mkey_t keys[C_COUNT];
     };
+    mkey_t tmp;
     bool has_focus;
 } input_t;
 

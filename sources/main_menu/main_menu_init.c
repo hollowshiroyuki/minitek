@@ -7,23 +7,17 @@
 
 #include "rpg.h"
 #include "index_gui.h"
-
-static void init_logo(engine_t *engine, menu_data_t *data)
-{
-    sfVector2f size = sfView_getSize(engine->view);
-    sfIntRect rect = gui_tex_index[GUI_TEX_LOGO];
-    sfVector2f pos = (sfVector2f){(size.x / 2) - rect.width / 2, 32};
-
-    data->logo = sfSprite_create();
-    sfSprite_setTexture(data->logo, engine->assets.gui, sfFalse);
-    sfSprite_setTextureRect(data->logo, rect);
-    sfSprite_setPosition(data->logo, pos);
-}
+#include "universe.h"
 
 void main_menu_init(engine_t *engine)
 {
     menu_data_t *data = &engine->menu_data;
+    game_data_t *game = &engine->game_data;
 
-    init_logo(engine, data);
+    screen_init(&data->screen, &engine->assets, engine->window);
+    data->input = input_create();
+    data->menu = title_menu_create(data);
+    menu_init(data->menu, game->universe, data->input);
     data->init = true;
+    data->stop = false;
 }

@@ -25,6 +25,7 @@ typedef enum engine_states_e engine_states_t;
 
 #include "screen.h"
 #include "input.h"
+#include "menus/menu.h"
 
 enum engine_states_e
 {
@@ -44,14 +45,18 @@ struct asset_store_s
 
 struct menu_data_s
 {
+    input_t *input;
+    screen_t screen;
+    menu_t *menu;
+    universe_t *universe;
+    bool stop;
     bool init;
-    sfSprite *logo;
 };
 
 struct game_data_s
 {
     universe_t *universe;
-    screen_t screen;
+    screen_t *screen;
     input_t *input;
 };
 

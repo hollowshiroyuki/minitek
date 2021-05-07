@@ -6,10 +6,12 @@
 */
 
 #include "rpg.h"
+#include "universe.h"
 
 void main_menu_draw(engine_t *engine, sfRenderWindow *window)
 {
     menu_data_t *data = &engine->menu_data;
+    game_data_t *game = &engine->game_data;
 
-    sfRenderWindow_drawSprite(window, data->logo, NULL);
+    title_menu_draw(data->menu, &data->screen);
 }

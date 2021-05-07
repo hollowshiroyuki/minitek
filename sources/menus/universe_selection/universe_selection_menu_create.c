@@ -12,13 +12,13 @@
 #include "universe.h"
 #include "hsy.h"
 
-menu_t *title_menu_create(menu_data_t *data)
+menu_t *universe_selection_menu_create(universe_t **uni, menu_t **ptr)
 {
     menu_t *new = malloc(sizeof(menu_t));
 
     memset(new, 0, sizeof(menu_t));
     new->name = hsy_strdup("");
-    new->title.data = data;
+    new->
     new->funcs = title_menu_funcs;
     return (new);
 }

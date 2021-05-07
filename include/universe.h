@@ -14,9 +14,12 @@
 #include "screen.h"
 #include "entities/entity.h"
 #include "recipes/craft.h"
+#include "limits.h"
 
 typedef struct universe_s
 {
+    char path[PATH_MAX];
+    char name[10];
     bool running;
     int floor_change;
     floor_t *active_floor;
