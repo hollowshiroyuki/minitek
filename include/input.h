@@ -55,6 +55,9 @@ typedef struct input_s
     };
     mkey_t tmp;
     bool has_focus;
+    char *buf;
+    int buf_pos;
+    int buf_len;
 } input_t;
 
 input_t *input_create(void);

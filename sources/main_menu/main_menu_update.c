@@ -20,6 +20,8 @@ void main_menu_update(engine_t *engine)
     if (data->stop == true)
         engine->state = EN_STOP;
     if (!data->stop && data->universe) {
+        (engine->menu_data.menu->funcs.destroy)(engine->menu_data.menu);
+        engine->menu_data.menu = 0;
         engine->active_scene = S_GAME;
         (*scenes[engine->active_scene].init)(engine);
     }
