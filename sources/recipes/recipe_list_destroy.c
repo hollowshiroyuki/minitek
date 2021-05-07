@@ -10,7 +10,6 @@
 #include <stdio.h>
 #include "recipes/craft.h"
 
-// Used to destroy the real list
 void recipe_list_destroy(recipe_t *list)
 {
     recipe_t *tmp;

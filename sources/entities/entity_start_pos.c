@@ -13,7 +13,7 @@
 #include "random.h"
 #include "tiles_id.h"
 
-bool entity_find_start_pos(entity_t *self, floor_t *floor)
+bool entity_start_pos(entity_t *self, floor_t *floor)
 {
     return (false);
 }

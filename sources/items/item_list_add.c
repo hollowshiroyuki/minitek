@@ -20,7 +20,7 @@ void item_list_add(item_t **list, item_t *new, int pos)
             new->next = *list;
             *list = new;
         } else {
-              list = &(*list)->next;
+            list = &(*list)->next;
         }
     }
 }

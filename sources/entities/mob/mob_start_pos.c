@@ -37,7 +37,7 @@ static bool near_entities(floor_t *floor, sfVector2i pos, int r)
     return (near);
 }
 
-bool mob_find_start_pos(entity_t *self, floor_t *floor)
+bool mob_start_pos(entity_t *self, floor_t *floor)
 {
     sfVector2i pos;
     sfVector2i pos2;

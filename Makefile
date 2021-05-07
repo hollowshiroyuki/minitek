@@ -111,7 +111,7 @@ PLAYER_FILES	=	player_create.c \
 					player_draw.c \
 					player_funcs.c \
 					player_tick.c \
-					player_find_start_pos.c \
+					player_start_pos.c \
 					player_hurt_tile.c \
 					player_do_hurt.c \
 					player_can_swim.c \
@@ -133,7 +133,7 @@ MOB_FILES	=	mob_funcs.c \
 				mob_is_swimming.c \
 				mob_hurt_tile.c \
 				mob_move.c \
-				mob_find_start_pos.c \
+				mob_start_pos.c \
 				$(addprefix slime/, $(SLIME_FILES)) \
 				$(addprefix zombie/, $(ZOMBIE_FILES)) \
 				$(addprefix player/, $(PLAYER_FILES))
@@ -160,7 +160,7 @@ ITEM_ENTITY_FILES	=	item_entity_create.c \
 						item_entity_take.c \
 						item_entity_touched_by.c
 
-ENTITIES_FILES	=	entity_is_blockable_by.c \
+ENTITIES_FILES	=	entity_is_block_by.c \
 					entity_can_swim.c \
 					entity_create.c \
 					entity_destroy.c \
@@ -187,7 +187,7 @@ ENTITIES_FILES	=	entity_is_blockable_by.c \
 					entities_remove.c \
 					entity_hurt_tile.c \
 					entity_blocks.c \
-					entity_find_start_pos.c \
+					entity_start_pos.c \
 					entity_heal.c \
 					entities_remove_all.c \
 					$(addprefix mob/, $(MOB_FILES)) \

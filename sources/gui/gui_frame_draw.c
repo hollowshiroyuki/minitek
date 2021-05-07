@@ -13,7 +13,7 @@
 
 static void draw_borders(screen_t *s, sfVector2i p, sfVector2i t, sfVector2i b)
 {
-    sfVector2i p_off= (sfVector2i){p.x * 8, p.y * 8};
+    sfVector2i p_off = (sfVector2i){p.x * 8, p.y * 8};
 
     if ((p.x == t.x && p.y == t.y) || (p.x == b.x && p.y == b.y)) {
         screen_render_gui(s, p_off, 672, (p.x == t.x && p.y == t.y) ? 0 : 3);

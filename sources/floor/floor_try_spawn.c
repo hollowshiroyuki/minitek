@@ -19,7 +19,7 @@ void floor_try_spawn(floor_t *self, int tries)
 
     for (int i = 0; i < tries; i++) {
         new = slime_create(1);
-        if ((*new->funcs.find_start_pos)(new, self)) {
+        if ((*new->funcs.start_pos)(new, self)) {
             floor_add(self, new);
         } else {
             (*new->funcs.destroy)(new);
