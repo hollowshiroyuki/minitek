@@ -16,5 +16,6 @@ const tile_t water = {
     .grass = false,
     .lava = false,
     .render = water_render,
-    .may_pass = water_may_pass
+    .may_pass = water_may_pass,
+    .tick = water_tick
 };

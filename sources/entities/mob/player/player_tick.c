@@ -93,14 +93,10 @@ void interact(entity_t *self)
 void player_tick(entity_t *self)
 {
     sfVector2i tile_pos = (sfVector2i){self->pos.x >> 4, self->pos.y >> 4};
-    tile_t on_tile = floor_get_tile(self->floor, tile_pos);
-    entity_t *e;
 
-    if (self->mob.pla.input->accept.clicked) {
-        e = zombie_create(1);
-        e->pos = (sfVector2i){self->pos.x, self->pos.y - 16};
-        floor_add(self->floor, e);
-    }
+    if (self->mob.pla.input->accept.clicked)
+        floor_set_tile(self->floor, (sfVector2i){tile_pos.x, tile_pos.y + 1}, stair_down, 0);
+
     mob_tick(self);
     if (self->mob.pla.invul)
         self->mob.pla.invul--;

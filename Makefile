@@ -213,7 +213,8 @@ STAIR_FILES	=	stair.c \
 
 WATER_FILES	=	water.c \
 				water_render.c \
-				water_may_pass.c
+				water_may_pass.c \
+				water_tick.c
 
 FLOOR_FILES	=	floor_get_tile.c \
 				floor_set_tile.c \
@@ -236,7 +237,9 @@ SAND_FILES	=	sand.c \
 				sand_render.c
 
 FARMLAND_FILES	=	farmland.c \
-					farmland_render.c
+					farmland_render.c \
+					farmland_tick.c \
+					farmland_step.c
 
 CACTUS_FILES	=	cactus.c \
 					cactus_render.c \
@@ -266,6 +269,11 @@ CARROT_FILES	=	carrot.c \
 ORE_FILES	=	ore.c \
 				ore_render.c
 
+LAVA_FILES	=	lava.c \
+				lava_render.c \
+				lava_may_pass.c \
+				lava_tick.c
+
 TILES_FILES	=	tiles.c \
 				$(addprefix dirt/, $(DIRT_FILES)) \
 				$(addprefix hole/, $(HOLE_FILES)) \
@@ -280,7 +288,8 @@ TILES_FILES	=	tiles.c \
 				$(addprefix farmland/, $(FARMLAND_FILES)) \
 				$(addprefix wheat/, $(WHEAT_FILES)) \
 				$(addprefix carrot/, $(CARROT_FILES)) \
-				$(addprefix ore/, $(ORE_FILES))
+				$(addprefix ore/, $(ORE_FILES)) \
+				$(addprefix lava/, $(LAVA_FILES))
 
 UNIVERSE_FILES	=	universe_create.c \
 					universe_tick.c \

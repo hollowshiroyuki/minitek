@@ -15,5 +15,7 @@ const tile_t farmland = {
     .sand = false,
     .grass = false,
     .lava = false,
-    .render = farmland_render
+    .render = farmland_render,
+    .step = farmland_step,
+    .tick = farmland_tick
 };
