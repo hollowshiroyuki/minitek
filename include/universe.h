@@ -19,7 +19,7 @@
 typedef struct universe_s
 {
     char path[PATH_MAX];
-    char name[10];
+    char *name;
     bool running;
     int floor_change;
     floor_t *active_floor;
@@ -39,5 +39,6 @@ void universe_destroy(universe_t *self);
 void universe_draw_gui(universe_t *self, screen_t *screen);
 void universe_set_menu(universe_t *self, menu_t *menu);
 void universe_change_floor(universe_t *self, int dir);
+bool universe_save(universe_t *self);
 
 #endif

@@ -19,7 +19,8 @@ entity_t *slime_create(int level)
     if (!new)
         return (0);
     memset(new, 0, sizeof(entity_t));
-    new->id = E_SLIME;
+    new->id = E_MOB;
+    new->mob.id = E_SLIME;
     new->mob.ent = new;
     new->mob.max_health = level * level * 5;
     new->mob.sli.mob = &new->mob;

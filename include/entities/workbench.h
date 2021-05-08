@@ -20,5 +20,6 @@ typedef struct workbench_s
 
 entity_t *workbench_create(void);
 bool workbench_use(entity_t *self, entity_t *player, int dir);
+void workbench_save(entity_t *self, int fd);
 
 #endif

@@ -18,6 +18,7 @@ typedef struct entity_s entity_t;
 
 typedef struct furniture_s
 {
+    int id;
     char *name;
     int push_time;
     int push_dir;
@@ -33,5 +34,6 @@ bool furniture_blocks(entity_t *self, entity_t *entity);
 void furniture_touched_by(entity_t *self, entity_t *entity);
 void furniture_take(entity_t *self, entity_t *player);
 void furniture_destroy(entity_t *self);
+void furniture_save(entity_t *self, int fd);
 
 #endif

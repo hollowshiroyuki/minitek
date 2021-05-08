@@ -95,7 +95,7 @@ void player_tick(entity_t *self)
     sfVector2i tile_pos = (sfVector2i){self->pos.x >> 4, self->pos.y >> 4};
 
     if (self->mob.pla.input->accept.clicked)
-        floor_set_tile(self->floor, (sfVector2i){tile_pos.x, tile_pos.y + 1}, stair_down, 0);
+        universe_save(self->mob.pla.universe);
 
     mob_tick(self);
     if (self->mob.pla.invul)

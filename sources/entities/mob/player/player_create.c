@@ -15,7 +15,8 @@
 
 void init_default_values(entity_t *new)
 {
-    new->id = E_PLAYER;
+    new->id = E_MOB;
+    new->mob.id = E_PLAYER;
     new->mob.ent = new;
     new->mob.pla.mob = &new->mob;
     new->mob.health = 10;

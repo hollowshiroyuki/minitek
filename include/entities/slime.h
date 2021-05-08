@@ -28,5 +28,6 @@ void slime_draw(entity_t *self, screen_t *screen);
 void slime_tick(entity_t *self);
 void slime_die(entity_t *self);
 void slime_touched_by(entity_t *self, entity_t *entity);
+void slime_save(entity_t *self, int fd);
 
 #endif

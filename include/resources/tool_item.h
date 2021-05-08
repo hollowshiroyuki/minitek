@@ -60,5 +60,6 @@ int tool_item_attack_bonus(item_t *self, entity_t *e);
 char *tool_item_get_name(item_t *self);
 bool tool_item_matches(item_t *self, item_t *item);
 void tool_item_funcs_combine(item_funcs_t *d, const item_funcs_t *i_f);
+void tool_item_save(item_t *self, int fd);
 
 #endif
