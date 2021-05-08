@@ -56,8 +56,12 @@ static void print_entries(sfVector2i size, screen_t *screen, int selection)
 void title_menu_draw(menu_t *self, screen_t *screen)
 {
     sfVector2i size = (sfVector2i){13, 2};
+    sfVector2f scale = (sfVector2f){screen->size.x / 256.0, screen->size.y / 256.0};
 
+    sfSprite_setScale(self->title.background, scale);
+    sfRenderWindow_drawSprite(screen->win, self->title.background, NULL);
     print_title(size, screen);
+    gui_frame_draw(screen, "", (sfVector2i){11, 7}, (sfVector2i){22, 12});
     print_entries(size, screen, self->title.selection);
     if (self->child)
         (self->child->funcs.draw)(self->child, screen);

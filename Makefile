@@ -327,9 +327,10 @@ SCREEN_FILES	=	screen_init.c \
 					screen_render_item.c
 
 TITLE_MENU_FILES	=	title_menu.c \
-					title_menu_create.c \
-					title_menu_tick.c \
-					title_menu_draw.c
+						title_menu_create.c \
+						title_menu_tick.c \
+						title_menu_draw.c \
+						title_menu_destroy.c
 
 INVENTORY_MENU_FILES	=	inventory_menu_create.c \
 							inventory_menu_draw.c \
