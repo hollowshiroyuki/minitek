@@ -51,7 +51,7 @@ bool creation_steps_next(menu_t *self)
             return (false);
         }
         randomize_seed();
-        if (!self->wsm.seed)
+        if (!self->wsm.seed[0])
             sd = random_int(99999);
         self->wsm.universe = universe_create(size, self->input, sd, name);
         self->wsm.parent->title.data->universe = self->wsm.universe;
