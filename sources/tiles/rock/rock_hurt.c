@@ -16,5 +16,6 @@
 
 void rock_hurt(floor_t *floor, sfVector2i pos, entity_t *entity, int dmg)
 {
+    printf("ocuh\n");
     rock_damage(floor, pos, dmg);
 }

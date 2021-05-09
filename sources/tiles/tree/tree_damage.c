@@ -43,10 +43,12 @@ static void tree_break(floor_t *floor, sfVector2i pos, int count1, int count2)
 void tree_damage(floor_t *floor, sfVector2i pos, int dmg)
 {
     int damage = floor_get_data(floor, pos) + dmg;
+    sfVector2i p_pos = (sfVector2i){pos.x * 16, pos.y * 16};
     int wood_drop = random_int(2) + 1;
     int accorn_drop = random_int(random_int(4) + 1);
 
-    damage = 51;
+    printf("damage @ %i, %i\n", pos.x, pos.y);
+    floor_add(floor, text_particle_create(dmg, p_pos, sfRed));
     if (damage > 20) {
         tree_break(floor, pos, wood_drop, accorn_drop);
     } else {
