@@ -61,7 +61,8 @@ MAIN_MENU_FILES	=	main_menu_update.c \
 
 RANDOM_FILES	=	random_float.c \
 					random_int.c \
-					randomize_seed.c
+					randomize_seed.c \
+					random_gaussian.c
 
 LEVEL_GEN_TOP_FILES	=	level_gen_create_top_map.c \
 						level_gen_create_and_validate_top_map.c \
@@ -174,6 +175,11 @@ ITEM_ENTITY_FILES	=	item_entity_create.c \
 						item_entity_save.c \
 						item_entity_load.c
 
+TEXT_PARTICLE_FILES	=	text_particle_create.c \
+						text_particle_draw.c \
+						text_particle_tick.c \
+						text_particle_funcs.c
+
 ENTITIES_FILES	=	entity_is_block_by.c \
 					entity_can_swim.c \
 					entity_create.c \
@@ -207,7 +213,8 @@ ENTITIES_FILES	=	entity_is_block_by.c \
 					entity_load.c \
 					$(addprefix mob/, $(MOB_FILES)) \
 					$(addprefix furniture/, $(FURNITURE_FILES)) \
-					$(addprefix item_entity/, $(ITEM_ENTITY_FILES))
+					$(addprefix item_entity/, $(ITEM_ENTITY_FILES)) \
+					$(addprefix text_particle/, $(TEXT_PARTICLE_FILES))
 
 DIRT_FILES	=	dirt.c \
 				dirt_render.c \

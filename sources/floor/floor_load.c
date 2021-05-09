@@ -29,21 +29,16 @@ static bool load_data(int **map, FILE *file)
 
     *map = malloc(sizeof(int) * map_size.x * map_size.y);
     split = str_split_count(str, ",", &count);
-    if (!str || !(*map)) {
-        printf("No maps\n");
+    if (!str || !(*map))
         return (true);
-    }
     if (count != map_size.x * map_size.y) {
-        printf("bad count\n");
         free(split);
         return (true);
     }
     for (int i = 0; !error && split[i]; i++) {
         (*map)[i] = hsy_atoi(split[i]);
-        if (!hsy_str_isnum(split[i])) {
-            printf("Bad num : %s\n", split[i]);
+        if (!hsy_str_isnum(split[i]))
             error = true;
-        }
     }
     free(split);
     return (error);

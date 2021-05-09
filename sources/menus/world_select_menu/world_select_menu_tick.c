@@ -70,7 +70,7 @@ bool creation_steps(menu_t *self)
     int fd = 0;
 
     if (self->wsm.stage == 1) {
-        self->child = text_input_menu_create(self->wsm.name, 15, name, self);
+        self->child = text_input_menu_create(self->wsm.name, 12, name, self);
         self->wsm.stage = 2;
         return (true);
     }

@@ -12,6 +12,21 @@
 
 const char *autorized = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789 ";
 
+static void fixed_keys_2(input_t *input, sfEvent *event)
+{
+    if (event->type == sfEvtMouseButtonPressed) {
+        if (event->mouseButton.button == sfMouseLeft)
+            mkey_toggle(&input->keys[C_ATTACK], true);
+        if (event->mouseButton.button == sfMouseRight)
+            mkey_toggle(&input->keys[C_ACCEPT], true);
+    } else if (event->type == sfEvtMouseButtonReleased) {
+        if (event->mouseButton.button == sfMouseLeft)
+            mkey_toggle(&input->keys[C_ATTACK], false);
+        if (event->mouseButton.button == sfMouseRight)
+            mkey_toggle(&input->keys[C_ACCEPT], false);
+    }
+}
+
 static void fixed_keys(input_t *input, sfEvent *event)
 {
     if (event->type == sfEvtKeyPressed) {
@@ -33,6 +48,7 @@ static void fixed_keys(input_t *input, sfEvent *event)
         if (event->key.code == sfKeyRight)
             mkey_toggle(&input->keys[C_RIGHT], false);
     }
+    fixed_keys_2(input, event);
 }
 
 static void dynamic_keys(input_t *input, sfEvent *event)
