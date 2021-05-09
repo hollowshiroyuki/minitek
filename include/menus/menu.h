@@ -19,6 +19,7 @@
 #include "menus/pause_menu.h"
 #include "menus/text_input_menu.h"
 #include "menus/options_menu.h"
+#include "menus/about_menu.h"
 #include "resources/item.h"
 
 typedef struct universe_s universe_t;
@@ -43,6 +44,7 @@ typedef struct menu_s
         world_select_menu_t wsm;
         text_input_menu_t ti;
         pause_menu_t pause;
+        about_menu_t about;
     };
     menu_funcs_t funcs;
 } menu_t;

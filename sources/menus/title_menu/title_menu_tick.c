@@ -30,6 +30,8 @@ static void menu_actions(menu_t *self)
         if (self->title.selection == 1) {
             self->child = options_menu_create(self->input, self);
         }
+        if (self->title.selection == 2)
+            self->child = about_menu_create(self->input, self);
         if (self->title.selection == 3) {
             self->title.data->stop = true;
         }
