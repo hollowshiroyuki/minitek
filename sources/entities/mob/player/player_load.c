@@ -60,7 +60,7 @@ bool player_load(entity_t **player, FILE *file)
         return (true);
     }
     load_values(*player, split);
-    error = inventory_load(&(*player)->mob.pla.inventory, split[6]);
+    (*player)->mob.pla.inventory = inventory_create(10);
     free(split);
     return (error);
 }

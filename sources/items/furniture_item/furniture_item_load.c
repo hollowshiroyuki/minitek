@@ -37,6 +37,7 @@ bool furniture_item_load(item_t **itm, char **split, int count)
         return (true);
     }
     furniture_id = hsy_atoi(split[1]);
+    printf("Load %i %i\n", furniture_id, F_WORKBENCH);
     furniture = furniture_create(furniture_id);
     *itm = furniture_item_create(furniture);
     return (error);

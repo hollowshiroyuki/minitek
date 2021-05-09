@@ -36,8 +36,10 @@ bool furniture_load(entity_t **e, char **split, int count)
     }
     type = hsy_atoi(split[4]);
     pos = (sfVector2i){hsy_atoi(split[2]), hsy_atoi(split[3])};
-    if (!error)
+    if (!error) {
+        printf("Loaded %i, %i\n", type, F_WORKBENCH);
         *e = furniture_create(type);
+    }
     (*e)->pos = pos;
     return (error);
 }
