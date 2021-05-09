@@ -16,7 +16,8 @@ enum {
     M_FLOOR_CHANGE,
     M_OPTIONS,
     M_WORLD_SELECT,
-    M_TEXT_INPUT
+    M_TEXT_INPUT,
+    M_PAUSE
 };
 
 #endif

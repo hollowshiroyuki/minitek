@@ -38,6 +38,8 @@ entity_t **floor_get_entities(floor_t *self, sfVector2i pos1, sfVector2i pos2)
                 continue;
             on_tile = self->entities_in_tiles[x + y * self->size.x];
             for (int i = 0; i < entities_per_tile && on_tile[i]; i++) {
+                if (ri == ent_count)
+                    break;
                 add_to_result(list, &ri, poss, on_tile[i]);
             }
         }

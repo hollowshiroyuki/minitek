@@ -23,7 +23,10 @@ static void input(menu_t *self, int len)
 
 void revive(menu_t *self)
 {
-    return;
+    self->dea.player->removed = false;
+    self->dea.player->mob.health = self->dea.player->mob.max_health;
+    universe_set_menu(self->dea.player->mob.pla.universe, NULL);
+    (self->funcs.destroy)(self);
 }
 
 void death_menu_tick(menu_t *self)
@@ -32,9 +35,13 @@ void death_menu_tick(menu_t *self)
     if (self->input->attack.clicked || self->input->accept.clicked) {
         if (self->dea.selection == 0)
             revive(self);
-        if (self->dea.selection == 1)
-            return;
-        if (self->dea.selection == 2)
-            return;
+        if (self->dea.selection == 1) {
+            self->dea.player->mob.pla.universe->running = false;
+            self->dea.player->mob.pla.universe->to_main_menu = true;
+        }
+        if (self->dea.selection == 2) {
+            self->dea.player->mob.pla.universe->running = false;
+            self->dea.player->mob.pla.universe->to_main_menu = false;
+        }
     }
 }

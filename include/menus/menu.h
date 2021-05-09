@@ -16,6 +16,7 @@
 #include "menus/floor_change_menu.h"
 #include "menus/death_menu.h"
 #include "menus/world_select_menu.h"
+#include "menus/pause_menu.h"
 #include "menus/text_input_menu.h"
 #include "menus/options_menu.h"
 #include "resources/item.h"
@@ -41,6 +42,7 @@ typedef struct menu_s
         options_menu_t opt;
         world_select_menu_t wsm;
         text_input_menu_t ti;
+        pause_menu_t pause;
     };
     menu_funcs_t funcs;
 } menu_t;

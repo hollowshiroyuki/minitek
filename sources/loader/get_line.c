@@ -23,6 +23,7 @@ char *get_line(FILE *file, bool fre)
     len = getline(&str, &b_len, file);
     if (len == -1) {
         free(str);
+        str = 0;
         return (0);
     }
     if (str[len - 1] == '\n')
