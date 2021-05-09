@@ -51,6 +51,7 @@ static void tick_entities(floor_t *self, entity_t *entities)
 
 void floor_tick(floor_t *self)
 {
+    floor_try_spawn(self, 5);
     tick_tiles(self);
     tick_entities(self, self->entities);
     self->tickCount++;
