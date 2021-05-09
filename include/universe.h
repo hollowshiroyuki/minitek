@@ -41,5 +41,7 @@ void universe_draw_gui(universe_t *self, screen_t *screen);
 void universe_set_menu(universe_t *self, menu_t *menu);
 void universe_change_floor(universe_t *self, int dir);
 bool universe_save(universe_t *self);
+universe_t *universe_load_from_file(char *name);
+void universe_kickstart(universe_t *self, input_t *input);
 
 #endif

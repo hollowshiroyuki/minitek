@@ -10,5 +10,5 @@
 
 bool entity_instance_of(entity_t *self, int id)
 {
-    return (id == E_ENTITY);
+    return (false);
 }

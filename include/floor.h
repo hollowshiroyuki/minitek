@@ -11,6 +11,7 @@
 #include <SFML/Graphics.h>
 #include "entities.h"
 #include "tiles/tile.h"
+#include <stdio.h>
 
 typedef struct floor_s
 {

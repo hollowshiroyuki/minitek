@@ -15,3 +15,6 @@ const sfVector2i render_size = {4 * scale , 3 * scale};
 // updated on player action.
 const int entities_per_tile = 10;
 const char *window_name = "MiniTek | MyRPG";
+// Only ^2 numbers, otherwise generation will behave wierd
+// 128x128 gives good performances on map loading and are big enough
+const sfVector2i map_size = (sfVector2i){128, 128};

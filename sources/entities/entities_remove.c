@@ -16,7 +16,7 @@ void entities_remove(entity_t **self, entity_t *entity)
 
     if (tmp == entity) {
         *self = tmp->next;
-        if (tmp->id != E_MOB && tmp->mob.id != E_PLAYER)
+        if (tmp->id != E_MOB && tmp->mob.id != MB_PLAYER)
             (*tmp->funcs.destroy)(tmp);
         return;
     } else {
@@ -26,7 +26,7 @@ void entities_remove(entity_t **self, entity_t *entity)
         }
         if (tmp) {
             prv->next = tmp->next;
-            if (tmp->id != E_MOB && tmp->mob.id != E_PLAYER) {
+            if (tmp->id != E_MOB && tmp->mob.id != MB_PLAYER) {
                 (*tmp->funcs.destroy)(tmp);
             }
         }

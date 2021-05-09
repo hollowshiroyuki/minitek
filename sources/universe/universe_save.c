@@ -14,7 +14,7 @@
 #include "hsy.h"
 #include "floor.h"
 
-int open_save_file(char *filename)
+static int open_save_file(char *filename)
 {
     char path[PATH_MAX];
     int fd;
@@ -29,6 +29,14 @@ int open_save_file(char *filename)
     return (fd);
 }
 
+void save_seeds(int seeds[2], int fd)
+{
+    hsy_fd_putnbr(fd, seeds[0]);
+    hsy_fd_putstr(fd, ",");
+    hsy_fd_putnbr(fd, seeds[1]);
+    hsy_fd_putstr(fd, "\n");
+}
+
 bool universe_save(universe_t *self)
 {
     int fd = open_save_file(self->name);
@@ -36,8 +44,12 @@ bool universe_save(universe_t *self)
     if (!fd)
         return (false);
     hsy_putstr("Saving ! The game will hang during the save.\n");
+    save_seeds(self->seeds, fd);
+    player_save(self->player, fd);
     for (int i = 0; i < 15 && self->floors[i]; i++) {
         floor_save(self->floors[i], fd);
+        if (self->floors[i + 1])
+            hsy_fd_putstr(fd, "\n");
     }
     close(fd);
     hsy_putstr("Done ! It's now safe to continue playing.\n");
