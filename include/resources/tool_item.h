@@ -22,7 +22,8 @@ enum {
     TT_SWORD,
     TT_AXE,
     TT_HOE,
-    TT_HEAVY_SWORD
+    TT_HEAVY_SWORD,
+    TT_COUNT
 };
 
 typedef struct tool_type_s
@@ -31,6 +32,8 @@ typedef struct tool_type_s
     char *name;
     int tex;
 } tool_type_t;
+
+extern const tool_type_t *tool_types[];
 
 extern const tool_type_t sword_type;
 extern const tool_type_t big_sword_type;

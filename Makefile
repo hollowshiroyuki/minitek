@@ -19,7 +19,7 @@ vpath %.c $(SOURCE_DIR)
 ### COMPILER OPTIONS ###
 ########################
 
-CC	=	gcc
+CC	=	clang
 
 CFLAGS	=	-W -Wall -Wextra -Werror \
 		-I$(HEADER_DIR) \
@@ -126,7 +126,9 @@ PLAYER_FILES	=	player_create.c \
 					player_hurt_pos.c \
 					player_get_attack_damage.c \
 					player_change_floor.c \
-					player_touch_item.c
+					player_touch_item.c \
+					player_save.c \
+					player_load.c
 
 MOB_FILES	=	mob_funcs.c \
 				mob_tick.c \
@@ -137,6 +139,8 @@ MOB_FILES	=	mob_funcs.c \
 				mob_move.c \
 				mob_start_pos.c \
 				mob_save.c \
+				mob_load.c \
+				simple_mob_load.c \
 				$(addprefix slime/, $(SLIME_FILES)) \
 				$(addprefix zombie/, $(ZOMBIE_FILES)) \
 				$(addprefix player/, $(PLAYER_FILES))
@@ -155,6 +159,9 @@ FURNITURE_FILES	=	furniture_funcs.c \
 					furniture_take.c \
 					furniture_destroy.c \
 					furniture_save.c \
+					furniture_create.c \
+					furnitures_types.c \
+					furniture_load.c \
 					$(addprefix workbench/, $(WORKBENCH_FILES))
 
 ITEM_ENTITY_FILES	=	item_entity_create.c \
@@ -164,7 +171,8 @@ ITEM_ENTITY_FILES	=	item_entity_create.c \
 						item_entity_destroy.c \
 						item_entity_take.c \
 						item_entity_touched_by.c \
-						item_entity_save.c
+						item_entity_save.c \
+						item_entity_load.c
 
 ENTITIES_FILES	=	entity_is_block_by.c \
 					entity_can_swim.c \
@@ -196,6 +204,7 @@ ENTITIES_FILES	=	entity_is_block_by.c \
 					entity_start_pos.c \
 					entity_heal.c \
 					entities_remove_all.c \
+					entity_load.c \
 					$(addprefix mob/, $(MOB_FILES)) \
 					$(addprefix furniture/, $(FURNITURE_FILES)) \
 					$(addprefix item_entity/, $(ITEM_ENTITY_FILES))
@@ -239,7 +248,8 @@ FLOOR_FILES	=	floor_get_tile.c \
 				floor_remove_entity.c \
 				floor_get_data.c \
 				floor_set_data.c \
-				floor_save.c
+				floor_save.c \
+				floor_load.c
 
 SAND_FILES	=	sand.c \
 				sand_render.c
@@ -306,7 +316,9 @@ UNIVERSE_FILES	=	universe_create.c \
 					universe_draw_gui.c \
 					universe_set_menu.c \
 					universe_change_floor.c \
-					universe_save.c
+					universe_save.c \
+					universe_load_from_file.c \
+					universe_kickstart.c
 
 GUI_FILES	=	gui_text_draw.c \
 				gui_frame_draw.c \
@@ -403,7 +415,8 @@ TOOL_ITEM_FILES	=	tool_item_create.c \
 					tool_item_draw_inventory.c \
 					tool_item_get_name.c \
 					tool_item_get_tex.c \
-					tool_item_save.c
+					tool_item_save.c \
+					tool_item_load.c
 
 RESOURCE_ITEM_FILES	=	resource_item_create.c \
 						resource_item_draw_icon.c \
@@ -413,7 +426,8 @@ RESOURCE_ITEM_FILES	=	resource_item_create.c \
 						resource_item_get_tex.c \
 						resource_item_interact_tile.c \
 						resource_item_is_depleted.c \
-						resource_item_save.c
+						resource_item_save.c \
+						resource_item_load.c
 
 INVENTORY_FILES	=	inventory_create.c \
 					inventory_add.c \
@@ -423,7 +437,9 @@ INVENTORY_FILES	=	inventory_create.c \
 					inventory_has_resources.c \
 					inventory_remove_resource.c \
 					inventory_remove_item.c \
-					inventory_count.c
+					inventory_count.c \
+					inventory_save.c \
+					inventory_load.c
 
 FURNITURE_ITEM_FILES	=	furniture_item_create.c \
 							furniture_item_draw_inventory.c \
@@ -435,9 +451,11 @@ FURNITURE_ITEM_FILES	=	furniture_item_create.c \
 							furniture_item_is_depleted.c \
 							furniture_item_funcs.c \
 							furniture_item_destroy.c \
-							furniture_item_save.c
+							furniture_item_save.c \
+							furniture_item_load.c
 
 ITEMS_FILES	=	resources.c \
+				resource_get.c \
 				resource_interact.c \
 				food_interact.c \
 				plant_interact.c \
@@ -460,6 +478,7 @@ ITEMS_FILES	=	resources.c \
 				item_list_size.c \
 				item_list_remove.c \
 				item_save.c \
+				item_load.c \
 				$(addprefix tool_item/, $(TOOL_ITEM_FILES)) \
 				$(addprefix resource_item/, $(RESOURCE_ITEM_FILES)) \
 				$(addprefix furniture_item/, $(FURNITURE_ITEM_FILES))
@@ -497,6 +516,10 @@ RECIPES_FILES	=	craft_create.c \
 					$(addprefix tool_recipe/, $(TOOL_RECIPE_FILES)) \
 					$(addprefix furniture_recipe/, $(FURNITURE_RECIPE_FILES))
 
+LOADER_FILES	=	parse_atoi.c \
+					get_line.c \
+					str_split.c
+
 SOURCES_FILES	=	main.c \
 					consts.c \
 					$(addprefix engine/, $(ENGINE_FILES)) \
@@ -517,7 +540,8 @@ SOURCES_FILES	=	main.c \
 					$(addprefix gui/, $(GUI_FILES)) \
 					$(addprefix items/, $(ITEMS_FILES)) \
 					$(addprefix inventory/, $(INVENTORY_FILES)) \
-					$(addprefix recipes/, $(RECIPES_FILES))
+					$(addprefix recipes/, $(RECIPES_FILES)) \
+					$(addprefix loader/, $(LOADER_FILES))
 
 LIBRARY		=	libhsy.a
 

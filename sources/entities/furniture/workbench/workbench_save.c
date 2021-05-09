@@ -15,6 +15,8 @@ void workbench_save(entity_t *self, int fd)
 {
     hsy_fd_putnbr(fd, self->id);
     hsy_fd_putstr(fd, ",");
+    hsy_fd_putnbr(fd, self->floor->depth);
+    hsy_fd_putstr(fd, ",");
     hsy_fd_putnbr(fd, self->pos.x);
     hsy_fd_putstr(fd, ",");
     hsy_fd_putnbr(fd, self->pos.y);

@@ -11,10 +11,11 @@
 #include "entities/mob.h"
 #include "entities_id.h"
 #include "hsy.h"
+#include "entities/furniture.h"
 #include "entities/workbench.h"
 
 void furniture_save(entity_t *self, int fd)
 {
-    if (self->fur.id == E_WORKBENCH)
+    if (self->fur.id == F_WORKBENCH)
         workbench_save(self, fd);
 }

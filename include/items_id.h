@@ -11,7 +11,8 @@
 enum {
     I_TOOL,
     I_FURNITURE,
-    I_RESOURCE
+    I_RESOURCE,
+    I_COUNT
 };
 
 #endif

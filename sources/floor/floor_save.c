@@ -28,6 +28,7 @@ void floor_save(floor_t *self, int fd)
 {
     int size = self->size.x * self->size.y;
 
+    hsy_fd_putstr(fd, "FLOOR\n");
     for (int i = 0; i < size; i++) {
         hsy_fd_putnbr(fd, self->tiles[i]);
         if (i != size - 1)
@@ -41,5 +42,6 @@ void floor_save(floor_t *self, int fd)
     }
     hsy_fd_putstr(fd, "\n");
     floor_save_entities(self->entities, fd);
+    hsy_fd_putstr(fd, "END_FLOOR");
     hsy_putstr("Floor saved.\n");
 }

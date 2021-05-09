@@ -80,3 +80,15 @@ const resource_t r_apple = {
     .food.stamina_cost = 1,
     .interact = food_interact
 };
+
+const resource_t *resources[] = {
+    &r_apple,
+    &r_bread,
+    &r_cloth,
+    &r_dirt,
+    &r_seeds,
+    &r_slime,
+    &r_stone,
+    &r_wood,
+    0
+};

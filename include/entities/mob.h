@@ -19,6 +19,13 @@ extern const entity_funcs_t mob_funcs;
 typedef struct entity_s entity_t;
 
 enum {
+    MB_PLAYER,
+    MB_ZOMBIE,
+    MB_SLIME,
+    MB_COUNT
+};
+
+enum {
     D_DOWN,
     D_UP,
     D_LEFT,

@@ -10,6 +10,7 @@
 #include "menus/menu.h"
 #include "screen.h"
 #include "hsy.h"
+#include "consts.h"
 
 const char *title_menu_entries[] = {
     "Play",
@@ -56,7 +57,8 @@ static void print_entries(sfVector2i size, screen_t *screen, int selection)
 void title_menu_draw(menu_t *self, screen_t *screen)
 {
     sfVector2i size = (sfVector2i){13, 2};
-    sfVector2f scale = (sfVector2f){screen->size.x / 256.0, screen->size.y / 256.0};
+    sfVector2f s = (sfVector2f){map_size.x, map_size.y};
+    sfVector2f scale = (sfVector2f){screen->size.x / s.x, screen->size.y / s.y};
 
     sfSprite_setScale(self->title.background, scale);
     sfRenderWindow_drawSprite(screen->win, self->title.background, NULL);

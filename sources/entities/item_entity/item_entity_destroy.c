@@ -11,7 +11,7 @@
 
 void item_entity_destroy(entity_t *self)
 {
-    if (!self->itm.picked_up) {
+    if (self->itm.item && !self->itm.picked_up) {
         (*self->itm.item->funcs.destroy)(self->itm.item);
     }
     entity_destroy(self);
