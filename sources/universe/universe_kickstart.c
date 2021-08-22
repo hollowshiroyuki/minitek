@@ -53,8 +53,8 @@ void universe_kickstart(universe_t *self, input_t *input)
 
     hsy_putstr("Starting the universe...\n");
     self->input = input;
-    self->active_floor = self->floors[(long)self->player->floor];
-    printf("Setting floor to %i\n", self->player->floor);
+    self->active_floor = self->floors[(long long)self->player->floor];
+    printf("Setting floor to %lli\n", (long long)self->player->floor);
     self->player->floor = self->active_floor;
     self->craft = craft_create();
     for (int i = 0; i < 15 && self->floors[i]; i++) {

@@ -108,7 +108,7 @@ $(TARGET_NAME): $(OBJECTS)
 	@echo -e "😺\e[35m -- LIB_HSY BUILD SUCCESS --\e[0m"
 
 $(OBJECT_DIR):
-	@mkdir -p $@
+	@mkdir $@
 
 $(SOURCE_DIR):
 	@echo "🙀\e[31m -- Error: source folder not found !\e[0m"
@@ -118,5 +118,6 @@ $(SOURCE_DIR):
 ########################
 
 $(OBJECT_DIR)/%.o : %.c
+	@echo gcc -c -o $@ $< $(CFLAGS)
 	@$(CC) -c -o $@ $< $(CFLAGS)
 	@echo -e "😺\e[35m -- $@ successfully compiled --\e[0m"

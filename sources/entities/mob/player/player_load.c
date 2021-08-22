@@ -37,7 +37,7 @@ static bool check_split(char **split)
 static void load_values(entity_t *e, char **split)
 {
     e->id = E_MOB;
-    e->floor = (void *)(long)hsy_atoi(split[1]);
+    e->floor = (void *)(long long)hsy_atoi(split[1]);
     e->pos = (sfVector2i){hsy_atoi(split[2]), hsy_atoi(split[3])};
     e->mob.id = MB_PLAYER;
     e->mob.health = hsy_atoi(split[5]);

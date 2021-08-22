@@ -88,7 +88,7 @@ universe_t *universe_load_from_file(char *name)
         error = player_load(&new->player, file);
     if (!error)
         error = floors_load(new->floors, file);
-    if (error || !new->floors[(long)new->player->floor]) {
+    if (error || !new->floors[(long long)new->player->floor]) {
         fclose(file);
         universe_destroy(new);
         return (0);

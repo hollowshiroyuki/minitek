@@ -38,7 +38,7 @@ static bool read_saves_dir(world_entry_t **entries)
     while ((i < 15) && (entry = readdir(dir))) {
         if (entry->d_name[0] == '.')
             continue;
-        if (hsy_strlen(entry->d_name) > 20 || entry->d_type != DT_REG)
+        if (hsy_strlen(entry->d_name) > 20)
             continue;
         entries[i] = malloc(sizeof(world_entry_t));
         entries[i]->error = false;

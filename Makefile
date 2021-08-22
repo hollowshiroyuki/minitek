@@ -19,7 +19,7 @@ vpath %.c $(SOURCE_DIR)
 ### COMPILER OPTIONS ###
 ########################
 
-CC	=	clang
+CC	=	gcc
 
 CFLAGS	=	-W -Wall -Wextra -Werror \
 		-I$(HEADER_DIR) \
@@ -607,13 +607,13 @@ $(LIBRARY):
 	@make -C $(LIBRARY_DIR) --no-print-directory
 
 $(OBJECT_DIR):
-	@mkdir -p $@
+	@mkdir $@
 
 $(OBJECT_DIR)/.:
-	@mkdir -p $@
+	@mkdir $@
 
 $(OBJECT_DIR)%/.:
-	@mkdir -p $@
+	@mkdir $@
 
 $(SOURCE_DIR):
 	@echo "🙀\e[31m -- Error: source folder not found !\e[0m"
@@ -626,4 +626,4 @@ $(SOURCE_DIR):
 
 $(OBJECT_DIR)/%.o : %.c | $$(@D)/.
 	@$(CC) -c -o $@ $< $(CFLAGS)
-	@echo -e "😺\e[35m -- $@ successfully compiled --\e[0m"
+	@echo "😺\e[35m -- $@ successfully compiled --\e[0m"
