@@ -5,3 +5,6 @@ memo
 dev
 .vscode
 .clang_complete
+*.dll
+*.exe
+*.zip
