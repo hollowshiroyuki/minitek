@@ -12,7 +12,7 @@
 const tile_t hole = {
     .id = T_HOLE,
     .water = true,
-    .sand = true,
+    .sand = false,
     .grass = false,
     .lava = true,
     .render = hole_render,

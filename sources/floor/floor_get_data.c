@@ -12,9 +12,12 @@
 
 int floor_get_data(floor_t *self, sfVector2i pos)
 {
-    int tile_id = 0;
+    int data = 0;
 
-    if (!pos.x || !pos.y || pos.x >= self->size.x || pos.y >= self->size.y)
+    if (pos.x < 0 || pos.y < 0)
         return (0);
-    return (self->data[pos.y * self->size.x + pos.x]);
+    if (pos.x >= self->size.x || pos.y >= self->size.y)
+        return (0);
+    data = self->data[self->size.x * pos.y + pos.x];
+    return (data);
 }

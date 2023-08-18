@@ -21,6 +21,7 @@ static void tick_tiles(floor_t *self)
         pos.x = random_int(self->size.x);
         pos.y = random_int(self->size.y);
         tile = floor_get_tile(self, pos);
+        printf("%i\n", self->data[self->size.x * pos.y + pos.x]);
         if (tile.tick)
             (*tile.tick)(tile, self, pos);
     }

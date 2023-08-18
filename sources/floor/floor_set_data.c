@@ -12,7 +12,9 @@
 
 void floor_set_data(floor_t *self, sfVector2i pos, int data)
 {
-    if (!pos.x || !pos.y || pos.x >= self->size.x || pos.y >= self->size.y)
+    if (pos.x < 0 || pos.y < 0)
+        return;
+    if (pos.x >= self->size.x || pos.y >= self->size.y)
         return;
     self->data[self->size.x * pos.y + pos.x] = data;
 }
