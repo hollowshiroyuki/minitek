@@ -410,6 +410,14 @@ TOOL_RECIPE_FILES	=	tool_recipe_create.c \
 						tool_recipe_funcs.c \
 						tool_recipe_craft.c
 
+FURNITURE_RECIPE_FILES	=	furniture_recipe_create.c \
+							furniture_recipe_funcs.c \
+							furniture_recipe_craft.c
+
+RESOURCE_RECIPE_FILES	=	resource_recipe_create.c \
+							resource_recipe_funcs.c \
+							resource_recipe_craft.c
+
 RECIPES_FILES	=	craft_create.c \
 					recipe_add_cost.c \
 					recipe_add.c \
@@ -428,7 +436,8 @@ RECIPES_FILES	=	craft_create.c \
 					recipe_list_size.c \
 					recipe_list_get.c \
 					recipe_list_sort.c \
-					$(addprefix tool_recipe/, $(TOOL_RECIPE_FILES))
+					$(addprefix tool_recipe/, $(TOOL_RECIPE_FILES)) \
+					$(addprefix furniture_recipe/, $(FURNITURE_RECIPE_FILES))
 
 SOURCES_FILES	=	main.c \
 					consts.c \
