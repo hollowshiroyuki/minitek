@@ -19,7 +19,11 @@ typedef struct engine_s engine_t;
 typedef struct scene_s scene_t;
 typedef struct asset_store_s asset_store_t;
 typedef struct menu_data_s menu_data_t;
+typedef struct game_data_s game_data_t;
+typedef struct universe_s universe_t;
 typedef enum engine_states_e engine_states_t;
+
+#include "screen.h"
 
 enum engine_states_e
 {
@@ -43,6 +47,12 @@ struct menu_data_s
     sfSprite *logo;
 };
 
+struct game_data_s
+{
+    universe_t *universe;
+    screen_t screen;
+};
+
 struct scene_s
 {
     void (*init)(engine_t *engine);
@@ -62,7 +72,13 @@ struct engine_s
     int active_scene;
     scene_t scenes[5];
     menu_data_t menu_data;
+    game_data_t game_data;
     sfRenderWindow *window;
+    long tick_count;
+    int ticks;
+    int fps;
+    sfClock *tick_clk;
+    sfClock *second_clk;
     sfView *view;
     sfEvent event;
     int ret;

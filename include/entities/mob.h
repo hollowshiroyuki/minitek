@@ -1,0 +1,37 @@
+/*
+** EPITECH PROJECT, 2021
+** rpg.h
+** File description:
+** hey. real programmers use vim
+*/
+
+#ifndef MOB_H_
+#define MOB_H_
+
+#include <SFML/Graphics.h>
+#include <stdbool.h>
+#include "entities/zombie.h"
+#include "entities/slime.h"
+
+extern const entity_funcs_t mob_funcs;
+
+typedef struct entity_s entity_t;
+
+typedef struct mob_s
+{
+    int dir;
+    int walk_dist;
+    sfVector2i knockback;
+    int max_health;
+    int health;
+    int hurt_time;
+    int swim_time;
+    int tick_time;
+    union {
+        slime_t sli;
+        zombie_t zom;
+    };
+    entity_t *ent;
+} mob_t;
+
+#endif

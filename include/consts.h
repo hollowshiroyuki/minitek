@@ -13,8 +13,8 @@
 #ifndef CONSTS_H_
 #define CONSTS_H_
 
-static const sfVector2i render_size = {288, 192};
-static const char *window_name = "MiniTek | MyRPG";
+extern const sfVector2i render_size;
+extern const char *window_name;
 
 #define TEX_ENTITIES "./assets/entities.png"
 #define TEX_GUI "./assets/gui.png"

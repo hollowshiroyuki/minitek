@@ -23,7 +23,7 @@ static bool underground_map_is_valid(int *map, int depth)
     return (is_valid);
 }
 
-maps_t level_gen_create_and_validate_underground_map(int w, int h, int depth)
+maps_t level_gen_create_and_validate_und_map(int w, int h, int depth)
 {
     maps_t maps;
     int tiles_count[T_COUNT];

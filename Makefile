@@ -26,6 +26,7 @@ CFLAGS	=	-W -Wall -Wextra -Werror \
 		-Wno-unused-variable \
 		-Wno-unused-parameter \
 		-Wno-deprecated-declarations \
+		-Wno-incompatible-pointer-types \
 		-g3 \
 		$(C_FLAGS_INPUT)
 
@@ -90,14 +91,100 @@ ENGINE_FILES	=	engine_init.c \
 					engine_internal_events.c \
 					engine_internal_resized.c
 
+SLIME_FILES	=	slime_create.c \
+				slime_funcs.c
+
+ZOMBIE_FILES	=	zombie_funcs.c
+
+MOB_FILES	=	mob_funcs.c \
+				$(addprefix slime/, $(SLIME_FILES)) \
+				$(addprefix zombie/, $(ZOMBIE_FILES))
+
+ENTITIES_FILES	=	entity_blocked_by.c \
+					entity_can_swim.c \
+					entity_create.c \
+					entity_destroy.c \
+					entity_draw.c \
+					entity_hurt.c \
+					entity_init.c \
+					entity_interact.c \
+					entity_move_axis.c \
+					entity_move.c \
+					entity_tick.c \
+					entity_touch_item.c \
+					entity_touched_by.c \
+					entity_use.c \
+					entity_instance_of.c \
+					entity_funcs.c \
+					entity_intersects.c \
+					entity_funcs_combine.c \
+					entities_funcs.c \
+					$(addprefix mob/, $(MOB_FILES))
+
+DIRT_FILES	=	dirt.c \
+				dirt_render.c
+
+HOLE_FILES	= hole.c
+
+STAIRUP_FILES	=	stair_up.c
+
+STAIRDOWN_FILES	=	stair_down.c
+
+WATER_FILES	=	water.c \
+				water_render.c
+
+FLOOR_FILES	=	floor_get_tile.c \
+				floor_set_tile.c \
+				floor_create.c \
+				floor_tick.c \
+				floor_draw_background.c \
+				floor_destroy.c
+
+SAND_FILES	=	sand.c \
+				sand_render.c
+
+GRASS_FILES	=	grass.c \
+				grass_render.c
+
+TILES_FILES	=	tiles.c \
+				$(addprefix dirt/, $(DIRT_FILES)) \
+				$(addprefix hole/, $(HOLE_FILES)) \
+				$(addprefix stair_up/, $(STAIRUP_FILES)) \
+				$(addprefix stair_down/, $(STAIRDOWN_FILES)) \
+				$(addprefix water/, $(WATER_FILES)) \
+				$(addprefix grass/, $(GRASS_FILES)) \
+				$(addprefix sand/, $(SAND_FILES))
+
+UNIVERSE_FILES	=	universe_create.c \
+					universe_tick.c \
+					universe_draw.c \
+					universe_destroy.c
+
+GAME_FILES	=	game_update.c \
+				game_draw.c \
+				game_init.c \
+				game_destroy.c
+
+SCREEN_FILES	=	screen_init.c \
+					screen_render_tile.c \
+					screen_set_offset.c \
+					screen_destroy.c
+
 SOURCES_FILES	=	main.c \
+					consts.c \
 					$(addprefix engine/, $(ENGINE_FILES)) \
 					$(addprefix view/, $(VIEW_FILES)) \
 					$(addprefix window/, $(WINDOW_FILES)) \
 					$(addprefix asset_manager/, $(ASSET_MAN_FILES)) \
 					$(addprefix menu/, $(MENU_FILES)) \
 					$(addprefix random/, $(RANDOM_FILES)) \
-					$(addprefix level_gen/, $(LEVEL_GEN_FILES))
+					$(addprefix level_gen/, $(LEVEL_GEN_FILES)) \
+					$(addprefix entities/, $(ENTITIES_FILES)) \
+					$(addprefix tiles/, $(TILES_FILES)) \
+					$(addprefix floor/, $(FLOOR_FILES)) \
+					$(addprefix universe/, $(UNIVERSE_FILES)) \
+					$(addprefix game/, $(GAME_FILES)) \
+					$(addprefix screen/, $(SCREEN_FILES))
 
 LIBRARY		=	libhsy.a
 
