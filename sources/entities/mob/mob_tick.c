@@ -18,8 +18,10 @@ void mob_tick(entity_t *self)
     if (floor_get_tile(self->floor, tile).id == T_LAVA) {
         mob_hurt(self, self, 4, mob->dir);
     }
-    if (self->mob.health <= 0)
+    if (self->mob.health <= 0) {
         self->removed = true;
+        (self->funcs.die)(self);
+    }
     if (mob->hurt_time)
         mob->hurt_time--;
 }

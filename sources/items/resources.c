@@ -6,6 +6,7 @@
 */
 
 #include "resources/resource.h"
+#include "resources/resources.h"
 #include "resources_id.h"
 #include "tiles/tile.h"
 #include "tiles/dirt.h"
@@ -37,6 +38,13 @@ const resource_t r_stone = {
     .id = R_STONE,
     .name = "Stone",
     .tex = 2,
+    .interact = resource_interact
+};
+
+const resource_t r_slime = {
+    .id = R_SLIME,
+    .name = "Slime",
+    .tex = 4 * 32 + 9,
     .interact = resource_interact
 };
 

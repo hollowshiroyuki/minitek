@@ -19,10 +19,12 @@ entity_t *slime_create(int level)
     if (!new)
         return (0);
     memset(new, 0, sizeof(entity_t));
-    new->mob.ent = new;
-    new->mob.sli.mob = &new->mob;
-    new->mob.health = 10;
     new->id = E_SLIME;
+    new->mob.ent = new;
+    new->mob.max_health = level * level * 5;
+    new->mob.sli.mob = &new->mob;
+    new->mob.health = new->mob.max_health;
+    new->box = (sfVector2i){4, 4};
     new->pos = (sfVector2i){random_int(1024), random_int(1024)};
     entity_funcs_combine(&new->funcs, &slime_funcs, &mob_funcs);
     return (new);

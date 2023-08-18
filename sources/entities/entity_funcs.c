@@ -25,5 +25,6 @@ const entity_funcs_t entity_funcs = {
     .find_start_pos = entity_find_start_pos,
     .blocks = entity_blocks,
     .init = entity_init,
-    .heal = entity_heal
+    .heal = entity_heal,
+    .die = entity_die
 };

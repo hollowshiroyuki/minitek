@@ -59,5 +59,6 @@ void entities_add_all(entity_t **dest, entity_t **src);
 void entities_remove(entity_t **self, entity_t *entity);
 void entity_heal(entity_t *self, int heal);
 void entities_remove_all(entity_t **self, entity_t **to_remove);
+void entity_die(entity_t *self);
 
 #endif

@@ -5,7 +5,9 @@
 ** hey. real programmers use vim
 */
 
+#include <stdio.h>
 #include "entities/entity.h"
+#include "entities_id.h"
 
 bool entity_move(entity_t *self, sfVector2i pos)
 {

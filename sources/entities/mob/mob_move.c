@@ -8,6 +8,8 @@
 #include "entities/entity.h"
 #include "tiles_id.h"
 #include "entities/mob.h"
+#include <stdio.h>
+#include "entities_id.h"
 
 static void knockback(entity_t *self)
 {
@@ -44,11 +46,13 @@ static void direction(entity_t *self, sfVector2i pos)
 
 bool mob_move(entity_t *self, sfVector2i pos)
 {
-    if (mob_is_swimming(self) && self->mob.swim_time++ % 2 == 0)
+    if (mob_is_swimming(self) && self->mob.swim_time++ % 2 == 0) {
         return (true);
+    }
     knockback(self);
-    if (self->mob.hurt_time)
+    if (self->mob.hurt_time) {
         return (true);
+    }
     direction(self, pos);
     return (entity_move(self, pos));
 }

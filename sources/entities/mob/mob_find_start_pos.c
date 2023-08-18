@@ -49,7 +49,7 @@ bool mob_find_start_pos(entity_t *self, floor_t *floor)
     pos2.y = pos.y * 16 + 8;
     if (floor->player && is_in_cam(floor->player->pos, pos2))
         return (false);
-    if (near_entities(floor, pos2, floor->monster_density))
+    if (near_entities(floor, pos2, floor->monster_density * 16))
         return (false);
     tile = floor_get_tile(floor, pos);
     if (!tile.may_pass || (*tile.may_pass)(tile, floor, pos, self)) {
