@@ -6,8 +6,10 @@
 */
 
 #include "rpg.h"
+#include "scenes.h"
 
 void engine_update(engine_t *engine)
 {
-    return;
+    if (scenes[engine->active_scene].update)
+        (scenes[engine->active_scene].update)(engine);
 }

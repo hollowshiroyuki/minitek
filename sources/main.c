@@ -6,10 +6,11 @@
 */
 
 #include "rpg.h"
+#include "scenes.h"
 
-int main(int argc, char **argv, char **envp)
+int main(int ac, char **av, char **env)
 {
-    engine_t engine = {.argc = argc, .argv = argv, .envp = envp};
+    engine_t engine = {.argc = ac, .argv = av, .envp = env};
 
     if (engine_usage(&engine))
         return (engine.ret);

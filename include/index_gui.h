@@ -35,17 +35,17 @@ typedef enum gui_tex_id_e
     GUI_TEX_MENU_BACK
 } gui_tex_id_t;
 
-const sfIntRect gui_tex_index[] = {
+static const sfIntRect gui_tex_index[] = {
 /*   X, Y, SX, SY  */
     {248, 0, 8, 8}, /* Error Texture */
-    {0, 0, 16, 120}, /* Logo */
+    {0, 0, 120, 16}, /* Logo */
     {0, 16, 8, 8}, /* Full Heart */
     {8, 16, 8, 8}, /* Full Energy */
     {16, 16, 8, 8}, /* Full Food */
     {24, 16, 8, 8}, /* Ver Swipe 1 */
     {32, 16, 8, 8}, /* Hor Swipe 1 */
     {40, 16, 8, 8}, /* Bluepill */
-    {48, 16, 8, 8} /* Redpill */
+    {48, 16, 8, 8}, /* Redpill */
     {0, 24, 8, 8}, /* Empty Heart */
     {8, 24, 8, 8}, /* Empty Energy */
     {16, 24, 8, 8}, /* Empty Food */
