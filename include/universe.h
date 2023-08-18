@@ -24,7 +24,7 @@ typedef struct universe_s
 } universe_t;
 
 void universe_tick(universe_t *self);
-universe_t *universe_create(sfVector2i size);
+universe_t *universe_create(sfVector2i size, input_t *input);
 void universe_draw(universe_t *self, screen_t *screen);
 void universe_destroy(universe_t *self);
 

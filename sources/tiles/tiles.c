@@ -14,6 +14,7 @@
 #include "tiles/water.h"
 #include "tiles/grass.h"
 #include "tiles/sand.h"
+#include "tiles/cactus.h"
 #include "tiles.h"
 
 const tile_t *tiles[T_COUNT] = {
@@ -23,5 +24,6 @@ const tile_t *tiles[T_COUNT] = {
     &stair_down,
     &water,
     &grass,
-    &sand
+    &sand, 
+    &cactus
 };

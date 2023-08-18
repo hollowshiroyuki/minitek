@@ -12,7 +12,7 @@
 #include <stdbool.h>
 #include "entities/zombie.h"
 #include "entities/slime.h"
-#include "player.h"
+#include "entities/player.h"
 
 extern const entity_funcs_t mob_funcs;
 
@@ -42,5 +42,12 @@ typedef struct mob_s
     };
     entity_t *ent;
 } mob_t;
+
+void mob_tick(entity_t *self);
+void mob_do_hurt(entity_t *self, int damage, int dir);
+void mob_hurt(entity_t *self, entity_t *mob, int damage, int dir);
+bool mob_is_swimming(entity_t *self);
+bool mob_move(entity_t *self, sfVector2i pos);
+void mob_hurt_tile(entity_t *self, tile_t tile, sfVector2i pos, int dmg);
 
 #endif
