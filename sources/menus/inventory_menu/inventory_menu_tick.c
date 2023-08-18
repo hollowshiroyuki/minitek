@@ -29,7 +29,7 @@ void inventory_menu_tick(menu_t *self)
     item_t *item;
 
     input(self, len);
-    if (in->menu.clicked) {
+    if (in->menu.clicked || in->escape.clicked) {
         universe_set_menu(self->universe, NULL);
         (self->funcs.destroy)(self);
         return;

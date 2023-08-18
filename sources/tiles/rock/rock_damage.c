@@ -46,7 +46,7 @@ void rock_damage(floor_t *floor, sfVector2i pos, int dmg)
     int stone_drop = random_int(4) + 1;
     int coal_drop = random_int(2);
 
-    damage = 51;
+    floor_add(floor, text_particle_create(damage, pos, sfRed));
     if (damage > 50) {
         rock_break(floor, pos, stone_drop, coal_drop);
     } else {

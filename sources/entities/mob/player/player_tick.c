@@ -94,9 +94,10 @@ void player_tick(entity_t *self)
 {
     sfVector2i tile_pos = (sfVector2i){self->pos.x >> 4, self->pos.y >> 4};
 
-    if (self->mob.pla.input->accept.clicked)
-        universe_save(self->mob.pla.universe);
-
+    if (self->mob.pla.input->escape.clicked) {
+        universe_set_menu(self->mob.pla.universe, pause_menu_create(self));
+        return;
+    }
     mob_tick(self);
     if (self->mob.pla.invul)
         self->mob.pla.invul--;

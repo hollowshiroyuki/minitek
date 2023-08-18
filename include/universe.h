@@ -21,6 +21,7 @@ typedef struct universe_s
     char path[PATH_MAX];
     char *name;
     bool running;
+    bool to_main_menu;
     int floor_change;
     int seeds[2];
     floor_t *active_floor;

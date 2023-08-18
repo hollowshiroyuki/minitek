@@ -33,6 +33,7 @@ void load_file(menu_t *self)
     char *select = self->wsm.worlds[self->wsm.selection]->name;
 
     self->wsm.universe = universe_load_from_file(select);
+    input_release_all(self->input);
     if (self->wsm.universe) {
         universe_kickstart(self->wsm.universe, self->input);
         self->wsm.parent->title.data->universe = self->wsm.universe;

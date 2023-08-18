@@ -93,6 +93,7 @@ universe_t *universe_load_from_file(char *name)
         universe_destroy(new);
         return (0);
     }
+    get_line(file, true);
     fclose(file);
     return (new);
 }
