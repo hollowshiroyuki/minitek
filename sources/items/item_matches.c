@@ -7,6 +7,7 @@
 
 #include "resources/item.h"
 #include "items_id.h"
+#include "entities/entity.h"
 
 bool item_matches(item_t *self, item_t *item)
 {
@@ -19,6 +20,11 @@ bool item_matches(item_t *self, item_t *item)
             return (self->tool.level == item->tool.level);
         } else {
             return (false);
+        }
+    }
+    if (self->id == I_FURNITURE) {
+        if (self->fur.furniture->id == item->fur.furniture->id) {
+            return (true);
         }
     }
     return (false);
