@@ -21,6 +21,7 @@ void universe_change_floor(universe_t *self, int dir)
     if (!self->floors[depth])
         self->floors[depth] = floor_create(size, depth, self->active_floor);
     self->active_floor = self->floors[depth];
+    self->player->next = 0;
     self->player->pos.x = (self->player->pos.x >> 4) * 16 + 8;
     self->player->pos.y = (self->player->pos.y >> 4) * 16 + 8;
     floor_add(self->active_floor, self->player);

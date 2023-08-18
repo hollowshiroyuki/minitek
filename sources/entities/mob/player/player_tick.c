@@ -8,6 +8,7 @@
 #include "entities/entity.h"
 #include "entities/player.h"
 #include "entities/mob.h"
+#include "tiles/stair.h"
 #include "screen.h"
 #include "universe.h"
 #include "tiles_id.h"
@@ -36,12 +37,12 @@ static void stamina_tick(entity_t *self)
 
 static bool change_level(entity_t *self)
 {
-    sfVector2i pos =  (sfVector2i){self->pos.x, self->pos.y};
+    sfVector2i pos = (sfVector2i){self->pos.x >> 4, self->pos.y >> 4};
     tile_t tile = floor_get_tile(self->floor, pos);
 
     if (tile.id == T_STAIRDOWN || tile.id == T_STAIRUP) {
         if (self->mob.pla.stair_delay == 0) {
-            player_change_floor(self, (tile.id == T_STAIRUP) ? 1 : -1);
+            player_change_floor(self, (tile.id == T_STAIRUP) ? -1 : 1);
             self->mob.pla.stair_delay = 10;
             return (true);
         }
@@ -95,7 +96,7 @@ void player_tick(entity_t *self)
     tile_t on_tile = floor_get_tile(self->floor, tile_pos);
 
     if (self->mob.pla.input->accept.clicked)
-        floor_add(self->floor, item_entity_create(resource_item_create((resource_t *)&r_stone, 1), self->pos));
+        floor_set_tile(self->floor, (sfVector2i){tile_pos.x, tile_pos.y + 2}, stair_down, 0);
     mob_tick(self);
     if (self->mob.pla.invul)
         self->mob.pla.invul--;

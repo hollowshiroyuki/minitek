@@ -15,7 +15,6 @@ bool workbench_use(entity_t *self, entity_t *player, int dir)
     recipe_t *recipes = uni->craft->workbench;
     menu_t *craft_menu = crafting_menu_create(recipes, player, "Crafting");
 
-    printf("Workbench\n");
     universe_set_menu(uni, craft_menu);
     return (true);
 }
