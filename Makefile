@@ -61,6 +61,7 @@ RANDOM_FILES	=	random_float.c \
 					random_int.c
 
 LEVEL_GEN_TOP_FILES =	level_gen_create_top_map.c \
+						level_gen_create_and_validate_top_map.c \
 						top_map_generate_island.c \
 						top_map_generate_sand.c \
 						top_map_generate_trees.c \
@@ -83,7 +84,7 @@ ENGINE_FILES	=	engine_init.c \
 					engine_internal_events.c \
 					engine_internal_resized.c
 
-SOURCES_FILES	=	../dev/map_main.c \
+SOURCES_FILES	=	main.c \
 					$(addprefix engine/, $(ENGINE_FILES)) \
 					$(addprefix view/, $(VIEW_FILES)) \
 					$(addprefix window/, $(WINDOW_FILES)) \
