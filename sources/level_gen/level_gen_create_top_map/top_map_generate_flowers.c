@@ -18,7 +18,7 @@ void generate_flowers(maps_t m, sfVector2i s)
         p[0].y = random_int(s.y);
         for (int j = 0; j < 30; j++) {
             p[1].x = p[0].x + random_int(5) - random_int(5);
-            p[1].y = p[0].y + random_int(5) - random_int(5); 
+            p[1].y = p[0].y + random_int(5) - random_int(5);
             if (p[1].x < 0 || p[1].y < 0 || p[1].x >= s.x || p[1].y >= s.y)
                 continue;
             if (m.map[p[1].x + p[1].y * s.x] == T_GRASS) {

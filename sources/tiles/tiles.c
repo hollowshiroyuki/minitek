@@ -24,6 +24,6 @@ const tile_t *tiles[T_COUNT] = {
     &stair_down,
     &water,
     &grass,
-    &sand, 
+    &sand,
     &cactus
 };

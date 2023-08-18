@@ -44,7 +44,7 @@ static void direction(entity_t *self, sfVector2i pos)
 
 bool mob_move(entity_t *self, sfVector2i pos)
 {
-    if (mob_is_swimming(self) && self->mob.swim_time++ % 2 == 0)
+    if (mob_is_swimming(self) && self->mob.swim_time++ % 4 == 0)
         return (true);
     knockback(self);
     if (self->mob.hurt_time)
