@@ -15,7 +15,7 @@
 void inventory_menu_draw(menu_t *self, screen_t *screen)
 {
     sfVector2i pos1 = (sfVector2i){1, 1};
-    sfVector2i pos2 = (sfVector2i){13, 16};
+    sfVector2i pos2 = (sfVector2i){14, 16};
     int val[5] = {pos1.x, pos1.y, pos2.x, pos2.y, self->inv.selection};
     item_t *items = self->inv.player->mob.pla.inventory->items;
 

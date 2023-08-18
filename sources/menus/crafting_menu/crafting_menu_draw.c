@@ -23,7 +23,7 @@ static void draw_frames(menu_t *self, screen_t *scr)
 
     gui_frame_draw(scr, "Have", pos_1hr, pos_2hr);
     gui_frame_draw(scr, "Cost", pos_1cr, pos_2cr);
-    gui_frame_draw(scr, name, (sfVector2i){1, 1}, (sfVector2i){13, 16});
+    gui_frame_draw(scr, name, (sfVector2i){1, 1}, (sfVector2i){14, 16});
 }
 
 static void draw_costs(menu_t *self, screen_t *scr, recipe_t *recipe)
@@ -65,7 +65,7 @@ void crafting_menu_draw(menu_t *self, screen_t *screen)
     int select = self->craft.selection;
     recipe_t *selected = recipe_list_get(self->craft.recipes, select);
     item_t *first_item = self->craft.recipes->result;
-    int il_dat[5] = {1, 1, 11, 11, self->craft.selection};
+    int il_dat[5] = {1, 1, 14, 16, self->craft.selection};
 
     draw_frames(self, screen);
     (self->funcs.draw_item_list)(self, screen, il_dat, first_item);
