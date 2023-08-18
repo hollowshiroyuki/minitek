@@ -38,6 +38,12 @@ LFLAGS	=	-L$(LIBRARY_DIR) -lhsy \
 ### SOURCES FILES    ###
 ########################
 
+# Pour gérer les dossiers imbriqués dans les sources faire ceci :
+# Créer une règle au dessus de ce commentaire contenant les fichiers.
+# ex: WINDOW_FILES : window_create.c
+# Ajouter une entrée dans SOURCE_FILES comme ceci :
+# $(addprefix <nomdudossier>/, $(<NOMDELAREGLE>))
+
 SOURCES_FILES	=	main.c
 
 LIBRARY		=	libhsy.a
