@@ -7,7 +7,7 @@
 
 #include "entities/entity.h"
 
-bool entity_is_blockable_by(entity_t *self, entity_t *entity)
+bool entity_is_block_by(entity_t *self, entity_t *entity)
 {
     return (false);
 }

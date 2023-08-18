@@ -40,5 +40,4 @@ void item_entity_tick(entity_t *self)
         self->removed = true;
         return;
     }
-    //calc_next_pos(self);
 }

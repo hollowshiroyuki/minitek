@@ -28,7 +28,7 @@ universe_t *universe_create(sfVector2i size, input_t *input, int seed, char *n)
     new->active_floor = new->floors[1];
     new->player = player_create(new, input);
     new->craft = craft_create();
-    (*new->player->funcs.find_start_pos)(new->player, new->active_floor);
+    (*new->player->funcs.start_pos)(new->player, new->active_floor);
     floor_add(new->active_floor, new->player);
     new->running = true;
     return (new);

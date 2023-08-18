@@ -13,5 +13,5 @@ const entity_funcs_t mob_funcs = {
     .do_hurt = mob_do_hurt,
     .move = mob_move,
     .hurt_tile = mob_hurt_tile,
-    .find_start_pos = mob_find_start_pos
+    .start_pos = mob_start_pos
 };

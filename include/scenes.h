@@ -11,11 +11,12 @@
 #include "rpg.h"
 #include "game.h"
 
+/* S_COUNT absolutely needs to be the last !*/
 enum scene_id_e
 {
     S_MENU,
     S_GAME,
-    S_COUNT /*This one absolutely need to be the last !*/
+    S_COUNT
 };
 
 static const scene_t scenes[] = {

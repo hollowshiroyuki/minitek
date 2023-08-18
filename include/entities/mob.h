@@ -49,6 +49,6 @@ void mob_hurt(entity_t *self, entity_t *mob, int damage, int dir);
 bool mob_is_swimming(entity_t *self);
 bool mob_move(entity_t *self, sfVector2i pos);
 void mob_hurt_tile(entity_t *self, tile_t tile, sfVector2i pos, int dmg);
-bool mob_find_start_pos(entity_t *self, floor_t *floor);
+bool mob_start_pos(entity_t *self, floor_t *floor);
 
 #endif

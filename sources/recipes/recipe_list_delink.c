@@ -10,7 +10,6 @@
 #include <stdio.h>
 #include "recipes/craft.h"
 
-// Used to destroy a copied list
 void recipe_list_delink(recipe_t *list)
 {
     recipe_t *tmp;

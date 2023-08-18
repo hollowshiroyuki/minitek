@@ -8,7 +8,7 @@
 #include <stdio.h>
 #include "tiles/tile.h"
 #include "tiles_id.h"
-#include "index_til.h"
+
 #include "entities/entity.h"
 #include "floor.h"
 #include "resources/item.h"

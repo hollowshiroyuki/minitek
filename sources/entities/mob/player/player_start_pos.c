@@ -13,7 +13,7 @@
 #include "random.h"
 #include "tiles_id.h"
 
-bool player_find_start_pos(entity_t *self, floor_t *floor)
+bool player_start_pos(entity_t *self, floor_t *floor)
 {
     sfVector2i pos = {0};
 

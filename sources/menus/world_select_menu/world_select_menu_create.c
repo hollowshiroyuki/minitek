@@ -43,7 +43,6 @@ static bool read_saves_dir(world_entry_t **entries)
         entries[i] = malloc(sizeof(world_entry_t));
         entries[i]->error = false;
         hsy_strcpy(entries[i]->name, entry->d_name);
-        printf("%s\n", entries[i]->name);
         i++;
     }
     closedir(dir);

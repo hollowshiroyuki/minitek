@@ -16,11 +16,11 @@
 #include "random.h"
 #include <stdio.h>
 
-static void move(entity_t *self)
+static void move(entity_t *self, sfVector2i off)
 {
     sfVector2i dir;
     int speed = self->mob.tick_time & 1;
-    sfVector2i n_pos = (sfVector2i){self->mob.zom.off.x * speed, self->mob.zom.off.y * speed};
+    sfVector2i n_pos = (sfVector2i){off.x * speed, off.y * speed};
 
     if (self->floor->player && self->mob.zom.walk_time == 0) {
         dir.x = self->floor->player->pos.x - self->pos.x;
@@ -37,12 +37,11 @@ static void move(entity_t *self)
         self->mob.zom.off.x = (random_int(3) - 1) * random_int(2);
         self->mob.zom.off.y = (random_int(3) - 1) * random_int(2);
     }
-    if (self->mob.zom.walk_time)
-        self->mob.zom.walk_time--;
+    self->mob.zom.walk_time -= (self->mob.zom.walk_time > 0) ? 1 : 0;
 }
 
 void zombie_tick(entity_t *self)
 {
     mob_tick(self);
-    move(self);
+    move(self, self->mob.zom.off);
 }

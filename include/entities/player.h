@@ -39,7 +39,7 @@ typedef struct player_s
 void player_tick(entity_t *self);
 entity_t *player_create(universe_t *universe, input_t *input);
 void player_draw(entity_t *self, screen_t *screen);
-bool player_find_start_pos(entity_t *self, floor_t *floor);
+bool player_start_pos(entity_t *self, floor_t *floor);
 void player_do_hurt(entity_t *self, int damage, int dir);
 void player_hurt_tile(entity_t *self, tile_t tile, sfVector2i pos, int dmg);
 bool player_can_swim(entity_t *self);

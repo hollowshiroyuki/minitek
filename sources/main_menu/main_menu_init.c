@@ -6,7 +6,6 @@
 */
 
 #include "rpg.h"
-#include "index_gui.h"
 #include "universe.h"
 
 void main_menu_init(engine_t *engine)

@@ -28,12 +28,12 @@ typedef struct entity_funcs_s
     bool (*move)(entity_t *self, sfVector2i pos);
     bool (*move_axis)(entity_t *self, sfVector2i pos);
     void (*touched_by)(entity_t *self, entity_t *entity);
-    bool (*is_blockable_by)(entity_t *self, entity_t *entity);
+    bool (*is_block_by)(entity_t *self, entity_t *entity);
     void (*touch_item)(entity_t *self, entity_t *item);
     bool (*can_swim)(entity_t *self);
     bool (*interact)(entity_t *self, entity_t *entity, item_t *item, int dir);
     bool (*use)(entity_t *self, entity_t *entity, int dir);
-    bool (*find_start_pos)(entity_t *self, floor_t *floor);
+    bool (*start_pos)(entity_t *self, floor_t *floor);
     void (*init)(entity_t *self, floor_t *floor);
     void (*heal)(entity_t *self, int heal);
     void (*die)(entity_t *self);
