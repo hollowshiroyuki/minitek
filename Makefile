@@ -179,7 +179,8 @@ TREE_FILES	=	tree.c \
 				tree_render.c \
 				tree_may_pass.c
 
-STAIRUP_FILES	=	stair_up.c
+STAIRUP_FILES	=	stair_up.c \
+					stair_up_render.c
 
 STAIRDOWN_FILES	=	stair_down.c \
 					stair_down_render.c
@@ -207,6 +208,9 @@ FLOOR_FILES	=	floor_get_tile.c \
 SAND_FILES	=	sand.c \
 				sand_render.c
 
+FARMLAND_FILES	=	farmland.c \
+					farmland_render.c
+
 CACTUS_FILES	=	cactus.c \
 					cactus_render.c \
 					cactus_bump.c \
@@ -218,8 +222,18 @@ GRASS_FILES	=	grass.c \
 ROCK_FILES	=	rock.c \
 				rock_render.c \
 				rock_may_pass.c
+
 FLOWER_FILES	=	flower.c \
 					flower_render.c
+
+WHEAT_FILES	=	wheat.c \
+				wheat_render.c
+
+CARROT_FILES	=	carrot.c \
+					carrot_render.c
+
+ORE_FILES	=	ore.c \
+				ore_render.c
 
 TILES_FILES	=	tiles.c \
 				$(addprefix dirt/, $(DIRT_FILES)) \
@@ -232,7 +246,11 @@ TILES_FILES	=	tiles.c \
 				$(addprefix cactus/, $(CACTUS_FILES)) \
 				$(addprefix rock/, $(ROCK_FILES)) \
 				$(addprefix tree/, $(TREE_FILES)) \
-				$(addprefix flower/, $(FLOWER_FILES))
+				$(addprefix flower/, $(FLOWER_FILES)) \
+				$(addprefix farmland/, $(FARMLAND_FILES)) \
+				$(addprefix wheat/, $(WHEAT_FILES)) \
+				$(addprefix carrot/, $(CARROT_FILES)) \
+				$(addprefix ore/, $(ORE_FILES))
 
 UNIVERSE_FILES	=	universe_create.c \
 					universe_tick.c \
