@@ -14,6 +14,19 @@
 #include "hsy.h"
 #include "random.h"
 
+void create_floors(universe_t *self, sfVector2i size)
+{
+    srand(self->seeds[1]);
+    self->floors[0] = floor_create(size, 0, 0);
+    self->seeds[1] = random_int(INT_MAX);
+    srand(self->seeds[1]);
+    self->floors[1] = floor_create(size, 1, self->floors[0]);
+    self->seeds[1] = random_int(INT_MAX);
+    srand(self->seeds[1]);
+    self->floors[2] = floor_create(size, 2, self->floors[1]);
+    self->seeds[1] = random_int(INT_MAX);
+}
+
 universe_t *universe_create(sfVector2i size, input_t *input, int seed, char *n)
 {
     universe_t *new = malloc(sizeof(universe_t));
@@ -22,10 +35,10 @@ universe_t *universe_create(sfVector2i size, input_t *input, int seed, char *n)
         return (0);
     memset(new, 0, sizeof(universe_t));
     new->input = input;
+    new->seeds[0] = seed;
     srand(seed);
-    new->floors[0] = floor_create(size, 0, 0);
-    new->floors[1] = floor_create(size, 1, new->floors[0]);
-    new->floors[2] = floor_create(size, 2, new->floors[1]);
+    new->seeds[1] = random_int(INT_MAX);
+    create_floors(new, size);
     new->active_floor = new->floors[1];
     new->player = player_create(new, input);
     new->craft = craft_create();

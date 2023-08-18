@@ -22,6 +22,7 @@ typedef struct universe_s
     char *name;
     bool running;
     int floor_change;
+    int seeds[2];
     floor_t *active_floor;
     input_t *input;
     floor_t *floors[16];

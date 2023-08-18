@@ -31,7 +31,7 @@ void load_file(menu_t *self)
 {
     char *select = self->wsm.worlds[self->wsm.selection]->name;
 
-    self->wsm.universe = universe_create((sfVector2i){256, 256}, self->input, 42, "");
+    self->wsm.universe = 0;
     if (self->wsm.universe) {
         self->wsm.parent->title.data->universe = self->wsm.universe;
     } else {
