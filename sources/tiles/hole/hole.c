@@ -6,12 +6,14 @@
 */
 
 #include "tiles/tile.h"
+#include "tiles/hole.h"
 #include "tiles_id.h"
 
 const tile_t hole = {
     .id = T_HOLE,
-    .water = false,
-    .sand = false,
+    .water = true,
+    .sand = true,
     .grass = false,
-    .lava = false,
+    .lava = true,
+    .render = hole_render
 };

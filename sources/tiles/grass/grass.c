@@ -15,5 +15,6 @@ const tile_t grass = {
     .sand = false,
     .grass = true,
     .lava = false,
-    .render = grass_render
+    .render = grass_render,
+    .interact = grass_interact
 };

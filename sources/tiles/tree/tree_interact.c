@@ -15,6 +15,7 @@
 #include "tiles/tree.h"
 #include "entities/entity.h"
 #include "items_id.h"
+#include <stdio.h>
 
 bool tree_interact(tile_t self, floor_t *floor, sfVector2i pos, entity_t *e)
 {

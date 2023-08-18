@@ -55,6 +55,13 @@ const resource_t r_cloth = {
     .interact = resource_interact
 };
 
+const resource_t r_seeds = {
+    .id = R_SEEDS,
+    .name = "Seeds",
+    .tex = 3,
+    .interact = resource_interact
+};
+
 /* Consumables */
 const resource_t r_bread = {
     .id = R_BREAD,

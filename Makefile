@@ -194,9 +194,11 @@ ENTITIES_FILES	=	entity_is_blockable_by.c \
 					$(addprefix item_entity/, $(ITEM_ENTITY_FILES))
 
 DIRT_FILES	=	dirt.c \
-				dirt_render.c
+				dirt_render.c \
+				dirt_interact.c
 
-HOLE_FILES	= hole.c
+HOLE_FILES	=	hole.c \
+				hole_render.c
 
 TREE_FILES	=	tree.c \
 				tree_render.c \
@@ -241,7 +243,8 @@ CACTUS_FILES	=	cactus.c \
 					cactus_may_pass.c
 
 GRASS_FILES	=	grass.c \
-				grass_render.c
+				grass_render.c \
+				grass_interact.c
 
 ROCK_FILES	=	rock.c \
 				rock_render.c \
