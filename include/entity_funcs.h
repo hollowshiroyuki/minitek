@@ -12,6 +12,7 @@
 #include <stdbool.h>
 #include "screen.h"
 #include "tiles/tile.h"
+#include "resources/item.h"
 
 typedef struct entity_s entity_t;
 
@@ -30,8 +31,8 @@ typedef struct entity_funcs_s
     bool (*is_blockable_by)(entity_t *self, entity_t *entity);
     void (*touch_item)(entity_t *self, entity_t *item);
     bool (*can_swim)(entity_t *self);
-    bool (*interact)(entity_t *self, entity_t *entity, void *item, int dir);
-    bool (*use)(entity_t *self, void *entity, int dir);
+    bool (*interact)(entity_t *self, entity_t *entity, item_t *item, int dir);
+    bool (*use)(entity_t *self, entity_t *entity, int dir);
     bool (*find_start_pos)(entity_t *self, floor_t *floor);
     void (*init)(entity_t *self, floor_t *floor);
     void (*heal)(entity_t *self, int heal);

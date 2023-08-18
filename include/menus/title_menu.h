@@ -17,7 +17,7 @@ typedef struct title_menu_s
     int selection;
 } title_menu_t;
 
-menu_t *title_menu_create(void);
+menu_t *title_menu_create();
 void title_menu_tick(menu_t *self);
 void title_menu_draw(menu_t *self, screen_t *screen);
 

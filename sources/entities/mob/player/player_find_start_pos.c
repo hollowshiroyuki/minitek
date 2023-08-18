@@ -13,7 +13,7 @@
 #include "random.h"
 #include "tiles_id.h"
 
-void player_find_start_pos(entity_t *self, floor_t *floor)
+bool player_find_start_pos(entity_t *self, floor_t *floor)
 {
     sfVector2i pos = {0};
 
@@ -23,7 +23,7 @@ void player_find_start_pos(entity_t *self, floor_t *floor)
         if (floor_get_tile(floor, pos).id == T_GRASS) {
             self->pos.x = pos.x * 16 + 8;
             self->pos.y = pos.y * 16 + 8;
-            return;
+            return (true);
         }
     }
 }

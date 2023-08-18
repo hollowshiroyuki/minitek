@@ -7,7 +7,7 @@
 
 #include "entities/entity.h"
 
-void entity_heal(entity_t *self, sfRenderWindow *win)
+void entity_heal(entity_t *self, int heal)
 {
     return;
 }

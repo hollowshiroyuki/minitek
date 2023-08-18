@@ -10,14 +10,14 @@
 #include <stdio.h>
 #include "recipes/craft.h"
 
-// Used to destroy the real list
-void recipe_list_destroy(recipe_t *list)
+// Used to destroy a copied list
+void recipe_list_delink(recipe_t *list)
 {
     recipe_t *tmp;
 
     while (list) {
         tmp = list->next;
-        (list->funcs.destroy)(list);
+        free(list);
         list = tmp;
     }
 }

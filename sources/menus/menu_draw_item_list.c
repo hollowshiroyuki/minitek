@@ -52,7 +52,7 @@ void menu_draw_item_list(menu_t *self, screen_t *scr, int v[5], item_t *list)
     sfVector2i pos;
     item_t *item;
 
-    calc_select(&draw_cursor, &select);
+    calc_select(&select, &draw_cursor);
     if (itm_off > item_list_size(list) - r.height)
         itm_off = item_list_size(list) - r.height;
     itm_off = (itm_off < 0) ? 0 : itm_off;
