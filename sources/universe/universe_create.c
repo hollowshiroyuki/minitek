@@ -18,9 +18,8 @@ universe_t *universe_create(sfVector2i size, input_t *input, int seed)
 
     if (!new)
         return (0);
-    memset(new->floors, 0, sizeof(new->floors));
+    memset(new, 0, sizeof(universe_t));
     new->input = input;
-    new->tick_count = 0;
     new->floors[0] = floor_create(size, 0, 0);
     new->floors[1] = floor_create(size, 1, new->floors[0]);
     new->floors[2] = floor_create(size, 2, new->floors[1]);
