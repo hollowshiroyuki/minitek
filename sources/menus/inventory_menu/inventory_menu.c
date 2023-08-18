@@ -13,5 +13,6 @@ const menu_funcs_t inventory_menu_funcs =
     .init = menu_init,
     .tick = inventory_menu_tick,
     .draw = inventory_menu_draw,
-    .destroy = menu_destroy
+    .destroy = menu_destroy,
+    .draw_item_list = menu_draw_item_list
 };

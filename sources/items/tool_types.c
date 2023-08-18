@@ -19,35 +19,35 @@ const char *level_names[] =
 const tool_type_t shovel_type = {
     .id = TT_SHOVEL,
     .name = "Shovel",
-    .tex = 416
+    .tex = 13 * 32 + 0
 };
 
 const tool_type_t pick_type = {
     .id = TT_PICK,
     .name = "Pick",
-    .tex = 448
+    .tex = 13 * 32 + 3
 };
 
 const tool_type_t hoe_type = {
     .id = TT_HOE,
     .name = "Hoe",
-    .tex = 416
+    .tex = 13 * 32 + 1
 };
 
 const tool_type_t sword_type = {
     .id = TT_SWORD,
     .name = "Sword",
-    .tex = 416
+    .tex = 13 * 32 + 2
 };
 
 const tool_type_t axe_type = {
     .id = TT_AXE,
     .name = "Axe",
-    .tex = 416
+    .tex = 13 * 32 + 4
 };
 
 const tool_type_t big_sword_type = {
     .id = TT_HEAVY_SWORD,
     .name = "B.Sword",
-    .tex = 416
+    .tex = 13 * 32 + 5
 };

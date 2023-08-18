@@ -32,6 +32,13 @@ typedef struct tool_type_s
     int tex;
 } tool_type_t;
 
+extern const tool_type_t sword_type;
+extern const tool_type_t big_sword_type;
+extern const tool_type_t pick_type;
+extern const tool_type_t axe_type;
+extern const tool_type_t shovel_type;
+extern const tool_type_t hoe_type;
+
 typedef struct tool_item_s
 {
     tool_type_t *type;

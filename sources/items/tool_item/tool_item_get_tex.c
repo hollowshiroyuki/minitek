@@ -9,5 +9,5 @@
 
 int tool_item_get_tex(item_t *self)
 {
-    return (0);
+    return (self->tool.type->tex + self->tool.level * 32);
 }
