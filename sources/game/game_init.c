@@ -16,5 +16,5 @@ void game_init(engine_t *engine)
 
     screen_init(&data->screen, &engine->assets, engine->window);
     data->input = input_create();
-    data->universe = universe_create((sfVector2i){256, 256}, data->input);
+    data->universe = universe_create((sfVector2i){256, 256}, data->input, 42);
 }

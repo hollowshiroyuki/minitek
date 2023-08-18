@@ -7,7 +7,7 @@
 
 #include "entities/entity.h"
 
-void entity_init(entity_t *self, floor_t *floor)
+bool player_can_swim(entity_t *self)
 {
-    self->floor = floor;
+    return (true);
 }
