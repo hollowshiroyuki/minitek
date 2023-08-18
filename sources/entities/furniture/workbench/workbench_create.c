@@ -21,7 +21,7 @@ entity_t *workbench_create(void)
         return (0);
     memset(new, 0, sizeof(entity_t));
     new->id = E_FURNITURE;
-    new->fur.id = E_WORKBENCH;
+    new->fur.id = F_WORKBENCH;
     furniture_init(new, "Workbench");
     new->fur.tex = 4;
     new->box.x = 3;

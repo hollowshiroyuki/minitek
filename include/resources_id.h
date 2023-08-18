@@ -27,7 +27,8 @@ typedef enum
     R_DIRT,
     R_APPLE,
     R_SLIME,
-    R_SEEDS
+    R_SEEDS,
+    R_COUNT
 }  resources_id_t;
 
 #endif

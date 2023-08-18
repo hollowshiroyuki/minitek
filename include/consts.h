@@ -17,6 +17,7 @@ extern const int scale;
 extern const sfVector2i render_size;
 extern const char *window_name;
 extern const int entities_per_tile;
+extern const sfVector2i map_size;
 
 #define TEX_ENTITIES "./assets/entities.png"
 #define TEX_GUI "./assets/gui.png"

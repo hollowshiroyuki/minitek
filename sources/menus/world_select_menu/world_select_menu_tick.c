@@ -9,7 +9,8 @@
 #include "universe.h"
 #include "menus/menu.h"
 #include "hsy.h"
-#include  "random.h"
+#include "random.h"
+#include "consts.h"
 
 static void input(menu_t *self)
 {
@@ -31,9 +32,11 @@ void load_file(menu_t *self)
 {
     char *select = self->wsm.worlds[self->wsm.selection]->name;
 
-    self->wsm.universe = 0;
+    self->wsm.universe = universe_load_from_file(select);
     if (self->wsm.universe) {
+        universe_kickstart(self->wsm.universe, self->input);
         self->wsm.parent->title.data->universe = self->wsm.universe;
+        (self->funcs.destroy)(self);
     } else {
         self->wsm.worlds[self->wsm.selection]->error = true;
     }
@@ -43,7 +46,7 @@ bool creation_steps_next(menu_t *self)
 {
     int sd = hsy_atoi(self->wsm.seed);
     char *name = self->wsm.name;
-    sfVector2i size = (sfVector2i){256, 256};
+    sfVector2i size = map_size;
 
     if (self->wsm.stage == 3) {
         if (self->ti_status) {
@@ -104,6 +107,7 @@ void world_select_menu_tick(menu_t *self)
     }
     if (self->input->accept.clicked && self->wsm.selection > 0) {
         load_file(self);
+        return;
     }
     if (self->input->accept.clicked && self->wsm.selection == 0) {
         self->wsm.stage = 1;

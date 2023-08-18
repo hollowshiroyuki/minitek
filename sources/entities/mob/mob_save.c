@@ -15,8 +15,8 @@
 
 void mob_save(entity_t *self, int fd)
 {
-    if (self->mob.id == E_ZOMBIE)
+    if (self->mob.id == MB_ZOMBIE)
         zombie_save(self, fd);
-    if (self->mob.id == E_SLIME)
+    if (self->mob.id == MB_SLIME)
         slime_save(self, fd);
 }

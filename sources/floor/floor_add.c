@@ -14,7 +14,7 @@ void floor_add(floor_t *self, entity_t *entity)
 {
     sfVector2i e_pos = (sfVector2i){entity->pos.x >> 4, entity->pos.y >> 4};
 
-    if (entity->id == E_MOB && entity->mob.id == E_PLAYER)
+    if (entity->id == E_MOB && entity->mob.id == MB_PLAYER)
         self->player = entity;
     entity->removed = false;
     entities_add(&self->entities, entity);

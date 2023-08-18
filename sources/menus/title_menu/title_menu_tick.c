@@ -38,7 +38,6 @@ static void menu_actions(menu_t *self)
 
 void title_menu_tick(menu_t *self)
 {
-    sfVector2i u_size = (sfVector2i){256, 256};
     input_t *in = self->title.data->input;
 
     if (self->child) {

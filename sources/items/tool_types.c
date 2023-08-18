@@ -48,6 +48,14 @@ const tool_type_t axe_type = {
 
 const tool_type_t big_sword_type = {
     .id = TT_HEAVY_SWORD,
-    .name = "B.Sword",
+    .name = "H.Sword",
     .tex = 13 * 32 + 5
+};
+
+const tool_type_t *tool_types[] = {
+    &pick_type,
+    &shovel_type,
+    &sword_type,
+    &axe_type,
+    &hoe_type
 };

@@ -9,14 +9,10 @@
 #define ENTITIES_ID_H_
 
 enum {
-    E_ENTITY,
     E_MOB,
     E_ITEM,
     E_FURNITURE,
-    E_SLIME,
-    E_ZOMBIE,
-    E_PLAYER,
-    E_WORKBENCH
+    E_COUNT
 };
 
 #endif

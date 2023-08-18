@@ -20,7 +20,7 @@ item_t *tool_item_create(tool_type_t *type, int level)
     new->id = I_TOOL;
     new->tool.type = type;
     new->tool.level = level;
-    new->tool.max_level = 5;
+    new->tool.max_level = 4;
     hsy_strcat(new->tool.name, level_names[level]);
     hsy_strcat(new->tool.name, " ");
     hsy_strcat(new->tool.name, type->name);

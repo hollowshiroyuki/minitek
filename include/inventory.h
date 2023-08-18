@@ -28,5 +28,6 @@ bool inventory_has_resources(inventory_t *self, resource_t *res, int count);
 bool inventory_remove_resource(inventory_t *self, resource_t *res, int count);
 int inventory_count(inventory_t *self, item_t *item);
 void inventory_destroy(inventory_t *self);
+void inventory_save(inventory_t *inventory, int fd);
 
 #endif

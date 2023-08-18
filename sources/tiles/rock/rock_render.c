@@ -84,7 +84,7 @@ void rock_render(tile_t self, screen_t *scr, floor_t *floor, sfVector2i pos)
 
     for (int i = 1; i < 3; i++)
         for (int j = 0; j < 3; j++)
-            tex[i * 3 + j] = tex[(i - 1 * 3 + j)] + 32;
+            tex[i * 3 + j] = tex[(i - 1) * 3 + j] + 32;
     for (int i = 1; i < 4; i++)
         for (int j = 0; j < 2; j++)
             tex[9 + i * 2 + j] = tex[9 + (i - 1) * 2 + j] + 32;
