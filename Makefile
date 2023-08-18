@@ -106,7 +106,8 @@ PLAYER_FILES	=	player_create.c \
 					player_hurt_tile.c \
 					player_do_hurt.c \
 					player_can_swim.c \
-					player_pay_stamina.c
+					player_pay_stamina.c \
+					player_destroy.c
 
 MOB_FILES	=	mob_funcs.c \
 				mob_tick.c \
