@@ -14,7 +14,9 @@ enum {
     M_CRAFTING,
     M_DEATH,
     M_FLOOR_CHANGE,
-    M_OPTIONS
+    M_OPTIONS,
+    M_WORLD_SELECT,
+    M_TEXT_INPUT
 };
 
 #endif

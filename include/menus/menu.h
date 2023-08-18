@@ -15,6 +15,8 @@
 #include "menus/crafting_menu.h"
 #include "menus/floor_change_menu.h"
 #include "menus/death_menu.h"
+#include "menus/world_select_menu.h"
+#include "menus/text_input_menu.h"
 #include "menus/options_menu.h"
 #include "resources/item.h"
 
@@ -29,6 +31,7 @@ typedef struct menu_s
     input_t *input;
     char *name;
     menu_t *child;
+    int ti_status;
     union {
         title_menu_t title;
         inventory_menu_t inv;
@@ -36,6 +39,8 @@ typedef struct menu_s
         death_menu_t dea;
         floor_change_menu_t flc;
         options_menu_t opt;
+        world_select_menu_t wsm;
+        text_input_menu_t ti;
     };
     menu_funcs_t funcs;
 } menu_t;

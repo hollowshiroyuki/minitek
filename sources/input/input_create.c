@@ -15,6 +15,9 @@ input_t *input_create(void)
 
     new->has_focus = true;
     new->tmp = (mkey_t){0};
+    new->buf = 0;
+    new->buf_len = 0;
+    new->buf_pos = 0;
     mkey_init(&new->up, sfKeyZ, C_UP);
     mkey_init(&new->down, sfKeyS, C_DOWN);
     mkey_init(&new->left, sfKeyQ, C_LEFT);

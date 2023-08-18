@@ -5,6 +5,7 @@
 ** hey. real programmers use vim
 */
 
+#include "csfml_version.h"
 #include "rpg.h"
 #include "scenes.h"
 #include "entities.h"

@@ -27,6 +27,7 @@ CFLAGS	=	-W -Wall -Wextra -Werror \
 		-Wno-unused-parameter \
 		-Wno-unused-function \
 		-Wno-deprecated-declarations \
+		-fno-builtin \
 		-g3 \
 		$(C_FLAGS_INPUT)
 
@@ -349,6 +350,18 @@ OPTIONS_MENU_FILES	=	options_menu.c \
 						options_menu_draw.c \
 						options_menu_tick.c
 
+WORLD_SELECT_FILES	=	world_select.c \
+						world_select_menu_create.c \
+						world_select_menu_destroy.c \
+						world_select_menu_draw.c \
+						world_select_menu_tick.c
+
+TEXT_INPUT_FILES	=	text_input_menu.c \
+						text_input_menu_create.c \
+						text_input_menu_destroy.c \
+						text_input_menu_draw.c \
+						text_input_menu_tick.c
+
 MENUS_FILES	=	menu.c \
 				menu_tick.c \
 				menu_draw.c \
@@ -360,7 +373,9 @@ MENUS_FILES	=	menu.c \
 				$(addprefix crafting_menu/, $(CRAFTING_MENU_FILES)) \
 				$(addprefix death_menu/, $(DEATH_MENU_FILES)) \
 				$(addprefix floor_change_menu/, $(FLOOR_CHANGE_MENU_FILES)) \
-				$(addprefix options_menu/, $(OPTIONS_MENU_FILES))
+				$(addprefix options_menu/, $(OPTIONS_MENU_FILES)) \
+				$(addprefix world_select_menu/, $(WORLD_SELECT_FILES)) \
+				$(addprefix text_input_menu/, $(TEXT_INPUT_FILES))
 
 INPUT_FILES	=	input_create.c \
 				mkey_init.c \
