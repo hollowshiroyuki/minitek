@@ -21,6 +21,7 @@ maps_t level_gen_create_top_map(int w, int h)
     generate_island(noises, map, (sfVector2i){w, h});
     generate_sand(map, (sfVector2i){w, h});
     generate_trees(map, (sfVector2i){w, h});
+    generate_cactus(map, (sfVector2i){w, h});
     for (int i = 0; i < 5; i++)
         level_gen_destroy(noises[i]);
     return ((maps_t){map, data});
