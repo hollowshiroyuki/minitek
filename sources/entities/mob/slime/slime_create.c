@@ -18,6 +18,6 @@ entity_t *slime_create(void)
     new->mob.ent = new;
     new->mob.sli.mob = &new->mob;
     new->id = E_SLIME;
-    entity_funcs_combine(&new->funcs, &mob_funcs, &entity_funcs);
+    entity_funcs_combine(&new->funcs, &slime_funcs, &mob_funcs);
     return (new);
 }

@@ -13,6 +13,7 @@
 #ifndef CONSTS_H_
 #define CONSTS_H_
 
+extern const int scale;
 extern const sfVector2i render_size;
 extern const char *window_name;
 
