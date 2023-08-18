@@ -1,0 +1,9 @@
+########################
+### LIB_HSY GITIGNORE###
+########################
+
+# Do not commit the compiled lib.
+libhsy.a
+
+# Do not commit the object files.
+objects/
