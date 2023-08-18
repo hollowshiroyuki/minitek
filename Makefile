@@ -343,6 +343,12 @@ FLOOR_CHANGE_MENU_FILES	=	floor_change_menu.c \
 							floor_change_menu_tick.c \
 							floor_change_menu_draw.c
 
+OPTIONS_MENU_FILES	=	options_menu.c \
+						options_menu_consts.c \
+						options_menu_create.c \
+						options_menu_draw.c \
+						options_menu_tick.c
+
 MENUS_FILES	=	menu.c \
 				menu_tick.c \
 				menu_draw.c \
@@ -353,7 +359,8 @@ MENUS_FILES	=	menu.c \
 				$(addprefix inventory_menu/, $(INVENTORY_MENU_FILES)) \
 				$(addprefix crafting_menu/, $(CRAFTING_MENU_FILES)) \
 				$(addprefix death_menu/, $(DEATH_MENU_FILES)) \
-				$(addprefix floor_change_menu/, $(FLOOR_CHANGE_MENU_FILES))
+				$(addprefix floor_change_menu/, $(FLOOR_CHANGE_MENU_FILES)) \
+				$(addprefix options_menu/, $(OPTIONS_MENU_FILES))
 
 INPUT_FILES	=	input_create.c \
 				mkey_init.c \

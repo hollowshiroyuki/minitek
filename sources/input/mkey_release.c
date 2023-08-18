@@ -13,7 +13,9 @@
 void mkey_release(mkey_t *key)
 {
     int code = key->code;
+    int id = key->id;
 
     memset(key, 0, sizeof(mkey_t));
     key->code = code;
+    key->id = id;
 }

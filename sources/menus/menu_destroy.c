@@ -12,5 +12,7 @@ void menu_destroy(menu_t *self)
 {
     if (self->name)
         free(self->name);
+    if (self->child)
+        (self->child->funcs.destroy)(self->child);
     free(self);
 }

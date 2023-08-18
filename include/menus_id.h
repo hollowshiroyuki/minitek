@@ -13,7 +13,8 @@ enum {
     M_INVENTORY,
     M_CRAFTING,
     M_DEATH,
-    M_FLOOR_CHANGE
+    M_FLOOR_CHANGE,
+    M_OPTIONS
 };
 
 #endif
