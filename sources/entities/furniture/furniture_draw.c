@@ -14,7 +14,7 @@
 void furniture_draw(entity_t *self, screen_t *screen)
 {
     sfVector2i pos = self->pos;
-    int tex = self->fur.tex;
+    int tex = (self->fur.tex * 2 + 8 + (26 * 32));
 
     screen_render_entity(screen, (sfVector2i){pos.x - 8, pos.y - 4}, tex);
     screen_render_entity(screen, (sfVector2i){pos.x, pos.y - 4}, tex + 1);
