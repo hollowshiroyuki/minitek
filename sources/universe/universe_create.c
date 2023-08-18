@@ -30,6 +30,7 @@ void create_floors(universe_t *self, sfVector2i size)
 universe_t *universe_create(sfVector2i size, input_t *input, int seed, char *n)
 {
     universe_t *new = malloc(sizeof(universe_t));
+    item_t *workbench = furniture_item_create(furniture_create(F_WORKBENCH));
 
     if (!new)
         return (0);
@@ -45,6 +46,7 @@ universe_t *universe_create(sfVector2i size, input_t *input, int seed, char *n)
     new->name = hsy_strdup(n);
     (*new->player->funcs.start_pos)(new->player, new->active_floor);
     floor_add(new->active_floor, new->player);
+    inventory_add(new->player->mob.pla.inventory, workbench);
     new->running = true;
     return (new);
 }
