@@ -16,9 +16,9 @@ void screen_render_tile(screen_t *self, sfVector2i pos, int tile_id)
 
     pos.x -= self->offset.x;
     pos.y -= self->offset.y;
-    if (pos.x < 0 || pos.x >= self->size.x)
+    if (pos.x < -8 || pos.x >= self->size.x + 8) 
         return;
-    if (pos.y < 0 || pos.y >= self->size.y)
+    if (pos.y < -8 || pos.y >= self->size.y + 8)
         return;
     sfSprite_setTextureRect(self->t_sprite, rect);
     sfSprite_setPosition(self->t_sprite, (sfVector2f){pos.x, pos.y});
