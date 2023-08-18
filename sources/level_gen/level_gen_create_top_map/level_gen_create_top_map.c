@@ -36,22 +36,28 @@ static void generate_stairs(int *m, sfVector2i s)
     }
 }
 
-maps_t level_gen_create_top_map(int w, int h)
+void level_gen_generate_top_map(maps_t *maps, int w, int h)
 {
     level_gen_t *noises[5];
-    int *map = malloc(sizeof(int) * w * h);
-    int *data = malloc(sizeof(int) * w * h);
-
     for (int i = 0; i < 5; i++)
         noises[i] = level_gen_create(w, h, (i > 2) ? (32) : (16));
-    memset(data, 0, sizeof(int) * w * h);
-    generate_island(noises, map, (sfVector2i){w, h});
-    generate_sand(map, (sfVector2i){w, h});
-    generate_trees(map, (sfVector2i){w, h});
-    generate_cactus(map, (sfVector2i){w, h});
-    generate_flowers((maps_t){map, data}, (sfVector2i){w, h});
-    generate_stairs(map, (sfVector2i){w, h});
+    memset(maps->data, 0, sizeof(int) * w * h);
+    generate_island(noises, maps->map, (sfVector2i){w, h});
+    generate_sand(maps->map, (sfVector2i){w, h});
+    generate_trees(maps->map, (sfVector2i){w, h});
+    generate_cactus(maps->map, (sfVector2i){w, h});
+    generate_flowers(*maps, (sfVector2i){w, h});
+    generate_stairs(maps->map, (sfVector2i){w, h});
     for (int i = 0; i < 5; i++)
         level_gen_destroy(noises[i]);
-    return ((maps_t){map, data});
+}
+
+maps_t level_gen_create_top_map(int w, int h)
+{
+    maps_t maps;
+    maps.map = malloc(sizeof(int) * w * h);
+    maps.data = malloc(sizeof(int) * w * h);
+
+    level_gen_generate_top_map(&maps, w, h);
+    return (maps);
 }

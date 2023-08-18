@@ -45,6 +45,18 @@ You're currently reading the README of the Linux version, for the Windows see [h
 
 Just go to the [releases](https://github.com/hollowshiroyuki/minitek/releases/) section and download the linux build. (i'm too lazy to start my arch, coming soon)
 
+## There's a generator demo program now too
+
+`make fclean && make gen_demo`
+
+To use it : `./gen_demo`
+
+Keys :
+- `P / M` : Increase / Decrease Map resolution.
+- `A / Z / E / R` : Set Map Level, Surface / Underground (1/2/3)
+- `Esc` : Quit
+- `Any other key` : Regenerate a map
+
 #### Build It !
 
 If you want to build it yourself you'll need `gcc`, `make` and `CSFML` to compile it.

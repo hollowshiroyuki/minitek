@@ -50,18 +50,25 @@ static void generate_stairs(int *m, sfVector2i s)
     }
 }
 
-maps_t level_gen_create_underground_map(int w, int h, int depth)
+void level_gen_generate_underground_map(maps_t *maps, int w, int h, int depth)
 {
     level_gen_t *noises[11];
-    int *map = malloc(sizeof(int) * w * h);
-    int *data = malloc(sizeof(int) * w * h);
 
     depth = (depth % 3) + 1;
-    memset(data, 0, sizeof(int) * w * h);
+    memset(maps->data, 0, sizeof(int) * w * h);
     generate_noise(noises, (sfVector2i){w, h});
-    generate_cave(noises, map, (sfVector2i){w, h}, depth);
-    generate_ores(map, (sfVector2i){w, h}, depth);
-    generate_stairs(map, (sfVector2i){w, h});
+    generate_cave(noises, maps->map, (sfVector2i){w, h}, depth);
+    generate_ores(maps->map, (sfVector2i){w, h}, depth);
+    generate_stairs(maps->map, (sfVector2i){w, h});
     destroy_noise(noises);
-    return ((maps_t){map, data});
+}
+
+maps_t level_gen_create_underground_map(int w, int h, int depth)
+{
+    maps_t maps;
+    maps.map = malloc(sizeof(int) * w * h);
+    maps.data = malloc(sizeof(int) * w * h);
+
+    level_gen_generate_underground_map(&maps, w, h, depth);
+    return (maps);
 }

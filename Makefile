@@ -19,7 +19,7 @@ vpath %.c $(SOURCE_DIR)
 ### COMPILER OPTIONS ###
 ########################
 
-CC	=	clang
+CC	=	gcc
 
 CFLAGS	=	-W -Wall -Wextra -Werror \
 		-I$(HEADER_DIR) \
@@ -562,6 +562,8 @@ SOURCES_FILES	=	main.c \
 					$(addprefix recipes/, $(RECIPES_FILES)) \
 					$(addprefix loader/, $(LOADER_FILES))
 
+GEN_DEMO_SOURCES	= $(subst main.c,gen_demo_main.c,$(SOURCES_FILES))
+
 LIBRARY		=	libhsy.a
 
 ########################
@@ -569,6 +571,8 @@ LIBRARY		=	libhsy.a
 ########################
 
 OBJECTS	=	$(addprefix $(OBJECT_DIR)/,$(patsubst %.c,%.o,$(SOURCES_FILES)))
+
+GEN_DEMO_OBJECTS	=	$(addprefix $(OBJECT_DIR)/,$(patsubst %.c,%.o,$(GEN_DEMO_SOURCES)))
 
 ########################
 ### RECIPES          ###
@@ -579,6 +583,10 @@ OBJECTS	=	$(addprefix $(OBJECT_DIR)/,$(patsubst %.c,%.o,$(SOURCES_FILES)))
 .PRECIOUS: $(OBJECT_DIR)/. $(OBJECT_DIR)%/.
 
 all: directories $(LIBRARY) $(TARGET_NAME)
+
+gen_demo: $(GEN_DEMO_OBJECTS)
+	@$(CC) -o gen_demo $^ $(LFLAGS)
+	@echo -e "😺\e[35m -- GEN_DEMO BUILD SUCCESSFUL --\e[0m"
 
 directories: | $(SOURCE_DIR) $(OBJECT_DIR)
 
