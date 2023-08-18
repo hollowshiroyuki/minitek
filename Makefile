@@ -68,11 +68,15 @@ LEVEL_GEN_TOP_FILES =	level_gen_create_top_map.c \
 						top_map_generate_cactus.c \
 						top_map_generate_flowers.c
 
+LEVEL_GEN_UNDERGROUND_FILES	=	level_gen_create_underground_map.c \
+								underground_map_generate_cave.c
+
 LEVEL_GEN_FILES	=	level_gen_create.c \
 					level_gen_sample.c \
 					level_gen_set_sample.c \
 					level_gen_destroy.c \
-					$(addprefix level_gen_create_top_map/, $(LEVEL_GEN_TOP_FILES))
+					$(addprefix level_gen_create_top_map/, $(LEVEL_GEN_TOP_FILES)) \
+					$(addprefix level_gen_create_underground_map/, $(LEVEL_GEN_UNDERGROUND_FILES))
 
 ENGINE_FILES	=	engine_init.c \
 					engine_usage.c \
