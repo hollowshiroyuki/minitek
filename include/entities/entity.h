@@ -14,6 +14,7 @@
 #include "entities/mob.h"
 #include "entities/furniture.h"
 #include "entities/item_entity.h"
+#include "entities/text_particle.h"
 
 typedef struct floor_s floor_t;
 
@@ -30,6 +31,7 @@ typedef struct entity_s
         mob_t mob;
         furniture_t fur;
         item_entity_t itm;
+        text_particle_t tpart;
     };
     entity_funcs_t funcs;
     entity_t *next;

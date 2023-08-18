@@ -14,6 +14,7 @@ void player_do_hurt(entity_t *self, int damage, int dir)
 {
     if (self->mob.hurt_time > 0 || self->mob.pla.invul > 0)
         return;
+    floor_add(self->floor, text_particle_create(damage, self->pos, sfRed));
     self->mob.health -= damage;
     if (dir == D_DOWN)
         self->mob.knockback.y = +6;
