@@ -26,5 +26,6 @@ const entity_funcs_t entity_funcs = {
     .blocks = entity_blocks,
     .init = entity_init,
     .heal = entity_heal,
-    .die = entity_die
+    .die = entity_die,
+    .do_hurt = entity_do_hurt
 };

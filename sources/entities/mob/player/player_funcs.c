@@ -14,5 +14,6 @@ const entity_funcs_t player_funcs = {
     .hurt_tile = player_hurt_tile,
     .can_swim = player_can_swim,
     .destroy = player_destroy,
-    .touch_item = player_touch_item
+    .touch_item = player_touch_item,
+    .do_hurt = player_do_hurt
 };

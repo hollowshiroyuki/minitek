@@ -99,7 +99,12 @@ SLIME_FILES	=	slime_create.c \
 				slime_die.c \
 				slime_touched_by.c
 
-ZOMBIE_FILES	=	zombie_funcs.c
+ZOMBIE_FILES	=	zombie_funcs.c \
+					zombie_die.c \
+					zombie_tick.c \
+					zombie_draw.c \
+					zombie_touched_by.c \
+					zombie_create.c
 
 PLAYER_FILES	=	player_create.c \
 					player_draw.c \
@@ -170,6 +175,7 @@ ENTITIES_FILES	=	entity_is_blockable_by.c \
 					entity_use.c \
 					entity_instance_of.c \
 					entity_funcs.c \
+					entity_do_hurt.c \
 					entity_intersects.c \
 					entity_funcs_combine.c \
 					entity_die.c \

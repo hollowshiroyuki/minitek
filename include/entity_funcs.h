@@ -37,6 +37,7 @@ typedef struct entity_funcs_s
     void (*init)(entity_t *self, floor_t *floor);
     void (*heal)(entity_t *self, int heal);
     void (*die)(entity_t *self);
+    void (*do_hurt)(entity_t *entity, int dmg, int dir);
 } entity_funcs_t;
 
 void entity_funcs_combine(entity_funcs_t *r,

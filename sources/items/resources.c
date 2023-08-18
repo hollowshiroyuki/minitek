@@ -48,6 +48,13 @@ const resource_t r_slime = {
     .interact = resource_interact
 };
 
+const resource_t r_cloth = {
+    .id = R_CLOTH,
+    .name = "Cloth",
+    .tex = 4 * 32 + 11,
+    .interact = resource_interact
+};
+
 /* Consumables */
 const resource_t r_bread = {
     .id = R_BREAD,
