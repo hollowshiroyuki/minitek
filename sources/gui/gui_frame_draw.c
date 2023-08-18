@@ -45,8 +45,12 @@ static void draw_frame(screen_t *s, sfVector2i p1, sfVector2i p2)
 
 void gui_frame_draw(screen_t *s, char *name, sfVector2i p1, sfVector2i p2)
 {
+    sfVector2i pos;
+
     draw_frame(s, p1, p2);
-    for (unsigned long i = 1; i <= hsy_strlen(name); i++)
-        screen_render_gui(s, (sfVector2i){i * p1.x * 8 + 8, p1.y * 8}, 675, 0);
+    for (unsigned long i = 1; i <= hsy_strlen(name); i++) {
+        pos = (sfVector2i){(i + p1.x) * 8, p1.y * 8};
+        screen_render_gui(s, pos, 675, 0);
+    }
     gui_text_draw(name, s, (sfVector2i){p1.x * 8 + 8, p1.y * 8}, sfWhite);
 }

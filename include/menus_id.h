@@ -10,7 +10,8 @@
 
 enum {
     M_TITLE,
-    M_INVENTORY
+    M_INVENTORY,
+    M_CRAFTING
 };
 
 #endif

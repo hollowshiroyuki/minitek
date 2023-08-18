@@ -7,11 +7,11 @@
 
 #include "resources/item.h"
 
-bool resource_item_interact_tile(item_t *self, tile_t *t, entity_t *player,
-                                    sfVector2i p)
+bool resource_item_interact_tile(item_t *self, tile_t t, sfVector2i p,
+                                    entity_t *player)
 {
     resource_t *res = self->res.resource;
-    bool interact = (*res->interact)(res, *t, p, player);
+    bool interact = (*res->interact)(res, t, p, player);
 
     if (interact) {
         self->res.count--;

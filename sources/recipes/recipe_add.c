@@ -9,8 +9,9 @@
 #include <stdlib.h>
 #include "recipes/craft.h"
 
-void recipe_add(recipe_t **list, recipe_t *recipe)
+void recipe_add(recipe_t **old, recipe_t *new)
 {
-    recipe->next = *list;
-    *list = recipe;
+    new->next = *old;
+    new->result->next = (*old) ? (*old)->result : 0;
+    *old = new;
 }

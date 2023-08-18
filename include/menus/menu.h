@@ -12,6 +12,7 @@
 #include "menu_funcs.h"
 #include "menus/title_menu.h"
 #include "menus/inventory_menu.h"
+#include "menus/crafting_menu.h"
 #include "resources/item.h"
 
 typedef struct universe_s universe_t;
@@ -23,9 +24,11 @@ typedef struct menu_s
     int id;
     universe_t *universe;
     input_t *input;
+    char *name;
     union {
         title_menu_t title;
         inventory_menu_t inv;
+        crafting_menu_t craft;
     };
     menu_funcs_t funcs;
 } menu_t;

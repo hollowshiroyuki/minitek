@@ -11,14 +11,16 @@
 #include "menus_id.h"
 #include "menus/title_menu.h"
 #include "universe.h"
+#include "hsy.h"
 
-menu_t *inventory_menu_create(entity_t *player)
+menu_t *inventory_menu_create(entity_t *player, char *title)
 {
     menu_t *new = malloc(sizeof(menu_t));
 
     memset(new, 0, sizeof(menu_t));
     new->id = M_INVENTORY;
     new->inv.player = player;
+    new->name = hsy_strdup(title);
     if (player->mob.pla.active_item) {
         inventory_add(player->mob.pla.inventory, player->mob.pla.active_item);
         player->mob.pla.active_item = NULL;
