@@ -6,12 +6,15 @@
 */
 
 #include "universe.h"
+#include "menus/menu.h"
+#include "menu_funcs.h"
 
 void universe_tick(universe_t *self)
 {
-    //if (self->menu)) {
-    //    menu_tick(universe->menu);
-    //} else {
+    input_tick(self->input);
+    if (self->menu) {
+        (*self->menu->funcs.tick)(self->menu);
+    } else {
         floor_tick(self->active_floor);
-    //}
+    }
 }

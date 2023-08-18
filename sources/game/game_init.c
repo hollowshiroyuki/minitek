@@ -9,6 +9,7 @@
 #include <stdio.h>
 #include "scenes.h"
 #include "universe.h"
+#include "menus/title_menu.h"
 
 void game_init(engine_t *engine)
 {
@@ -17,4 +18,6 @@ void game_init(engine_t *engine)
     screen_init(&data->screen, &engine->assets, engine->window);
     data->input = input_create();
     data->universe = universe_create((sfVector2i){256, 256}, data->input, 42);
+    data->universe->menu = title_menu_create(data->universe);
+    data->universe->menu->input = data->input;
 }

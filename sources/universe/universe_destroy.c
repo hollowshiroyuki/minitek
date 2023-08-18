@@ -21,5 +21,7 @@ void universe_destroy(universe_t *self)
     if (self->player) {
         (*self->player->funcs.destroy)(self->player);
     }
+    if (self->menu)
+        (*self->menu->funcs.destroy)(self->menu);
     free(self);
 }
