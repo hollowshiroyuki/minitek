@@ -17,7 +17,8 @@ enum {
     M_OPTIONS,
     M_WORLD_SELECT,
     M_TEXT_INPUT,
-    M_PAUSE
+    M_PAUSE,
+    M_ABOUT
 };
 
 #endif

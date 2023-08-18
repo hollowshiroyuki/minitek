@@ -25,6 +25,7 @@ void revive(menu_t *self)
 {
     self->dea.player->removed = false;
     self->dea.player->mob.health = self->dea.player->mob.max_health;
+    floor_add(self->dea.player->floor, self->dea.player);
     universe_set_menu(self->dea.player->mob.pla.universe, NULL);
     (self->funcs.destroy)(self);
 }

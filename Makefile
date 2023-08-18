@@ -395,6 +395,11 @@ PAUSE_MENU_FILES	=	pause_menu.c \
 						pause_menu_draw.c \
 						pause_menu_tick.c
 
+ABOUT_MENU_FILES	=	about_menu.c \
+						about_menu_draw.c \
+						about_menu_tick.c \
+						about_menu_create.c
+
 MENUS_FILES	=	menu.c \
 				menu_tick.c \
 				menu_draw.c \
@@ -409,7 +414,8 @@ MENUS_FILES	=	menu.c \
 				$(addprefix options_menu/, $(OPTIONS_MENU_FILES)) \
 				$(addprefix world_select_menu/, $(WORLD_SELECT_FILES)) \
 				$(addprefix text_input_menu/, $(TEXT_INPUT_FILES)) \
-				$(addprefix pause_menu/, $(PAUSE_MENU_FILES))
+				$(addprefix pause_menu/, $(PAUSE_MENU_FILES)) \
+				$(addprefix about_menu/, $(ABOUT_MENU_FILES))
 
 INPUT_FILES	=	input_create.c \
 				mkey_init.c \
