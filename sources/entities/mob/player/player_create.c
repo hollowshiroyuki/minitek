@@ -19,6 +19,9 @@ void init_default_values(entity_t *new)
     new->mob.ent = new;
     new->mob.pla.mob = &new->mob;
     new->mob.health = 10;
+    new->mob.max_health = 10;
+    new->mob.pla.max_stamina = 10;
+    new->mob.pla.stamina = 10;
     new->box = (sfVector2i){4, 4};
 }
 

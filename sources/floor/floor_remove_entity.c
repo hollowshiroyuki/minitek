@@ -19,7 +19,12 @@ void floor_remove_entity(floor_t *self, sfVector2i p, entity_t *entity)
     if (p.x < 0 || p.y < 0 || p.x >= self->size.x || p.y >= self->size.y)
         return;
     list = self->entities_in_tiles[p.x + p.y * self->size.x];
-    for (int i = 0; i < ept; i++)
-        if (list[i] == entity)
+    for (int i = 0; i < ept; i++) {
+        if (list[i] == entity) {
             list[i] = 0;
+            for (int j = i + 1; j < ept; j++) {
+                list[j - 1] = list[j];
+            }
+        }
+    }
 }
