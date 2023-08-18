@@ -220,7 +220,8 @@ SCREEN_FILES	=	screen_init.c \
 					screen_set_offset.c \
 					screen_destroy.c \
 					screen_render_entity.c \
-					screen_render_gui.c
+					screen_render_gui.c \
+					screen_sprite_flip.c
 
 TITLE_MENU_FILES	=	title_menu.c \
 					title_menu_create.c \
