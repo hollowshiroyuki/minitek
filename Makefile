@@ -62,7 +62,8 @@ RANDOM_FILES	=	random_float.c \
 
 LEVEL_GEN_TOP_FILES =	level_gen_create_top_map.c \
 						top_map_generate_island.c \
-						top_map_generate_sand.c
+						top_map_generate_sand.c \
+						top_map_generate_trees.c
 
 LEVEL_GEN_FILES	=	level_gen_create.c \
 					level_gen_sample.c \
