@@ -60,11 +60,15 @@ MENU_FILES		=	menu_update.c \
 RANDOM_FILES	=	random_float.c \
 					random_int.c
 
+LEVEL_GEN_TOP_FILES =	level_gen_create_top_map.c \
+						top_map_generate_island.c \
+						top_map_generate_sand.c
+
 LEVEL_GEN_FILES	=	level_gen_create.c \
 					level_gen_sample.c \
 					level_gen_set_sample.c \
 					level_gen_destroy.c \
-					level_gen_create_top_map.c
+					$(addprefix level_gen_create_top_map/, $(LEVEL_GEN_TOP_FILES))
 
 ENGINE_FILES	=	engine_init.c \
 					engine_usage.c \
