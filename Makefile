@@ -69,6 +69,7 @@ LEVEL_GEN_TOP_FILES =	level_gen_create_top_map.c \
 						top_map_generate_flowers.c
 
 LEVEL_GEN_UNDERGROUND_FILES	=	level_gen_create_underground_map.c \
+								level_gen_create_and_validate_underground_map.c \
 								underground_map_generate_cave.c \
 								underground_map_generate_ores.c
 
