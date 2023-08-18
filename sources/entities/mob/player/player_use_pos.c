@@ -17,7 +17,7 @@ bool player_use_pos(entity_t *self, sfVector2i pos1, sfVector2i pos2)
     bool is_player;
 
     for (int i = 0; es[i]; i++) {
-        is_player = es[i]->id == E_MOB && es[i]->mob.id == E_PLAYER;
+        is_player = es[i]->id == E_MOB && es[i]->mob.id == MB_PLAYER;
         if (!is_player && (*es[i]->funcs.use)(es[i], self, dir)) {
             free(es);
             return (true);

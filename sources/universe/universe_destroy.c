@@ -18,9 +18,8 @@ void universe_destroy(universe_t *self)
     for (int i = 0; self->floors[i]; i++) {
         floor_destroy(self->floors[i]);
     }
-    if (self->player) {
-        (*self->player->funcs.destroy)(self->player);
-    }
+    if (self->player)
+        player_destroy(self->player);
     if (self->menu)
         (*self->menu->funcs.destroy)(self->menu);
     if (self->craft)

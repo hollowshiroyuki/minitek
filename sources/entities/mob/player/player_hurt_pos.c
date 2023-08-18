@@ -17,7 +17,7 @@ void player_hurt_pos(entity_t *self, sfVector2i pos1, sfVector2i pos2)
     int dmg = 0;
 
     for (int i = 0; es[i]; i++) {
-        if (es[i]->mob.id != E_PLAYER) {
+        if (es[i]->mob.id != MB_PLAYER) {
             dmg = player_get_attack_damage(self, es[i]);
             (*es[i]->funcs.hurt)(es[i], self, dmg, dir);
         }

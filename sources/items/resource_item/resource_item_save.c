@@ -14,8 +14,8 @@
 void resource_item_save(item_t *self, int fd)
 {
     hsy_fd_putnbr(fd, self->id);
-    hsy_fd_putstr(fd, ",");
+    hsy_fd_putstr(fd, " ");
     hsy_fd_putnbr(fd, self->res.resource->id);
-    hsy_fd_putstr(fd, ",");
+    hsy_fd_putstr(fd, " ");
     hsy_fd_putnbr(fd, self->res.count);
 }

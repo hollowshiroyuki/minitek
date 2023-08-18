@@ -14,6 +14,7 @@
 #include "level_gen.h"
 #include "tiles_id.h"
 #include "random.h"
+#include "consts.h"
 
 void set_pixel(sfUint8 *pixels, char r, char g, char b)
 {
@@ -63,12 +64,13 @@ static sfTexture *generate_background(sfVector2i size)
 menu_t *title_menu_create(menu_data_t *data)
 {
     menu_t *new = malloc(sizeof(menu_t));
+    sfVector2i s = map_size;
 
     memset(new, 0, sizeof(menu_t));
     new->name = hsy_strdup("");
     new->title.data = data;
     new->title.background = sfSprite_create();
-    new->title.texture = generate_background((sfVector2i){256, 256});
+    new->title.texture = generate_background((sfVector2i){s.x, s.y});
     sfSprite_setTexture(new->title.background, new->title.texture, false);
     new->funcs = title_menu_funcs;
     return (new);
