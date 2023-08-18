@@ -27,5 +27,6 @@ void zombie_die(entity_t *self);
 void zombie_touched_by(entity_t *self, entity_t *e);
 void zombie_tick(entity_t *self);
 entity_t *zombie_create(int level);
+void zombie_save(entity_t *self, int fd);
 
 #endif

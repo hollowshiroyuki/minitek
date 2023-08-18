@@ -18,6 +18,7 @@ typedef struct entity_s entity_t;
 
 typedef struct item_entity_s
 {
+    int id;
     int lifetime;
     sfVector3f a;
     sfVector3f b;
@@ -34,5 +35,6 @@ bool item_entity_blocks(entity_t *self, entity_t *entity);
 void item_entity_touched_by(entity_t *self, entity_t *entity);
 void item_entity_take(entity_t *self, entity_t *player);
 void item_entity_destroy(entity_t *self);
+void item_entity_save(entity_t *self, int fd);
 
 #endif

@@ -44,5 +44,6 @@ entity_t **floor_get_entities(floor_t *self, sfVector2i pos1, sfVector2i pos2);
 void floor_insert_entity(floor_t *self, sfVector2i p, entity_t *entity);
 void floor_remove_entity(floor_t *self, sfVector2i p, entity_t *entity);
 //void floor_remove(floor_t *self, entity_t *entity);
+void floor_save(floor_t *self, int fd);
 
 #endif

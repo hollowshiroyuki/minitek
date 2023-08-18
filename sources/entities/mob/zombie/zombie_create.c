@@ -19,7 +19,8 @@ entity_t *zombie_create(int level)
     if (!new)
         return (0);
     memset(new, 0, sizeof(entity_t));
-    new->id = E_ZOMBIE;
+    new->id = E_MOB;
+    new->mob.id = E_ZOMBIE;
     new->mob.ent = new;
     new->mob.max_health = level * level * 10;
     new->mob.zom.mob = &new->mob;

@@ -16,7 +16,7 @@ bool player_interact_pos(entity_t *self, sfVector2i pos1, sfVector2i pos2)
     item_t *item = self->mob.pla.active_item;
 
     for (int i = 0; es[i]; i++) {
-        if (es[i]->id == E_PLAYER)
+        if (es[i]->id == E_MOB && es[i]->mob.id == E_MOB)
             continue;
         if ((*es[i]->funcs.interact)(es[i], self, item, dir)) {
             free(es);

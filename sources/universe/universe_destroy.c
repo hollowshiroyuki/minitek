@@ -25,5 +25,7 @@ void universe_destroy(universe_t *self)
         (*self->menu->funcs.destroy)(self->menu);
     if (self->craft)
         craft_destroy(self->craft);
+    if (self->name)
+        free(self->name);
     free(self);
 }

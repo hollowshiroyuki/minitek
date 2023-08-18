@@ -98,14 +98,16 @@ SLIME_FILES	=	slime_create.c \
 				slime_draw.c \
 				slime_tick.c \
 				slime_die.c \
-				slime_touched_by.c
+				slime_touched_by.c \
+				slime_save.c
 
 ZOMBIE_FILES	=	zombie_funcs.c \
 					zombie_die.c \
 					zombie_tick.c \
 					zombie_draw.c \
 					zombie_touched_by.c \
-					zombie_create.c
+					zombie_create.c \
+					zombie_save.c \
 
 PLAYER_FILES	=	player_create.c \
 					player_draw.c \
@@ -134,13 +136,15 @@ MOB_FILES	=	mob_funcs.c \
 				mob_hurt_tile.c \
 				mob_move.c \
 				mob_start_pos.c \
+				mob_save.c \
 				$(addprefix slime/, $(SLIME_FILES)) \
 				$(addprefix zombie/, $(ZOMBIE_FILES)) \
 				$(addprefix player/, $(PLAYER_FILES))
 
 WORKBENCH_FILES	=	workbench_create.c \
 					workbench_use.c \
-					workbench_funcs.c
+					workbench_funcs.c \
+					workbench_save.c
 
 FURNITURE_FILES	=	furniture_funcs.c \
 					furniture_init.c \
@@ -150,6 +154,7 @@ FURNITURE_FILES	=	furniture_funcs.c \
 					furniture_touched_by.c \
 					furniture_take.c \
 					furniture_destroy.c \
+					furniture_save.c \
 					$(addprefix workbench/, $(WORKBENCH_FILES))
 
 ITEM_ENTITY_FILES	=	item_entity_create.c \
@@ -158,7 +163,8 @@ ITEM_ENTITY_FILES	=	item_entity_create.c \
 						item_entity_draw.c \
 						item_entity_destroy.c \
 						item_entity_take.c \
-						item_entity_touched_by.c
+						item_entity_touched_by.c \
+						item_entity_save.c
 
 ENTITIES_FILES	=	entity_is_block_by.c \
 					entity_can_swim.c \
@@ -232,7 +238,8 @@ FLOOR_FILES	=	floor_get_tile.c \
 				floor_draw_entities.c \
 				floor_remove_entity.c \
 				floor_get_data.c \
-				floor_set_data.c
+				floor_set_data.c \
+				floor_save.c
 
 SAND_FILES	=	sand.c \
 				sand_render.c
@@ -298,7 +305,8 @@ UNIVERSE_FILES	=	universe_create.c \
 					universe_destroy.c \
 					universe_draw_gui.c \
 					universe_set_menu.c \
-					universe_change_floor.c
+					universe_change_floor.c \
+					universe_save.c
 
 GUI_FILES	=	gui_text_draw.c \
 				gui_frame_draw.c \
@@ -393,7 +401,8 @@ TOOL_ITEM_FILES	=	tool_item_create.c \
 					tool_item_draw_icon.c \
 					tool_item_draw_inventory.c \
 					tool_item_get_name.c \
-					tool_item_get_tex.c
+					tool_item_get_tex.c \
+					tool_item_save.c
 
 RESOURCE_ITEM_FILES	=	resource_item_create.c \
 						resource_item_draw_icon.c \
@@ -402,7 +411,8 @@ RESOURCE_ITEM_FILES	=	resource_item_create.c \
 						resource_item_get_name.c \
 						resource_item_get_tex.c \
 						resource_item_interact_tile.c \
-						resource_item_is_depleted.c
+						resource_item_is_depleted.c \
+						resource_item_save.c
 
 INVENTORY_FILES	=	inventory_create.c \
 					inventory_add.c \
@@ -423,7 +433,8 @@ FURNITURE_ITEM_FILES	=	furniture_item_create.c \
 							furniture_item_get_name.c \
 							furniture_item_is_depleted.c \
 							furniture_item_funcs.c \
-							furniture_item_destroy.c
+							furniture_item_destroy.c \
+							furniture_item_save.c
 
 ITEMS_FILES	=	resources.c \
 				resource_interact.c \
@@ -447,6 +458,7 @@ ITEMS_FILES	=	resources.c \
 				item_list_add.c \
 				item_list_size.c \
 				item_list_remove.c \
+				item_save.c \
 				$(addprefix tool_item/, $(TOOL_ITEM_FILES)) \
 				$(addprefix resource_item/, $(RESOURCE_ITEM_FILES)) \
 				$(addprefix furniture_item/, $(FURNITURE_ITEM_FILES))

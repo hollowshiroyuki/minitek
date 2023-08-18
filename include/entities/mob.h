@@ -27,6 +27,7 @@ enum {
 
 typedef struct mob_s
 {
+    int id;
     int dir;
     int walk_dist;
     sfVector2i knockback;
@@ -50,5 +51,6 @@ bool mob_is_swimming(entity_t *self);
 bool mob_move(entity_t *self, sfVector2i pos);
 void mob_hurt_tile(entity_t *self, tile_t tile, sfVector2i pos, int dmg);
 bool mob_start_pos(entity_t *self, floor_t *floor);
+void mob_save(entity_t *self, int fd);
 
 #endif
