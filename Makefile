@@ -260,6 +260,15 @@ TOOL_ITEM_FILES	=	tool_item_create.c \
 					tool_item_get_tex.c \
 					tool_item_matches.c
 
+RESOURCE_ITEM_FILES	=	resource_item_create.c \
+						resource_item_draw_icon.c \
+						resource_item_draw_inventory.c \
+						resource_item_funcs.c \
+						resource_item_get_name.c \
+						resource_item_get_tex.c \
+						resource_item_interact_tile.c \
+						resource_item_is_depleted.c
+
 INVENTORY_FILES	=	inventory_create.c \
 					inventory_add.c \
 					inventory_add_pos.c \
@@ -288,7 +297,29 @@ ITEMS_FILES	=	resources.c \
 				item_funcs_combine.c \
 				item_funcs.c \
 				item_destroy.c \
-				$(addprefix tool_item/, $(TOOL_ITEM_FILES))
+				item_list_add.c \
+				item_list_size.c \
+				item_list_remove.c \
+				$(addprefix tool_item/, $(TOOL_ITEM_FILES)) \
+				$(addprefix resource_item/, $(RESOURCE_ITEM_FILES))
+
+TOOL_RECIPE_FILES	=	tool_recipe_create.c \
+						tool_recipe_funcs.c
+
+RECIPES_FILES	=	craft_create.c \
+					recipe_add_cost.c \
+					recipe_add.c \
+					workbench_recipes_create.c \
+					recipe_funcs_combine.c \
+					recipe_funcs.c \
+					recipe_destroy.c \
+					recipe_deduct_cost.c \
+					recipe_check_can_craft.c \
+					recipe_craft.c \
+					recipe_list_destroy.c \
+					craft_destroy.c \
+					recipe_init.c \
+					$(addprefix tool_recipe/, $(TOOL_RECIPE_FILES))
 
 SOURCES_FILES	=	main.c \
 					consts.c \
@@ -309,7 +340,8 @@ SOURCES_FILES	=	main.c \
 					$(addprefix menus/, $(MENUS_FILES)) \
 					$(addprefix gui/, $(GUI_FILES)) \
 					$(addprefix items/, $(ITEMS_FILES)) \
-					$(addprefix inventory/, $(INVENTORY_FILES))
+					$(addprefix inventory/, $(INVENTORY_FILES)) \
+					$(addprefix recipes/, $(RECIPES_FILES))
 
 LIBRARY		=	libhsy.a
 

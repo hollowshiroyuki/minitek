@@ -25,14 +25,14 @@ const resource_t r_dirt = {
 };
 
 /* Common resources */
-const resource_t wood = {
+const resource_t r_wood = {
     .id = R_WOOD,
     .tex = 1,
     .interact = resource_interact
 };
 
 /* Consumables */
-const resource_t bread = {
+const resource_t r_bread = {
     .id = R_BREAD,
     .tex = 7,
     .food.heal = 2,

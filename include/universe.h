@@ -13,6 +13,7 @@
 #include "menus/menu.h"
 #include "screen.h"
 #include "entities/entity.h"
+#include "recipes/craft.h"
 
 typedef struct universe_s
 {
@@ -20,6 +21,7 @@ typedef struct universe_s
     floor_t *active_floor;
     input_t *input;
     floor_t *floors[16];
+    craft_t *craft;
     long tick_count;
     entity_t *player;
     menu_t *menu;

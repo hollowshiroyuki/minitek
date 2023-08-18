@@ -11,17 +11,6 @@
 #include "gui.h"
 #include <stdio.h>
 
-static int list_item_size(item_t *list)
-{
-    int i = 0;
-
-    while (list) {
-        list = list->next;
-        i++;
-    };
-    return (i);
-}
-
 item_t *item_list_get(item_t *item, int pos)
 {
     int i = 0;
@@ -56,16 +45,16 @@ static void render_cursor(screen_t *scr, int select, sfIntRect r, int itm_off)
 void menu_draw_item_list(menu_t *self, screen_t *scr, int v[5], item_t *list)
 {
     sfIntRect r = (sfIntRect){v[0], v[1], v[2] - v[0], v[3] - v[1] - 1};
-    bool draw_cursor = true;
+    bool draw_cursor = (item_list_size(list)) ? true : false;
     int select = v[4];
-    int l_len = ((l_len = list_item_size(list)) > r.height) ? r.height : l_len;
+    int l_len = ((l_len = item_list_size(list)) > r.height) ? r.height : l_len;
     int itm_off = select - r.height / 2;
     sfVector2i pos;
     item_t *item;
 
     calc_select(&draw_cursor, &select);
-    if (itm_off > list_item_size(list) - r.height)
-        itm_off = list_item_size(list) - r.height;
+    if (itm_off > item_list_size(list) - r.height)
+        itm_off = item_list_size(list) - r.height;
     itm_off = (itm_off < 0) ? 0 : itm_off;
     for (int i = 0; i < l_len; i++) {
         item = item_list_get(list, i + itm_off);
