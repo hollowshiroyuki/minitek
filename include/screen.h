@@ -32,7 +32,7 @@ typedef struct screen_s
 void screen_init(screen_t *self, asset_store_t *assets, sfRenderWindow *win);
 void screen_set_offset(screen_t *self, sfVector2i offset);
 void screen_destroy(screen_t *self);
-void screen_render_tile(screen_t *self, sfVector2i pos, int tile_id);
+void screen_render_tile(screen_t *self, sfVector2i pos, int tile_id, int flip);
 void screen_render_entity(screen_t *self, sfVector2i pos, int tile_id);
 void screen_render_gui(screen_t *self, sfVector2i pos, int tile_id, int flip);
 void screen_sprite_flip(sfSprite *sprite, int m);

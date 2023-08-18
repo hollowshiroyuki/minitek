@@ -7,13 +7,13 @@
 
 #include "tiles/tile.h"
 #include "tiles_id.h"
-#include "tiles/stair_down.h"
+#include "tiles/flower.h"
 
-const tile_t stair_down = {
-    .id = T_STAIRDOWN,
+const tile_t flower = {
+    .id = T_FLOWER,
     .water = false,
     .sand = false,
-    .grass = false,
+    .grass = true,
     .lava = false,
-    .render = stair_down_render
+    .render = flower_render
 };
