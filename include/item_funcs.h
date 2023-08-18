@@ -29,6 +29,7 @@ typedef struct item_funcs_s
     int (*attack_bonus)(item_t *self, entity_t *e);
     char *(*get_name)(item_t *self);
     bool (*matches)(item_t *self, item_t *item);
+    void (*destroy)(item_t *self);
 } item_funcs_t;
 
 int item_get_tex(item_t *self);
@@ -42,6 +43,7 @@ int item_attack_bonus(item_t *self, entity_t *e);
 char *item_get_name(item_t *self);
 bool item_matches(item_t *self, item_t *item);
 void item_funcs_combine(item_funcs_t *d, const item_funcs_t *i_f);
+void item_destroy(item_t *self);
 
 extern const item_funcs_t item_funcs;
 

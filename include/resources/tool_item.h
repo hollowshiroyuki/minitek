@@ -40,14 +40,13 @@ typedef struct tool_item_s
     char name[16];
 } tool_item_t;
 
-item_t *create_tool_item(tool_type_t *type, int level);
-
+item_t *tool_item_create(tool_type_t *type, int level);
 int tool_item_get_tex(item_t *self);
 void tool_item_on_take(item_t *self, entity_t *item);
 void tool_item_draw_inventory(item_t *self, screen_t *screen, sfVector2i pos);
 void tool_item_draw_icon(item_t *self, screen_t *screen, sfVector2i pos);
 bool tool_item_interact(item_t *self, entity_t *play, entity_t *item, int dir);
-bool tool_item_interact_tile(item_t *self, entity_t *play, entity_t *item, int dir);
+bool tool_item_interact_tile(item_t *self, entity_t *p, entity_t *i, int dir);
 bool tool_item_is_depleted(item_t *self);
 bool tool_item_can_attack(item_t *self);
 int tool_item_attack_bonus(item_t *self, entity_t *e);
