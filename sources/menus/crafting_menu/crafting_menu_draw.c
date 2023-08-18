@@ -42,11 +42,9 @@ static void draw_costs(menu_t *self, screen_t *scr, recipe_t *recipe)
         has = inventory_count(self->craft.player->mob.pla.inventory, cur);
         color = (has < req) ? sfRed : sfWhite;
         has = (has > 99) ? 99 : has;
-        count[0] = ((count[1] = has % 10 + '0') == '0') ? ' ' : has / 10 + '0';
-        gui_text_draw(count, scr, (sfVector2i){pos.x + 1 * 8, pos.y}, color);
+        gui_num_draw(has, scr, (sfVector2i){pos.x + 1 * 8, pos.y}, color);
         gui_text_draw("/", scr, (sfVector2i){pos.x + 3 * 8, pos.y}, color);
-        count[0] = ((count[1] = req % 10 + '0') == '0') ? ' ' : req / 10 + '0';
-        gui_text_draw(count, scr, (sfVector2i){pos.x + 4 * 8, pos.y}, color);
+        gui_num_draw(req, scr, (sfVector2i){pos.x + 4 * 8, pos.y}, color);
     }
 }
 
@@ -57,10 +55,9 @@ static void draw_result(menu_t *self, screen_t *scr, recipe_t *recipe)
     int tex = recipe->result->funcs.get_tex(recipe->result);
     int has = inventory_count(self->craft.player->mob.pla.inventory, result);
     int has_max = (has > 99) ? 99 : has;
-    char count[3] = {has_max / 10 + '0', has_max % 10 + '0', 0};
 
     screen_render_item(scr, pos, tex, 0);
-    gui_text_draw(count, scr, (sfVector2i){pos.x + 8, 2 * 8}, sfWhite);
+    gui_num_draw(has, scr, (sfVector2i){pos.x + 8, 2 * 8}, sfWhite);
 }
 
 void crafting_menu_draw(menu_t *self, screen_t *screen)

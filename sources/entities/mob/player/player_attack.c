@@ -104,6 +104,7 @@ void player_attack(entity_t *self)
 
     self->mob.walk_dist += 8;
     if (active_item) {
+        self->mob.pla.attack_time = 10;
         if (use_active_item(self, active_item, yo)) {
             if ((*active_item->funcs.is_depleted)(active_item)) {
                 (active_item->funcs.destroy)(active_item);
@@ -113,6 +114,7 @@ void player_attack(entity_t *self)
         }
     }
     if (!active_item || (*active_item->funcs.can_attack)(active_item)) {
+        self->mob.pla.attack_time = 5;
         attack_entities(self, yo, 20);
         attack_tile(self, yo, 20);
     }

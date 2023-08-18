@@ -7,12 +7,15 @@
 
 #include "entities/workbench.h"
 #include "universe.h"
+#include <stdio.h>
 
 bool workbench_use(entity_t *self, entity_t *player, int dir)
 {
-    //universe_t *uni = player->mob.pla.universe;
-    //menu_t *craft_menu = create_crafting_menu(uni->craft->workbench, player);
+    universe_t *uni = player->mob.pla.universe;
+    recipe_t *recipes = uni->craft->workbench;
+    menu_t *craft_menu = crafting_menu_create(recipes, player, "Crafting");
 
-    //universe_set_menu(uni, craft_menu);
-    return (false);
+    printf("Workbench\n");
+    universe_set_menu(uni, craft_menu);
+    return (true);
 }

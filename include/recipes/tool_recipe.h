@@ -25,5 +25,6 @@ typedef struct tool_recipe_s
 recipe_t *tool_recipe_create(tool_type_t *type, int level);
 void tool_recipe_craft(recipe_t *self, entity_t *player);
 void tool_recipe_destroy(recipe_t *self);
+void tool_recipe_craft(recipe_t *self, entity_t *player);
 
 #endif

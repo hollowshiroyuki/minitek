@@ -24,6 +24,7 @@ static void input(menu_t *self, int len)
 static void craft_item(menu_t *self, int len)
 {
     recipe_t *r = recipe_list_get(self->craft.recipes, self->craft.selection);
+
     (*r->funcs.check_can_craft)(r, self->craft.player);
     if (r->can_craft) {
         (r->funcs.deduct_cost)(r, self->craft.player);
