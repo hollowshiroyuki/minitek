@@ -122,13 +122,19 @@ MOB_FILES	=	mob_funcs.c \
 				$(addprefix zombie/, $(ZOMBIE_FILES)) \
 				$(addprefix player/, $(PLAYER_FILES))
 
+WORKBENCH_FILES	=	workbench_create.c \
+					workbench_use.c \
+					workbench_funcs.c
+
 FURNITURE_FILES	=	furniture_funcs.c \
 					furniture_init.c \
 					furniture_tick.c \
 					furniture_draw.c \
 					furniture_blocks.c \
 					furniture_touched_by.c \
-					furniture_take.c
+					furniture_take.c \
+					furniture_destroy.c \
+					$(addprefix workbench/, $(WORKBENCH_FILES))
 
 ENTITIES_FILES	=	entity_is_blockable_by.c \
 					entity_can_swim.c \
