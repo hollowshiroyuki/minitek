@@ -40,5 +40,6 @@ void player_find_start_pos(entity_t *self, floor_t *floor);
 void player_do_hurt(entity_t *self, int damage, int dir);
 void player_hurt_tile(entity_t *self, tile_t tile, sfVector2i pos, int dmg);
 bool player_can_swim(entity_t *self);
+bool player_pay_stamina(entity_t *self, int cost);
 
 #endif
