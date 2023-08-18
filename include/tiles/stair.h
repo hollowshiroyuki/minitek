@@ -5,13 +5,14 @@
 ** hey. real programmers use vim
 */
 
-#ifndef STAIRDOWN_H_
-#define STAIRDOWN_H_
+#ifndef STAIRUP_H_
+#define STAIRUP_H_
 
 #include "tiles/tile.h"
 
+extern const tile_t stair_up;
 extern const tile_t stair_down;
 
-void stair_down_render(tile_t self, screen_t *scr, floor_t *fl, sfVector2i p);
+void stair_render(tile_t self, screen_t *scr, floor_t *flr, sfVector2i p);
 
 #endif

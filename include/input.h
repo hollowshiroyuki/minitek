@@ -23,6 +23,7 @@ typedef struct key_s
 void mkey_toggle(mkey_t *self, bool pressed);
 void mkey_tick(mkey_t *self);
 void mkey_init(mkey_t *key, int code);
+void mkey_release(mkey_t *key);
 
 enum {
     C_UP,
@@ -49,12 +50,13 @@ typedef struct input_s
         };
         mkey_t keys[C_COUNT];
     };
+    bool has_focus;
 } input_t;
 
 input_t *input_create(void);
 void input_toggle(input_t *self, sfEvent *event, bool pressed);
 void input_release_all(input_t *self);
-void input_tick(input_t *self);
+bool input_tick(input_t *self);
 void input_event(input_t *input, sfEvent *event);
 
 

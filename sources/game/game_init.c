@@ -17,10 +17,10 @@ void game_init(engine_t *engine)
 
     screen_init(&data->screen, &engine->assets, engine->window);
     data->input = input_create();
-    data->universe = universe_create((sfVector2i){256, 256}, data->input, 42);
-    universe_set_menu(data->universe, crafting_menu_create(data->universe->craft->workbench, data->universe->player, "Crafting"));
+    data->universe = universe_create((sfVector2i){256, 256}, data->input, 69);
     inventory_add(data->universe->player->mob.pla.inventory, furniture_item_create(workbench_create()));
     inventory_add(data->universe->player->mob.pla.inventory, furniture_item_create(workbench_create()));
     inventory_add(data->universe->player->mob.pla.inventory, furniture_item_create(workbench_create()));
     inventory_add(data->universe->player->mob.pla.inventory, furniture_item_create(workbench_create()));
+    //universe_set_menu(data->universe, death_menu_create(data->universe->player));
 }

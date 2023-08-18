@@ -35,6 +35,18 @@ static void stamina_tick(entity_t *self)
 
 static bool change_level(entity_t *self)
 {
+    sfVector2i pos =  (sfVector2i){self->pos.x, self->pos.y};
+    tile_t tile = floor_get_tile(self->floor, pos);
+
+    if (tile.id == T_STAIRDOWN || tile.id == T_STAIRUP) {
+        if (self->mob.pla.stair_delay == 0) {
+            player_change_floor(self, (tile.id == T_STAIRUP) ? 1 : -1);
+            self->mob.pla.stair_delay = 10;
+            return (true);
+        }
+    } else if (self->mob.pla.stair_delay > 0) {
+        self->mob.pla.stair_delay--;
+    }
     return (false);
 }
 
