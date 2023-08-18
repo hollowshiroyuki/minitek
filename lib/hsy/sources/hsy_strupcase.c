@@ -9,6 +9,8 @@
 
 char *hsy_strupcase(char *str)
 {
+    if (!str)
+        return (0);
     for (int i = 0; str[i]; i++) {
         if ('a' <= str[i] && str[i] <= 'z') {
             str[i] -= 'a' - 'A';
