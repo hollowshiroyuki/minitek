@@ -47,21 +47,21 @@ LFLAGS	=	-L$(LIBRARY_DIR) -lhsy \
 WINDOW_FILES	=	window_init.c \
 					window_destroy.c
 
-VIEW_FILES		=	view_ratio.c
+VIEW_FILES	=	view_ratio.c
 
-ASSET_MAN_FILES =	asset_manager_destroy.c \
+ASSET_MAN_FILES	=	asset_manager_destroy.c \
 					asset_manager_init.c
 
-MENU_FILES		=	menu_update.c \
-					menu_destroy.c \
-					menu_draw.c \
-					menu_event.c \
-					menu_init.c
+MENU_FILES	=	menu_update.c \
+				menu_destroy.c \
+				menu_draw.c \
+				menu_event.c \
+				menu_init.c
 
 RANDOM_FILES	=	random_float.c \
 					random_int.c
 
-LEVEL_GEN_TOP_FILES =	level_gen_create_top_map.c \
+LEVEL_GEN_TOP_FILES	=	level_gen_create_top_map.c \
 						level_gen_create_and_validate_top_map.c \
 						top_map_generate_island.c \
 						top_map_generate_sand.c \
