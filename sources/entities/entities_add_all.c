@@ -6,6 +6,7 @@
 */
 
 #include "entities/entity.h"
+#include "consts.h"
 
 void entities_add_all(entity_t **dest, entity_t **src)
 {
@@ -13,7 +14,7 @@ void entities_add_all(entity_t **dest, entity_t **src)
 
     while (*dest)
         i++;
-    for (int j = 0; src[j]; j++) {
+    for (int j = 0; j < entities_per_tile && src[j]; j++) {
         dest[i + j] = src[j];
     }
 }

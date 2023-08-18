@@ -14,7 +14,8 @@ enum {
     E_SLIME,
     E_ZOMBIE,
     E_PLAYER,
-    E_WORKBENCH
+    E_WORKBENCH,
+    E_ITEM
 };
 
 #endif

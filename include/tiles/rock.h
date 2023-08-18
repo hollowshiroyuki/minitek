@@ -14,5 +14,8 @@ extern const tile_t rock;
 
 void rock_render(tile_t self, screen_t *scr, floor_t *floor, sfVector2i pos);
 bool rock_may_pass(tile_t self, floor_t *floor, sfVector2i pos, entity_t *e);
+void rock_damage(floor_t *floor, sfVector2i pos, int dmg);
+void rock_hurt(floor_t *floor, sfVector2i pos, entity_t *entity, int dmg);
+bool rock_interact(tile_t self, floor_t *floor, sfVector2i pos, entity_t *e);
 
 #endif

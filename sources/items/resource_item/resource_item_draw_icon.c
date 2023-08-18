@@ -7,6 +7,7 @@
 
 #include "resources/item.h"
 #include "screen.h"
+#include <stdio.h>
 
 void resource_item_draw_icon(item_t *self, screen_t *screen, sfVector2i pos)
 {

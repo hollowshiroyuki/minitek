@@ -10,12 +10,22 @@
 
 typedef enum
 {
+    R_FLOWER,
+    R_WHEAT,
+    R_BREAD,
+    R_LEATHER,
+    R_CLOTH,
+    R_RAW_PORK,
+    R_CKD_PORK,
+    R_RAW_BEEF,
+    R_CKD_BEEF,
+    R_RAW_FISH,
+    R_CKD_FISH,
     R_WOOD,
     R_STONE,
-    R_FLOWER,
     R_ACORN,
     R_DIRT,
-    R_BREAD
+    R_APPLE
 }  resources_id_t;
 
 #endif

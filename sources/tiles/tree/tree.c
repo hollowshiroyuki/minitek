@@ -16,5 +16,7 @@ const tile_t tree = {
     .grass = true,
     .lava = false,
     .may_pass = tree_may_pass,
-    .render = tree_render
+    .render = tree_render,
+    .hurt = tree_hurt,
+    .interact = tree_interact
 };

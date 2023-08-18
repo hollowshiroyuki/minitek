@@ -10,6 +10,7 @@
 #include <stdio.h>
 #include "entities/entity.h"
 #include "entities_id.h"
+#include "consts.h"
 
 static void bubble_sort(entity_t **list)
 {
