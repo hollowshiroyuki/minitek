@@ -10,4 +10,5 @@
 void engine_destroy(engine_t *engine)
 {
     window_destroy(engine);
+    asset_manager_destroy(engine);
 }
