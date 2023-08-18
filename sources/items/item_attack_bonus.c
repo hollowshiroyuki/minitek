@@ -5,9 +5,9 @@
 ** hey. real programmers use vim
 */
 
-#include "rpg.h"
+#include "resources/item.h"
 
-void menu_update(engine_t *engine)
+int item_attack_bonus(item_t *self, entity_t *e)
 {
-    return;
+    return (0);
 }

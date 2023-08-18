@@ -16,5 +16,6 @@ const tile_t cactus = {
     .grass = false,
     .lava = false,
     .render = cactus_render,
-    .bump = cactus_bump
+    .bump = cactus_bump,
+    .may_pass = cactus_may_pass
 };

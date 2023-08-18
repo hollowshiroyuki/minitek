@@ -12,7 +12,7 @@
 void mob_tick(entity_t *self)
 {
     mob_t *mob = &self->mob;
-    sfVector2i tile = {mob->ent->pos.x >> 4, mob->ent->pos.y >> 4};
+    sfVector2i tile = (sfVector2i){self->pos.x >> 4, self->pos.y >> 4};
 
     mob->tick_time++;
     if (floor_get_tile(self->floor, tile).id == T_LAVA) {

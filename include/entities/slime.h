@@ -23,6 +23,7 @@ typedef struct slime_s
     mob_t *mob;
 } slime_t;
 
-entity_t *slime_create(void);
+entity_t *slime_create(int level);
+void slime_draw(entity_t *self, screen_t *screen);
 
 #endif

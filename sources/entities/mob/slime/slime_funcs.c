@@ -8,5 +8,5 @@
 #include "entities/slime.h"
 
 const entity_funcs_t slime_funcs = {
-    0
+    .draw = slime_draw
 };

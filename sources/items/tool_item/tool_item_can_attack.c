@@ -5,9 +5,9 @@
 ** hey. real programmers use vim
 */
 
-#include "rpg.h"
+#include "resources/item.h"
 
-void menu_event(engine_t *engine, sfEvent *event)
+bool tool_item_can_attack(item_t *self)
 {
-    return;
+    return (false);
 }

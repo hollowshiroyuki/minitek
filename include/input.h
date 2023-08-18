@@ -9,6 +9,7 @@
 #define INPUT_H_
 
 #include <stdbool.h>
+#include <SFML/Graphics.h>
 
 typedef struct key_s
 {
@@ -39,12 +40,12 @@ typedef struct input_s
     union {
         struct {
             mkey_t up;
-        mkey_t down;
-        mkey_t left;
-        mkey_t right;
-        mkey_t menu;
-        mkey_t attack;
-        mkey_t accept;
+            mkey_t down;
+            mkey_t left;
+            mkey_t right;
+            mkey_t menu;
+            mkey_t attack;
+            mkey_t accept;
         };
         mkey_t keys[C_COUNT];
     };

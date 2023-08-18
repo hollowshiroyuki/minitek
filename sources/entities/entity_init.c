@@ -7,7 +7,7 @@
 
 #include "entities/entity.h"
 
-void entity_init(entity_t *self)
+void entity_init(entity_t *self, floor_t *floor)
 {
-    return;
+    self->floor = floor;
 }

@@ -24,8 +24,12 @@ typedef struct tile_s
     bool grass;
     bool lava;
     void (*render)(tile_t self, screen_t *scr, floor_t *floor, sfVector2i pos);
-    void (*bump)(tile_t self, floor_t *f, sfVector2i p, entity_t *e);
-    bool (*may_pass)(tile_t self, floor_t *f, sfVector2i p, entity_t *e);
+    void (*bump)(tile_t self, floor_t *floor, sfVector2i pos, entity_t *e);
+    bool (*may_pass)(tile_t self, floor_t *floor, sfVector2i pos, entity_t *e);
+    void (*step)(tile_t self, floor_t *floor, sfVector2i pos, entity_t *e);
+    bool (*interact)(tile_t self, floor_t *floor, sfVector2i pos, entity_t *e);
+    bool (*use)(tile_t self, floor_t *floor, sfVector2i pos, entity_t *e);
+    void (*tick)(tile_t self, floor_t *floor, sfVector2i pos);
 } tile_t;
 
 #endif
