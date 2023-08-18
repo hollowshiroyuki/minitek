@@ -34,11 +34,11 @@ void engine_start(engine_t *engine)
 {
     int to_process = 0;
     int elapsed = 0;
-    sfUint64 usPerTick = 1000000 / 60;
+    sfUint64 msPerTick = 1000000 / 60;
 
     while (engine->state == EN_RUN && sfRenderWindow_isOpen(engine->window)) {
         elapsed = sfTime_asMicroseconds(sfClock_restart(engine->tick_clk));
-        to_process += elapsed / usPerTick;
+        to_process += elapsed / msPerTick;
         while (to_process >= 1) {
             engine_tick(engine);
             to_process -= 1;

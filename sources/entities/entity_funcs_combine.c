@@ -17,4 +17,5 @@ void entity_funcs_combine(entity_funcs_t *r,
     r->hurt = pa->hurt ?: pb->hurt ?: entity_funcs.hurt;
     r->move = pa->move ?: pb->move ?: entity_funcs.move;
     r->move_axis = pa->move_axis ?: pb->move_axis ?: entity_funcs.move_axis;
+    r->draw = pa->draw ?: pb->draw ?: entity_funcs.draw;
 }

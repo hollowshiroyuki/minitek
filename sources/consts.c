@@ -7,5 +7,5 @@
 
 #include "consts.h"
 
-const sfVector2i render_size = {600, 600};
+const sfVector2i render_size = {272, 256};
 const char *window_name = "MiniTek | MyRPG";

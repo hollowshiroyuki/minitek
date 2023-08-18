@@ -22,7 +22,9 @@ universe_t *universe_create(sfVector2i size)
     new->floors[1] = floor_create(size, 1, new->floors[0]);
     new->floors[2] = floor_create(size, 2, new->floors[1]);
     new->active_floor = new->floors[1];
-    //universe->player = player_create(new);
+    new->player = player_create(new, 0);
+    player_find_start_pos(new->player, new->active_floor);
+    new->active_floor->player = new->player;
     new->running = true;
     new->tick_count = 0;
     return (new);

@@ -97,9 +97,16 @@ SLIME_FILES	=	slime_create.c \
 
 ZOMBIE_FILES	=	zombie_funcs.c
 
+PLAYER_FILES	=	player_create.c \
+					player_draw.c \
+					player_funcs.c \
+					player_find_start_pos.c
+
+
 MOB_FILES	=	mob_funcs.c \
 				$(addprefix slime/, $(SLIME_FILES)) \
-				$(addprefix zombie/, $(ZOMBIE_FILES))
+				$(addprefix zombie/, $(ZOMBIE_FILES)) \
+				$(addprefix player/, $(PLAYER_FILES))
 
 ENTITIES_FILES	=	entity_blocked_by.c \
 					entity_can_swim.c \
@@ -169,7 +176,8 @@ GAME_FILES	=	game_update.c \
 SCREEN_FILES	=	screen_init.c \
 					screen_render_tile.c \
 					screen_set_offset.c \
-					screen_destroy.c
+					screen_destroy.c \
+					screen_render_entity.c
 
 SOURCES_FILES	=	main.c \
 					consts.c \
