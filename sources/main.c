@@ -5,7 +5,14 @@
 ** hey. real programmers use vim
 */
 
-int main(void)
+#include "rpg.h"
+
+int main(int argc, char **argv, char **envp)
 {
-    return (0);
+    engine_t engine = {.argc = argc, .argv = argv, .envp = envp};
+
+    engine_init(&engine);
+    if (engine.state == EN_RUN)
+        engine_start(&engine);
+    return (engine.ret);
 }
