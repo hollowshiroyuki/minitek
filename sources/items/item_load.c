@@ -44,8 +44,10 @@ bool item_load(item_t **itm, char *str)
     id = hsy_atoi(split[0]);
     if (id == I_TOOL)
         error = tool_item_load(itm, split, count);
-    if (id == I_FURNITURE)
+    if (id == I_FURNITURE) {
+        printf("Loading item %i %i\n", id, I_FURNITURE);
         error = furniture_item_load(itm, split, count);
+    }
     if (id == I_RESOURCE)
         error = resource_item_load(itm, split, count);
     free(split);
