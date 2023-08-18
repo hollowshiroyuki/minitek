@@ -221,7 +221,8 @@ SCREEN_FILES	=	screen_init.c \
 					screen_destroy.c \
 					screen_render_entity.c \
 					screen_render_gui.c \
-					screen_sprite_flip.c
+					screen_sprite_flip.c \
+					screen_render_item.c
 
 TITLE_MENU_FILES	=	title_menu.c \
 					title_menu_create.c \
@@ -238,6 +239,7 @@ MENUS_FILES	=	menu.c \
 				menu_draw.c \
 				menu_init.c \
 				menu_destroy.c \
+				menu_draw_item_list.c \
 				$(addprefix title_menu/, $(TITLE_MENU_FILES)) \
 				$(addprefix inventory_menu/, $(INVENTORY_MENU_FILES))
 
