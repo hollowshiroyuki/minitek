@@ -6,6 +6,7 @@
 */
 
 #include <stdio.h>
+#include "universe.h"
 #include "menus/menu.h"
 
 static void input(menu_t *self)
@@ -23,4 +24,10 @@ static void input(menu_t *self)
 void title_menu_tick(menu_t *self)
 {
     input(self);
+    if (self->input->accept.clicked) {
+        if (self->title.selection == 0) {
+            universe_set_menu(self->universe, NULL);
+            (self->funcs.destroy)(self);
+        }
+    }
 }

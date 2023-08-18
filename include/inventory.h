@@ -19,6 +19,7 @@ typedef struct inventory_s
 } inventory_t;
 
 inventory_t *inventory_create(int size);
+item_t *inventory_remove_item(inventory_t *self, int pos);
 void inventory_add(inventory_t *self, item_t *item);
 void inventory_add_pos(inventory_t *self, item_t *item, int pos);
 item_t *inventory_find_resource(inventory_t *self, resource_t *res);

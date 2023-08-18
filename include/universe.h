@@ -31,5 +31,6 @@ universe_t *universe_create(sfVector2i size, input_t *input, int seed);
 void universe_draw(universe_t *self, screen_t *screen);
 void universe_destroy(universe_t *self);
 void universe_draw_gui(universe_t *self, screen_t *screen);
+void universe_set_menu(universe_t *self, menu_t *menu);
 
 #endif

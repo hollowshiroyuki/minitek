@@ -11,6 +11,7 @@
 #include "input.h"
 #include "menu_funcs.h"
 #include "menus/title_menu.h"
+#include "menus/inventory_menu.h"
 
 typedef struct universe_s universe_t;
 
@@ -23,11 +24,11 @@ typedef struct menu_s
     input_t *input;
     union {
         title_menu_t title;
+        inventory_menu_t inv;
     };
     menu_funcs_t funcs;
 } menu_t;
 
-menu_t *title_menu_create(universe_t *universe);
 void menu_init(menu_t *self, universe_t *universe, input_t *input);
 void menu_tick(menu_t *self);
 void menu_draw(menu_t *self, screen_t *screen);
